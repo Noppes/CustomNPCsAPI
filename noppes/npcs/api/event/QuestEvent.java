@@ -32,9 +32,9 @@ public class QuestEvent extends Event {
 		
 	}
 
-	public static class QuestEndEvent extends QuestEvent{
+	public static class QuestTurnedInEvent extends QuestEvent{
 
-		public QuestEndEvent(EntityPlayer player, IQuest quest) {
+		public QuestTurnedInEvent(EntityPlayer player, IQuest quest) {
 			super(player, quest);
 		}
 		
