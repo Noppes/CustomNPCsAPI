@@ -3,8 +3,8 @@ package noppes.npcs.api.block;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import noppes.npcs.api.IData;
+import noppes.npcs.api.IItemStack;
 import noppes.npcs.api.IWorld;
-import noppes.npcs.api.entity.IItemStack;
 
 public interface IBlock {
 

@@ -1,10 +1,11 @@
 package noppes.npcs.api;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.EventBus;
+import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
 
@@ -18,6 +19,8 @@ public abstract class NpcAPI {
 	public abstract ICustomNpc createNPC(World world);
 
 	public abstract IEntity getEntityInterface(Entity entity);
+
+	public abstract IBlock getBlockInterface(World world, BlockPos pos);
 	
 	public abstract EventBus events();
 			

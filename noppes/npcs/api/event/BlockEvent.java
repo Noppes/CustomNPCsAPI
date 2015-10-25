@@ -25,7 +25,8 @@ public class BlockEvent extends Event {
 			this.entity = NpcAPI.Instance().getEntityInterface(entity);
 		}
 	}
-	
+
+	@Cancelable
 	public static class InteractEvent extends BlockEvent{
 		public final IPlayer player;
 
@@ -58,12 +59,9 @@ public class BlockEvent extends Event {
 	}
 	
 	@Cancelable
-	public static class DoorRedstoneEvent extends BlockEvent{
-		public final int prevPower, power;
-		public DoorRedstoneEvent(IBlock block, int prevPower, int power) {
+	public static class DoorToggleEvent extends BlockEvent{
+		public DoorToggleEvent(IBlock block) {
 			super(block);
-			this.power = power;
-			this.prevPower = prevPower;
 		}
 	}
 	
@@ -122,9 +120,9 @@ public class BlockEvent extends Event {
 	
 	public static class CollidedEvent extends BlockEvent{
 		public final IEntity entity;
-		public CollidedEvent(IBlock block, Entity player) {
+		public CollidedEvent(IBlock block, Entity entity) {
 			super(block);
-			this.entity = NpcAPI.Instance().getEntityInterface(player);
+			this.entity = NpcAPI.Instance().getEntityInterface(entity);
 		}
 	}
 }

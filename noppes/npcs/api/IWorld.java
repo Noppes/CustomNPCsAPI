@@ -3,7 +3,6 @@ package noppes.npcs.api;
 import net.minecraft.world.World;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.IEntity;
-import noppes.npcs.api.entity.IItemStack;
 import noppes.npcs.api.entity.IPlayer;
 
 public interface IWorld {

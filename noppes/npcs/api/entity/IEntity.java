@@ -1,6 +1,7 @@
 package noppes.npcs.api.entity;
 
 import net.minecraft.entity.Entity;
+import noppes.npcs.api.IItemStack;
 import noppes.npcs.api.IWorld;
 
 public interface IEntity{

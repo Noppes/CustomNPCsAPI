@@ -1,4 +1,4 @@
-package noppes.npcs.api.entity;
+package noppes.npcs.api;
 
 import net.minecraft.item.ItemStack;
 
