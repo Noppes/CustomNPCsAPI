@@ -1,6 +1,7 @@
 package noppes.npcs.api;
 
 import net.minecraft.item.ItemStack;
+import noppes.npcs.api.entity.IEntityLiving;
 
 public interface IItemStack {
 
@@ -20,6 +21,8 @@ public interface IItemStack {
 	 * @param value The value to be set as item damage. For tools this is the durability for other items the color and more.
 	 */
 	public void setItemDamage(int value);
+	
+	public void damageItem(int damage, IEntityLiving living);
 
 	/**
 	 * @param key The key of this NBTTag
