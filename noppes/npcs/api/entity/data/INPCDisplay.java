@@ -1,6 +1,6 @@
 package noppes.npcs.api.entity.data;
 
-public interface INPCDisplayData {
+public interface INPCDisplay {
 
 	public String getName();
 

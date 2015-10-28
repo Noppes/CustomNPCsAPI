@@ -9,7 +9,9 @@ import noppes.npcs.api.IWorld;
 public interface IBlock {
 
 	public int getX();
+	
 	public int getY();
+	
 	public int getZ();
 	
 	/**

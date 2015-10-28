@@ -45,9 +45,10 @@ public interface IPlayer extends IEntityLivingBase{
      */
 	public int getFactionPoints(int faction);
 
-	public void sendMessage(String message);
+	public void message(String message);
 	
 	public int getGamemode();
+	
 	public void setGamemode(int mode);
 	
 	/**

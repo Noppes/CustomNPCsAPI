@@ -2,7 +2,7 @@ package noppes.npcs.api.entity.data;
 
 import noppes.npcs.api.IItemStack;
 
-public interface INPCInventoryData {
+public interface INPCInventory {
 
 	public IItemStack getRightHand();
 	
