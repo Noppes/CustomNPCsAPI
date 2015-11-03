@@ -124,7 +124,7 @@ public class NpcEvent extends Event{
 
 		public CollideEvent(ICustomNpc npc, Entity entity) {
 			super(npc);
-			this.entity = (IEntityLivingBase) NpcAPI.Instance().getEntityInterface(entity);
+			this.entity = (IEntity) NpcAPI.Instance().getEntityInterface(entity);
 		}
 	}
 }

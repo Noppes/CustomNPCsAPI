@@ -11,8 +11,9 @@ public interface IPlayer extends IEntityLivingBase{
 	public String getName();
 	
 	public boolean hasFinishedQuest(int id);
+	
 	public boolean hasActiveQuest(int id);
-	public boolean hasReadDialog(int id);
+	
 	public void startQuest(int id);
 	
 	/**
@@ -33,6 +34,12 @@ public interface IPlayer extends IEntityLivingBase{
 	 */
 	public void removeQuest(int id);
 
+	public boolean hasReadDialog(int id);
+	
+	/**
+	 * @param name Name of the person talking in the dialog
+	 */
+	public void showDialog(int id, String name);
 	/**
 	 * @param faction The faction id
 	 * @param points The points to increase. Use negative values to decrease
@@ -98,6 +105,7 @@ public interface IPlayer extends IEntityLivingBase{
 	 * @param z The z position
 	 */
 	public void setSpawnpoint(int x, int y, int z);
+	
 	public void resetSpawnpoint();
 
 	/**
@@ -107,8 +115,10 @@ public interface IPlayer extends IEntityLivingBase{
 	public boolean hasAchievement(String achievement);
 	
 	public int getExpLevel();
+	
 	public void setExpLevel(int level);
 	
 	@Override
 	public EntityPlayerMP getMCEntity();
+
 }
