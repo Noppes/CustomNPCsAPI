@@ -109,13 +109,13 @@ public interface IEntity{
 	 */
 	public String getTypeName();
 	/**
-	 * @return Returns the {@link noppes.npcs.scripted.constants.EntityType} of this entity
+	 * @return Returns the {@link noppes.npcs.api.constants.EntityType} of this entity
 	 */
 	public int getType();
 	
 	/**
-	 * @param type {@link noppes.npcs.scripted.constants.EntityType} to check
-	 * @return Returns whether the entity is type of the given {@link noppes.npcs.scripted.constants.EntityType}
+	 * @param type {@link noppes.npcs.api.constants.EntityType} to check
+	 * @return Returns whether the entity is type of the given {@link noppes.npcs.api.constants.EntityType}
 	 */
 	public boolean typeOf(int type);
 

@@ -27,4 +27,15 @@ public interface INPCInventory {
 	 * @param slot The armor slot to return. 0:head, 1:body, 2:legs, 3:boots
 	 */
 	public void setArmor(int slot, IItemStack item);
+
+	/**
+	 * @param slot 0-8
+	 * @param chance 1-100
+	 */
+	public void setDropItem(int slot, IItemStack item, int chance);
+
+	/**
+	 * @param slot 0-8
+	 */
+	public IItemStack getDropItem(int slot);
 }

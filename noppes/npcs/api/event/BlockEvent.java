@@ -22,7 +22,7 @@ public class BlockEvent extends Event {
 		public EntityFallenUponEvent(IBlock block, Entity entity, float distance){
 			super(block);
 			this.distanceFallen = distance;
-			this.entity = NpcAPI.Instance().getEntityInterface(entity);
+			this.entity = NpcAPI.Instance().getIEntity(entity);
 		}
 	}
 
@@ -39,7 +39,7 @@ public class BlockEvent extends Event {
 		
 		public InteractEvent(IBlock block, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
 			super(block);
-			this.player = (IPlayer) NpcAPI.Instance().getEntityInterface(player);
+			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 
 			this.hitX = hitX;
 			this.hitY = hitY;
@@ -106,7 +106,7 @@ public class BlockEvent extends Event {
 		public final IPlayer player;
 		public ClickedEvent(IBlock block, EntityPlayer player) {
 			super(block);
-			this.player = (IPlayer) NpcAPI.Instance().getEntityInterface(player);
+			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 		}
 	}
 	
@@ -114,7 +114,7 @@ public class BlockEvent extends Event {
 		public final IPlayer player;
 		public HarvestedEvent(IBlock block, EntityPlayer player) {
 			super(block);
-			this.player = (IPlayer) NpcAPI.Instance().getEntityInterface(player);
+			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 		}
 	}
 	
@@ -122,7 +122,7 @@ public class BlockEvent extends Event {
 		public final IEntity entity;
 		public CollidedEvent(IBlock block, Entity entity) {
 			super(block);
-			this.entity = NpcAPI.Instance().getEntityInterface(entity);
+			this.entity = NpcAPI.Instance().getIEntity(entity);
 		}
 	}
 }

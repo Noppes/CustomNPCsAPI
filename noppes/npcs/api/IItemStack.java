@@ -43,6 +43,11 @@ public interface IItemStack {
 	public Object getTag(String key);
 	
 	public boolean isEnchanted();
+
+	/**
+	 * @param id The enchantment id
+	 */
+	boolean hasEnchant(int id);
 	
 	/**
 	 * @return Returns whether or not this item is a block

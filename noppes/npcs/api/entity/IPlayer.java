@@ -5,10 +5,9 @@ import noppes.npcs.api.IItemStack;
 
 public interface IPlayer extends IEntityLivingBase{
 
-	/**
-	 * @return Returns the players name
-	 */
 	public String getName();
+	
+	public String getDisplayName();
 	
 	public boolean hasFinishedQuest(int id);
 	
@@ -117,6 +116,8 @@ public interface IPlayer extends IEntityLivingBase{
 	public int getExpLevel();
 	
 	public void setExpLevel(int level);
+	
+	public boolean hasPermission(String permission);
 	
 	@Override
 	public EntityPlayerMP getMCEntity();

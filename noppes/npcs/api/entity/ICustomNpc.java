@@ -1,7 +1,12 @@
 package noppes.npcs.api.entity;
 
+import noppes.npcs.api.entity.data.INPCFaction;
+import noppes.npcs.api.IItemStack;
+import noppes.npcs.api.entity.data.INPCAi;
 import noppes.npcs.api.entity.data.INPCDisplay;
 import noppes.npcs.api.entity.data.INPCInventory;
+import noppes.npcs.api.entity.data.INPCJob;
+import noppes.npcs.api.entity.data.INPCRole;
 import noppes.npcs.api.entity.data.INPCStats;
 
 public interface ICustomNpc extends IEntityLivingBase{
@@ -11,6 +16,16 @@ public interface ICustomNpc extends IEntityLivingBase{
 	public INPCInventory getInventory();
 
 	public INPCStats getStats();
+
+	public INPCAi getAi();
+	
+	public INPCFaction getFaction();
+
+	public void setFaction(int id);
+
+	public INPCRole getRole();
+	
+	public INPCJob getJob();
 
 	public int getHomeX();
 
@@ -31,4 +46,21 @@ public interface ICustomNpc extends IEntityLivingBase{
 	 * Kill the npc, doesnt't despawn it
 	 */
 	public void kill();
+
+	/**
+	 * @param item The item you want to shoot
+	 * @param accuracy Accuracy of the shot (1-100)
+	 */
+	public void shootItem(IEntityLivingBase target, IItemStack item, int accuracy);
+
+	/**
+	 * If the player can't carry the item it will fall on the ground. (unless the player is in creative)
+	 */
+	public void giveItem(IPlayer player, IItemStack item);
+
+	/**
+	 * On servers the enable-command-block option in the server.properties needs to be set to true
+	 */
+	public void executeCommand(String command);
+
 }
