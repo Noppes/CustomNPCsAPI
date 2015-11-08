@@ -34,7 +34,7 @@ public class NpcEvent extends Event{
 		public IEntityLivingBase entity;
 		public TargetEvent(ICustomNpc npc, EntityLivingBase entity) {
 			super(npc);
-			this.entity = (IEntityLivingBase) NpcAPI.Instance().getEntityInterface(entity);
+			this.entity = (IEntityLivingBase) NpcAPI.Instance().getIEntity(entity);
 		}
 	}
 
@@ -46,7 +46,7 @@ public class NpcEvent extends Event{
 		public final IEntityLivingBase entity;
 		public TargetLostEvent(ICustomNpc npc, EntityLivingBase entity) {
 			super(npc);
-			this.entity = (IEntityLivingBase) NpcAPI.Instance().getEntityInterface(entity);
+			this.entity = (IEntityLivingBase) NpcAPI.Instance().getIEntity(entity);
 		}
 	}
 
@@ -68,7 +68,7 @@ public class NpcEvent extends Event{
 			super(npc);
 			this.mcDamageSource = damagesource;
 			type = damagesource.damageType;
-			this.source = NpcAPI.Instance().getEntityInterface(entity);
+			this.source = NpcAPI.Instance().getIEntity(entity);
 		}
 	}
 	
@@ -76,7 +76,7 @@ public class NpcEvent extends Event{
 		public final IEntityLivingBase entity;
 		public KilledEntityEvent(ICustomNpc npc, EntityLivingBase entity) {
 			super(npc);
-			this.entity = (IEntityLivingBase) NpcAPI.Instance().getEntityInterface(entity);
+			this.entity = (IEntityLivingBase) NpcAPI.Instance().getIEntity(entity);
 		}
 	}
 
@@ -87,7 +87,7 @@ public class NpcEvent extends Event{
 
 		public MeleeAttackEvent(ICustomNpc npc, EntityLivingBase target, float damage) {
 			super(npc);
-			this.target = (IEntityLivingBase) NpcAPI.Instance().getEntityInterface(target);
+			this.target = (IEntityLivingBase) NpcAPI.Instance().getIEntity(target);
 			this.damage = damage;
 		}
 	}
@@ -99,7 +99,7 @@ public class NpcEvent extends Event{
 
 		public RangedLaunchedEvent(ICustomNpc npc, EntityLivingBase target, float damage) {
 			super(npc);
-			this.target = (IEntityLivingBase) NpcAPI.Instance().getEntityInterface(target);
+			this.target = (IEntityLivingBase) NpcAPI.Instance().getIEntity(target);
 			this.damage = damage;
 		}
 	}
@@ -113,7 +113,7 @@ public class NpcEvent extends Event{
 
 		public DamagedEvent(ICustomNpc npc, EntityLivingBase source, float damage, DamageSource mcDamageSource) {
 			super(npc);
-			this.source = (IEntityLivingBase) NpcAPI.Instance().getEntityInterface(source);
+			this.source = (IEntityLivingBase) NpcAPI.Instance().getIEntity(source);
 			this.damage = damage;
 			this.mcDamageSource = mcDamageSource;
 		}
@@ -124,7 +124,7 @@ public class NpcEvent extends Event{
 
 		public CollideEvent(ICustomNpc npc, Entity entity) {
 			super(npc);
-			this.entity = (IEntity) NpcAPI.Instance().getEntityInterface(entity);
+			this.entity = (IEntity) NpcAPI.Instance().getIEntity(entity);
 		}
 	}
 }

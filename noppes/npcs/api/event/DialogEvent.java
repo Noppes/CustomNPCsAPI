@@ -15,7 +15,7 @@ public class DialogEvent extends NpcEvent {
 	public DialogEvent(ICustomNpc npc, EntityPlayer player, IDialog dialog) {
 		super(npc);
 		this.dialog = dialog;
-		this.player = (IPlayer) NpcAPI.Instance().getEntityInterface(player);
+		this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 	}
 
 	@Cancelable

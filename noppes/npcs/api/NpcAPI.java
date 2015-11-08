@@ -18,9 +18,9 @@ public abstract class NpcAPI {
 		
 	public abstract ICustomNpc createNPC(World world);
 
-	public abstract IEntity getEntityInterface(Entity entity);
+	public abstract IEntity getIEntity(Entity entity);
 
-	public abstract IBlock getBlockInterface(World world, BlockPos pos);
+	public abstract IBlock getIBlock(World world, BlockPos pos);
 	
 	public abstract EventBus events();
 			

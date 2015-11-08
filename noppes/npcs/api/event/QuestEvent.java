@@ -12,7 +12,7 @@ public class QuestEvent extends Event {
 	public final IPlayer player;
 	public QuestEvent(EntityPlayer player, IQuest quest) {
 		this.quest = quest;
-		this.player = (IPlayer) NpcAPI.Instance().getEntityInterface(player);
+		this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 	}
 
 	@Cancelable
