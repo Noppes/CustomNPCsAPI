@@ -14,4 +14,24 @@ public interface INPCStats {
 	
 	public void setResistance(int type, float value);
 
+	/**
+	 * @return Returns the combat health regen per second
+	 */
+	public int getCombatRegen();
+
+	/**
+	 * @param regen The combat health regen per second
+	 */
+	public void setCombatRegen(int regen);
+
+	/**
+	 * @return Returns the health regen per second when not in combat
+	 */
+	public int getHealthRegen();
+
+	/**
+	 * @param regen The health regen per second when not in combat
+	 */
+	public void setHealthRegen(int regen);
+
 }
