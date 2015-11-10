@@ -38,4 +38,19 @@ public interface INPCInventory {
 	 * @param slot 0-8
 	 */
 	public IItemStack getDropItem(int slot);
+
+	public int getExpMin();
+
+	public int getExpMax();
+
+	/**
+	 * @return Returns a value between expMin and expMax
+	 */
+	public int getExpRNG();
+
+	/**
+	 * Sets the random exp dropped when the npc dies
+	 */
+	public void setExp(int min, int max);
+
 }

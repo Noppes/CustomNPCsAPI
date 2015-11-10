@@ -15,16 +15,16 @@ public final class PotionEffectType {
 	
 
 	
-	public static int getPotionID(int effect) {
+	public static Potion getMCType(int effect) {
 		switch(effect){
-			case POISON : return Potion.poison.id;
-			case HUNGER : return Potion.hunger.id;
-			case WEAKNESS : return Potion.weakness.id;
-			case SLOWNESS : return Potion.moveSlowdown.id;
-			case NAUSEA : return Potion.confusion.id;
-			case BLINDNESS : return Potion.blindness.id;
-			case WITHER : return Potion.wither.id;
-			default : return 0;
+			case POISON : return Potion.poison;
+			case HUNGER : return Potion.hunger;
+			case WEAKNESS : return Potion.weakness;
+			case SLOWNESS : return Potion.moveSlowdown;
+			case NAUSEA : return Potion.confusion;
+			case BLINDNESS : return Potion.blindness;
+			case WITHER : return Potion.wither;
+			default : return null;
 		}
 	}
 }

@@ -13,7 +13,7 @@ public class ParticleType {
 	public static final int ENCHANT = 7;
 	public static final int CRIT = 8;
 	
-	public static EnumParticleTypes getEnumType(int type){
+	public static EnumParticleTypes getMCType(int type){
 		if(type == SMOKE)
 			return EnumParticleTypes.SMOKE_NORMAL;
 		if(type == PORTAL)

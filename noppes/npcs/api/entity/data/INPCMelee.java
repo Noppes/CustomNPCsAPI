@@ -6,8 +6,24 @@ public interface INPCMelee {
 
 	public void setStrength(int strength);
 
-	public int getSpeed();
+	public int getDelay();
 
-	public void setSpeed(int speed);
+	public void setDelay(int speed);
+
+	public int getRange();
+
+	public void setRange(int range);
+
+	public int getKnockback();
+
+	public void setKnockback(int knockback);
+
+	public int getEffectType();
+
+	public int getEffectTime();
+
+	public int getEffectStrength();
+
+	public void setEffect(int type, int strength, int time);
 
 }

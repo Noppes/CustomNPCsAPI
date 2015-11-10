@@ -34,4 +34,8 @@ public interface INPCStats {
 	 */
 	public void setHealthRegen(int regen);
 
+	public INPCMelee getMelee();
+
+	public INPCRanged getRanged();
+
 }
