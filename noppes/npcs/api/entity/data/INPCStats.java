@@ -38,4 +38,14 @@ public interface INPCStats {
 
 	public INPCRanged getRanged();
 
+	/**
+	 * @param type 0:Potion, 1:Falldamage, 2:Sunburning, 3:Fire, 4:Drowning, 5:Cobweb
+	 */
+	public boolean getImmune(int type);
+
+	/**
+	 * @param type 0:Potion, 1:Falldamage, 2:Sunburning, 3:Fire, 4:Drowning, 5:Cobweb
+	 */
+	public void setImmune(int type, boolean bo);
+
 }

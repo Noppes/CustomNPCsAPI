@@ -3,7 +3,7 @@ package noppes.npcs.api.constants;
 /**
  * Tactical Variant Types
  */
-public class TacticalVariantType {
+public class TacticalType {
     public static final int DEFAULT = 0;
     public static final int DODGE = 1;
     public static final int SURROUND = 2;
