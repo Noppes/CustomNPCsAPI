@@ -48,4 +48,32 @@ public interface INPCStats {
 	 */
 	public void setImmune(int type, boolean bo);
 
+	/**
+	 * (0=Normal, 1=Undead, 2=Arthropod) Only used for damage calculations with enchants
+	 */
+	public void setCreatureType(int type);
+
+	/**
+	 * (0=Normal, 1=Undead, 2=Arthropod) Only used for damage calculations with enchants
+	 */
+	public int getCreatureType();
+
+	/**
+	 * @return 0:Yes, 1:Day, 2:Night, 3:No, 4:Naturally
+	 */
+	public int getRespawnType();
+
+	/**
+	 * @param type 0:Yes, 1:Day, 2:Night, 3:No, 4:Naturally
+	 */
+	public void setRespawnType(int type);
+
+	public int getRespawnTime();
+
+	public void setRespawnTime(int seconds);
+
+	public boolean getHideDeadBody();
+
+	public void setHideDeadBody(boolean hide);
+
 }
