@@ -48,5 +48,46 @@ public interface INPCAi {
 	 * @param type 0:RotateBody, 1:NoRotation, 2:Stalking, 3:HeadRotation
 	 */
 	public void setStandingType(int type);
+
+	/**
+	 * @return Returns whether or not he can attack invisible entities
+	 */
+	public boolean getAttackInvisible();
+
+	public void setAttackInvisible(boolean attack);
+
+	public int getWanderingRange();
+
+	/**
+	 * @param range (1-50)
+	 */
+	public void setWanderingRange(int range);
+
+	public boolean getInteractWithNPCs();
+
+	public void setInteractWithNPCs(boolean interact);
+
+	public boolean getStopOnInteract();
+
+	public void setStopOnInteract(boolean stopOnInteract);
+
+	public int getWalkingSpeed();
+
+	/**
+	 * @param speed 0-10
+	 */	
+	public void setWalkingSpeed(int speed);
+	
+	/**
+	 * @return 0:Looping, 1:Backtracking
+	 */
+	public int getMovingPathType();
+
+	public boolean getMovingPathPauses();
+
+	/**
+	 * @param type 0:Looping, 1:Backtracking
+	 */
+	public void setMovingPathType(int type, boolean pauses);
 	
 }

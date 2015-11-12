@@ -81,4 +81,14 @@ public interface INPCDisplay {
 
 	public String getOverlayTexture();
 
+	/**
+	 * @param part 0:Head, 1:Body, 2:ArmLeft, 3:ArmRight, 4:LegLeft, 5:LegRight
+	 */
+	public void setModelScale(int part, float x, float y, float z);
+
+	/**
+	 * @param part 0:Head, 1:Body, 2:ArmLeft, 3:ArmRight, 4:LegLeft, 5:LegRight
+	 */
+	public float[] getModelScale(int part);
+
 }
