@@ -1,6 +1,7 @@
 package noppes.npcs.api.block;
 
 import noppes.npcs.api.IItemStack;
+import noppes.npcs.api.ITimers;
 
 public interface IBlockScripted extends IBlock{
 
@@ -12,6 +13,8 @@ public interface IBlockScripted extends IBlock{
 	public void setModel(String name);
 
 	public IItemStack getModel();
+	
+	public ITimers getTimers();
 
 	/**
 	 * @param strength Sets the strength of the redstone signal (0-15)

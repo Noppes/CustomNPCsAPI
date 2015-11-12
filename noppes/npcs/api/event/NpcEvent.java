@@ -127,4 +127,13 @@ public class NpcEvent extends Event{
 			this.entity = (IEntity) NpcAPI.Instance().getIEntity(entity);
 		}
 	}
+
+	public static class TimerEvent extends NpcEvent{
+		public final int id;
+		
+		public TimerEvent(ICustomNpc npc, int id) {
+			super(npc);
+			this.id = id;
+		}
+	}
 }

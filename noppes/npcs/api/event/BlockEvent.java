@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.eventhandler.Cancelable;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.block.IBlock;
+import noppes.npcs.api.constants.SideType;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IPlayer;
 
@@ -123,6 +124,15 @@ public class BlockEvent extends Event {
 		public CollidedEvent(IBlock block, Entity entity) {
 			super(block);
 			this.entity = NpcAPI.Instance().getIEntity(entity);
+		}
+	}
+
+	public static class TimerEvent extends BlockEvent{
+		public final int id;
+		
+		public TimerEvent(IBlock block, int id) {
+			super(block);
+			this.id = id;
 		}
 	}
 }

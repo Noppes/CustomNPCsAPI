@@ -1,6 +1,10 @@
 package noppes.npcs.api.block;
 
+import noppes.npcs.api.ITimers;
+
 public interface IBlockScriptedDoor extends IBlock{
+	
+	public ITimers getTimers();
 
 	public boolean getOpen();
 

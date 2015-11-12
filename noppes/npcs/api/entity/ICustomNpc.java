@@ -1,9 +1,10 @@
 package noppes.npcs.api.entity;
 
-import noppes.npcs.api.entity.data.INPCFaction;
 import noppes.npcs.api.IItemStack;
+import noppes.npcs.api.ITimers;
 import noppes.npcs.api.entity.data.INPCAi;
 import noppes.npcs.api.entity.data.INPCDisplay;
+import noppes.npcs.api.entity.data.INPCFaction;
 import noppes.npcs.api.entity.data.INPCInventory;
 import noppes.npcs.api.entity.data.INPCJob;
 import noppes.npcs.api.entity.data.INPCRole;
@@ -26,6 +27,8 @@ public interface ICustomNpc extends IEntityLivingBase{
 	public INPCRole getRole();
 	
 	public INPCJob getJob();
+	
+	public ITimers getTimers();
 
 	public int getHomeX();
 
@@ -62,5 +65,5 @@ public interface ICustomNpc extends IEntityLivingBase{
 	 * On servers the enable-command-block option in the server.properties needs to be set to true
 	 */
 	public void executeCommand(String command);
-
+	
 }
