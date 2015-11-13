@@ -76,4 +76,8 @@ public interface INPCStats {
 
 	public void setHideDeadBody(boolean hide);
 
+	public int getAggroRange();
+
+	public void setAggroRange(int range);
+
 }

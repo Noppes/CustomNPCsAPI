@@ -89,5 +89,56 @@ public interface INPCAi {
 	 * @param type 0:Looping, 1:Backtracking
 	 */
 	public void setMovingPathType(int type, boolean pauses);
+
+	public int getDoorInteract();
+
+	public void setDoorInteract(int type);
+
+	public boolean getCanSwim();
+
+	public void setCanSwim(boolean canSwim);
+
+	/**
+	 * @return 0:Darkness, 1:Sunlight, 2:Disabled
+	 */
+	public int getSheltersFrom();
+
+	/**
+	 * @param type 0:Darkness, 1:Sunlight, 2:Disabled
+	 */
+	public void setSheltersFrom(int type);
+
+	/**
+	 * @return Whether the NPC requires Direct Line of Sight to Attack
+	 */
+	public boolean getAttackLOS();
+
+	/**
+	 * @param mustSee Whether the NPC requires Direct Line of Sight to Attack
+	 */
+	public void setAttackLOS(boolean enabled);
+
+	public boolean getAvoidsWater();
+
+	public void setAvoidsWater(boolean enabled);
+
+	public boolean getLeapAtTarget();
+
+	public void setLeapAtTarget(boolean leap);
+
+	/**
+	 * @see noppes.npcs.api.constants.TacticalType
+	 */
+	public int getTacticalType();
+
+	
+	/**
+	 * @see noppes.npcs.api.constants.TacticalType
+	 */
+	public void setTacticalType(int type);
+
+	public int getTacticalRange();
+
+	public void setTacticalRange(int range);
 	
 }

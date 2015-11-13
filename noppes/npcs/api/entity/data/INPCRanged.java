@@ -119,4 +119,12 @@ public interface INPCRanged {
 
 	public void setDelay(int min, int max);
 
+	public int getFireType();
+
+	public void setFireType(int type);
+
+	public int getMeleeRange();
+
+	public void setMeleeRange(int range);
+
 }
