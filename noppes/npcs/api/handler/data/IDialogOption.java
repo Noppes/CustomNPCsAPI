@@ -1,4 +1,4 @@
-package noppes.npcs.api;
+package noppes.npcs.api.handler.data;
 
 import noppes.npcs.api.constants.EnumOptionType;
 

@@ -4,6 +4,7 @@ import net.minecraft.world.World;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IPlayer;
+import noppes.npcs.api.entity.data.IData;
 
 public interface IWorld {
 

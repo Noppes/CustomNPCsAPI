@@ -9,6 +9,8 @@ import net.minecraftforge.fml.common.eventhandler.EventBus;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
+import noppes.npcs.api.handler.IFactionHandler;
+import noppes.npcs.api.handler.IRecipeHandler;
 
 /**
  * Note this API should only be used Server side not on the client
@@ -24,6 +26,10 @@ public abstract class NpcAPI {
 	public abstract IBlock getIBlock(World world, BlockPos pos);
 	
 	public abstract IItemStack getIItemStack(ItemStack itemstack);
+	
+	public abstract IFactionHandler getFactions();
+	
+	public abstract IRecipeHandler getRecipes();
 	
 	public abstract EventBus events();
 			

@@ -2,11 +2,11 @@ package noppes.npcs.api.event;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.common.eventhandler.Cancelable;
-import noppes.npcs.api.IDialog;
-import noppes.npcs.api.IDialogOption;
 import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IPlayer;
+import noppes.npcs.api.handler.data.IDialog;
+import noppes.npcs.api.handler.data.IDialogOption;
 
 public class DialogEvent extends NpcEvent {
 	public final IDialog dialog;

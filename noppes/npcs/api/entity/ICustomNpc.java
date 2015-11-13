@@ -4,11 +4,11 @@ import noppes.npcs.api.IItemStack;
 import noppes.npcs.api.ITimers;
 import noppes.npcs.api.entity.data.INPCAi;
 import noppes.npcs.api.entity.data.INPCDisplay;
-import noppes.npcs.api.entity.data.INPCFaction;
 import noppes.npcs.api.entity.data.INPCInventory;
 import noppes.npcs.api.entity.data.INPCJob;
 import noppes.npcs.api.entity.data.INPCRole;
 import noppes.npcs.api.entity.data.INPCStats;
+import noppes.npcs.api.handler.data.IFaction;
 
 public interface ICustomNpc extends IEntityLivingBase{
 	
@@ -20,7 +20,7 @@ public interface ICustomNpc extends IEntityLivingBase{
 
 	public INPCAi getAi();
 	
-	public INPCFaction getFaction();
+	public IFaction getFaction();
 
 	public void setFaction(int id);
 

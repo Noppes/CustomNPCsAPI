@@ -1,9 +1,9 @@
-package noppes.npcs.api.entity.data;
+package noppes.npcs.api.handler.data;
 
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IPlayer;
 
-public interface INPCFaction {
+public interface IFaction {
 
 	public int getId();
 	
