@@ -124,4 +124,6 @@ public interface IEntity{
 	 * @return Returns minecrafts entity
 	 */
 	public Entity getMCEntity();
+	
+	public String getUUID();
 }
