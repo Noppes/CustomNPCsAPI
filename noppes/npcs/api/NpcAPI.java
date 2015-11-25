@@ -1,5 +1,7 @@
 package noppes.npcs.api;
 
+import java.io.File;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
@@ -19,7 +21,15 @@ import noppes.npcs.api.handler.IRecipeHandler;
 public abstract class NpcAPI {	
 	private static NpcAPI instance = null;
 		
+	/**
+	 * Doesnt spawn the npc in the world
+	 */
 	public abstract ICustomNpc createNPC(World world);
+	
+	/**
+	 * Creates and spawns an npc
+	 */
+	public abstract ICustomNpc spawnNPC(World world, int x, int y, int z);
 
 	public abstract IEntity getIEntity(Entity entity);
 
@@ -32,6 +42,16 @@ public abstract class NpcAPI {
 	public abstract IRecipeHandler getRecipes();
 	
 	public abstract EventBus events();
+
+	/**
+	 * @return Returns the .minecraft/customnpcs folder or [yourserverfolder]/customnpcs
+	 */
+	public abstract File getGlobalDir();
+
+	/**
+	 * @return Returns the .minecraft/saves/[yourworld]/customnpcs folder or [yourserverfolder]/[yourworld]/customnpcs
+	 */
+	public abstract File getWorldDir();
 			
 	public static boolean IsAvailable(){
 		return Loader.isModLoaded("customnpcs");
@@ -53,6 +73,5 @@ public abstract class NpcAPI {
 			e.printStackTrace();
 		}
 		return instance;
-	}
-	
+	}	
 }
