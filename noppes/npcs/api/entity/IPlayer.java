@@ -62,8 +62,11 @@ public interface IPlayer extends IEntityLivingBase{
 	 * @return How many of this item the player has
 	 */
 	public int inventoryItemCount(IItemStack item);
-	
 
+	/**
+	 * @return Returns a IItemStack array size 36
+	 */
+	public IItemStack[] getInventory();
 	
 	/**
 	 * @param item The Item type to be removed
