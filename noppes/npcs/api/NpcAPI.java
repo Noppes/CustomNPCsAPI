@@ -42,6 +42,12 @@ public abstract class NpcAPI {
 	public abstract IRecipeHandler getRecipes();
 	
 	public abstract EventBus events();
+	
+	
+	/**
+	 * Use to register your own /noppes subcommand
+	 */
+	public abstract void registerCommand(CommandNoppesBase command);
 
 	/**
 	 * @return Returns the .minecraft/customnpcs folder or [yourserverfolder]/customnpcs
