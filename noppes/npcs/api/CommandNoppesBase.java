@@ -6,7 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,8 +14,6 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentTranslation;
-import noppes.npcs.api.CommandNoppesBase.SubCommand;
-import noppes.npcs.command.CmdHelp;
 
 public abstract class CommandNoppesBase extends CommandBase{
 	public Map<String, Method> subcommands = new HashMap<String, Method>();
