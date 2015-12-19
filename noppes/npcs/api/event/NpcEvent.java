@@ -10,6 +10,7 @@ import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IEntityLivingBase;
+import noppes.npcs.api.entity.IPlayer;
 
 public class NpcEvent extends Event{
 	public final ICustomNpc npc;
@@ -52,10 +53,10 @@ public class NpcEvent extends Event{
 
 	@Cancelable
 	public static class InteractEvent extends NpcEvent{
-		public final EntityPlayer player;
+		public final IPlayer player;
 		public InteractEvent(ICustomNpc npc, EntityPlayer player) {
 			super(npc);
-			this.player = player;
+			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 		}
 	}
 
