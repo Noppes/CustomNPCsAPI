@@ -84,12 +84,13 @@ public interface IPlayer extends IEntityLivingBase{
 	public boolean removeItem(String id, int damage, int amount);
 
 	public void removeAllItems(IItemStack item);
+	
 	/**
 	 * @param item Item to be added
-	 * @param amount The amount of the item to be added
 	 * @return Returns whether or not it gave the item succesfully
 	 */
-	public boolean giveItem(IItemStack item, int amount);
+	public boolean giveItem(IItemStack item);
+	
 	
 	/**
 	 * @param id The items name
