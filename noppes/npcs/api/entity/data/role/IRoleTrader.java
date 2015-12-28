@@ -8,6 +8,21 @@ public interface IRoleTrader extends INPCRole{
 	/**
 	 * @param slot Slot number 0-17
 	 */
+	public IItemStack getOptionSold(int slot);
+	
+	/**
+	 * @param slot Slot number 0-17
+	 */
+	public IItemStack getOptionCurrency1(int slot);
+	
+	/**
+	 * @param slot Slot number 0-17
+	 */
+	public IItemStack getOptionCurrency2(int slot);
+
+	/**
+	 * @param slot Slot number 0-17
+	 */
 	public void setOption(int slot, IItemStack currency, IItemStack currency2, IItemStack sold);
 
 	/**
