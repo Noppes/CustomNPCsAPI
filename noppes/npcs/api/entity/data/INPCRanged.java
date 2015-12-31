@@ -88,7 +88,7 @@ public interface INPCRanged {
 	public String getSound(int type);
 
 	/**
-	 * @param type 0:Fire
+	 * @param type 0:Fire, 1:Hit, 2:Ground
 	 */
 	public void setSound(int type, String sound);
 
