@@ -3,7 +3,7 @@ package noppes.npcs.api.entity;
 import net.minecraft.entity.EntityLivingBase;
 import noppes.npcs.api.IItemStack;
 
-public interface IEntityLivingBase extends IEntity{
+public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T>{
 
 	public float getHealth();
 	
@@ -62,6 +62,7 @@ public interface IEntityLivingBase extends IEntity{
 	public int getPotionEffect(int effect);
 	
 	public boolean isChild();
-	
-	public EntityLivingBase getMCEntity();
+
+	@Override
+	public T getMCEntity();
 }

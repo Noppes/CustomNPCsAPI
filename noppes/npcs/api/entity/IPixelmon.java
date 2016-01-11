@@ -1,6 +1,8 @@
 package noppes.npcs.api.entity;
 
-public interface IPixelmon extends IAnimal{
+import net.minecraft.entity.passive.EntityTameable;
+
+public interface IPixelmon<T extends EntityTameable> extends IAnimal<T>{
 
 	public boolean getIsShiny();
 
@@ -90,4 +92,7 @@ public interface IPixelmon extends IAnimal{
 
 	public void setMove(int slot, String move);
 
+	@Override
+	public T getMCEntity();
+	
 }

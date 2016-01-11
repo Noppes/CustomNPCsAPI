@@ -5,7 +5,7 @@ import noppes.npcs.api.IItemStack;
 import noppes.npcs.api.IWorld;
 import noppes.npcs.api.entity.data.IData;
 
-public interface IEntity{
+public interface IEntity<T extends Entity> {
 	
 	public double getX();
 	
@@ -123,7 +123,7 @@ public interface IEntity{
 	 * Expert users only
 	 * @return Returns minecrafts entity
 	 */
-	public Entity getMCEntity();
+	public T getMCEntity();
 	
 	public String getUUID();
 }

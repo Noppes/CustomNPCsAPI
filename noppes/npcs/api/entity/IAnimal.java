@@ -1,5 +1,10 @@
 package noppes.npcs.api.entity;
 
-public interface IAnimal extends IEntityLiving{
+import net.minecraft.entity.passive.EntityAnimal;
 
+public interface IAnimal<T extends EntityAnimal> extends IEntityLiving<T>{
+
+	@Override
+	public T getMCEntity();
+	
 }

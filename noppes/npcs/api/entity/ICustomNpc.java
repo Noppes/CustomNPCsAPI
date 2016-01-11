@@ -1,5 +1,6 @@
 package noppes.npcs.api.entity;
 
+import net.minecraft.entity.EntityCreature;
 import noppes.npcs.api.IItemStack;
 import noppes.npcs.api.ITimers;
 import noppes.npcs.api.entity.data.INPCAi;
@@ -10,7 +11,7 @@ import noppes.npcs.api.entity.data.INPCRole;
 import noppes.npcs.api.entity.data.INPCStats;
 import noppes.npcs.api.handler.data.IFaction;
 
-public interface ICustomNpc extends IEntityLivingBase{
+public interface ICustomNpc<T extends EntityCreature> extends IEntityLivingBase<T>{
 	
 	public INPCDisplay getDisplay();
 
@@ -65,5 +66,8 @@ public interface ICustomNpc extends IEntityLivingBase{
 	 * On servers the enable-command-block option in the server.properties needs to be set to true
 	 */
 	public void executeCommand(String command);
+
+	@Override
+	public T getMCEntity();
 	
 }

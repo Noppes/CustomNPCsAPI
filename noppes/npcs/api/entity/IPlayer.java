@@ -3,7 +3,7 @@ package noppes.npcs.api.entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import noppes.npcs.api.IItemStack;
 
-public interface IPlayer extends IEntityLivingBase{
+public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
 	public String getName();
 	
@@ -122,8 +122,8 @@ public interface IPlayer extends IEntityLivingBase{
 	public void setExpLevel(int level);
 	
 	public boolean hasPermission(String permission);
-	
+
 	@Override
-	public EntityPlayerMP getMCEntity();
+	public T getMCEntity();
 
 }

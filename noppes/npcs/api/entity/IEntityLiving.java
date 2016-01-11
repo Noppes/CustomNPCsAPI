@@ -1,6 +1,8 @@
 package noppes.npcs.api.entity;
 
-public interface IEntityLiving extends IEntityLivingBase{
+import net.minecraft.entity.EntityLiving;
+
+public interface IEntityLiving<T extends EntityLiving> extends IEntityLivingBase<T>{
 
 	/**
 	 * @return Whether or not this entity is navigating somewhere
@@ -19,4 +21,8 @@ public interface IEntityLiving extends IEntityLivingBase{
 	 * @param z Destination x position
 	 */
 	public void navigateTo(double x, double y, double z, double speed);
+
+	@Override
+	public T getMCEntity();
+	
 }
