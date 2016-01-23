@@ -37,4 +37,6 @@ public interface IRecipe {
 	public void save();
 	
 	public void delete();
+
+	public int getId();
 }

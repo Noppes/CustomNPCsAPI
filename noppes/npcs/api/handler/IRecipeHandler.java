@@ -14,4 +14,6 @@ public interface IRecipeHandler {
 	public IRecipe addRecipe(String name, boolean global, ItemStack result, Object... objects);
 
 	public IRecipe addRecipe(String name, boolean global, ItemStack result, int width, int height, ItemStack... recipe);
+
+	public IRecipe delete(int id);
 }
