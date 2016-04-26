@@ -14,6 +14,10 @@ public interface IBlock {
 	
 	public int getZ();
 	
+	public int getMetadata();
+	
+	public void setMetadata(int i);
+	
 	/**
 	 * @return Returns this blocks name
 	 */

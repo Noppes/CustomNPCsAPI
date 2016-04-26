@@ -46,6 +46,8 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLivingBase<
 
 	public void say(String message);
 
+	public void sayTo(IPlayer player, String message);
+
 	/**
 	 * Kill the npc, doesnt't despawn it
 	 */
