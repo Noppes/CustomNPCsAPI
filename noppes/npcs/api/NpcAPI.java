@@ -4,7 +4,8 @@ import java.io.File;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.EventBus;
@@ -37,9 +38,9 @@ public abstract class NpcAPI {
 	
 	public abstract IItemStack getIItemStack(ItemStack itemstack);
 	
-	public abstract IFactionHandler getFactions();
+	public abstract IFactionHandler getFactions(MinecraftServer server);
 	
-	public abstract IRecipeHandler getRecipes();
+	public abstract IRecipeHandler getRecipes(MinecraftServer server);
 	
 	public abstract EventBus events();
 	

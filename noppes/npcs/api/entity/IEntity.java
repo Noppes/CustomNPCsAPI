@@ -40,10 +40,28 @@ public interface IEntity<T extends Entity> {
 	public IEntity getMount();
 	
 	public void setMount(IEntity entity);
+
+	/**
+	 * @return Returns the entities riding this entity
+	 * @since 1.9
+	 */
+	public IEntity[] getRiders();
 	
-	public IEntity getRider();
-	
-	public void setRider(IEntity entity);
+	/**
+	 * @return Returns the entities riding this entity including the entities riding those entities
+	 * @since 1.9
+	 */
+	public IEntity[] getAllRiders();
+
+	/**
+	 * @since 1.9
+	 */
+	public void addRider(IEntity entity);
+
+	/**
+	 * @since 1.9
+	 */
+	public void clearRiders();
 	
 	/**
 	 * @param power How strong the knockback is

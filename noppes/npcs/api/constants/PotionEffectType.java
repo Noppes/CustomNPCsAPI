@@ -1,5 +1,6 @@
 package noppes.npcs.api.constants;
 
+import net.minecraft.init.MobEffects;
 import net.minecraft.potion.Potion;
 
 public final class PotionEffectType {
@@ -17,13 +18,13 @@ public final class PotionEffectType {
 	
 	public static Potion getMCType(int effect) {
 		switch(effect){
-			case POISON : return Potion.poison;
-			case HUNGER : return Potion.hunger;
-			case WEAKNESS : return Potion.weakness;
-			case SLOWNESS : return Potion.moveSlowdown;
-			case NAUSEA : return Potion.confusion;
-			case BLINDNESS : return Potion.blindness;
-			case WITHER : return Potion.wither;
+			case POISON : return MobEffects.poison;
+			case HUNGER : return MobEffects.hunger;
+			case WEAKNESS : return MobEffects.weakness;
+			case SLOWNESS : return MobEffects.moveSlowdown;
+			case NAUSEA : return MobEffects.confusion;
+			case BLINDNESS : return MobEffects.blindness;
+			case WITHER : return MobEffects.wither;
 			default : return null;
 		}
 	}

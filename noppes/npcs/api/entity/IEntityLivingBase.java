@@ -22,18 +22,36 @@ public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T
 	public IEntityLivingBase getLastAttacked();
 	
 	public boolean canSeeEntity(IEntity entity);
-	
-	public void swingHand();
-	
 
+	/**
+	 * @since 1.9
+	 */
+	public void swingMainhand();
+
+	/**
+	 * @since 1.9
+	 */
+	public void swingOffhand();
 	
 	/**
-	 * Note not all Living Entities support this
-	 * @return The item the entity is holding
+	 * @since 1.9
 	 */
-	public IItemStack getHeldItem();
-	
-	public void setHeldItem(IItemStack item);
+	public IItemStack getMainhandItem();
+
+	/**
+	 * @since 1.9
+	 */
+	public void setMainhandItem(IItemStack item);
+
+	/**
+	 * @since 1.9
+	 */
+	public IItemStack getOffhandItem();
+
+	/**
+	 * @since 1.9
+	 */
+	public void setOffhandItem(IItemStack item);
 	
 	/**
 	 * Note not all Living Entities support this

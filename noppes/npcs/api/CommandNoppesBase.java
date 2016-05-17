@@ -13,7 +13,8 @@ import java.util.Map;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.text.TextComponentTranslation;
 
 public abstract class CommandNoppesBase extends CommandBase{
 	public Map<String, Method> subcommands = new HashMap<String, Method>();
@@ -31,7 +32,7 @@ public abstract class CommandNoppesBase extends CommandBase{
 	}
 
 	@Override
-	public void processCommand(ICommandSender sender, String[] args) throws CommandException {
+	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
 		
 	}
 	
@@ -54,7 +55,7 @@ public abstract class CommandNoppesBase extends CommandBase{
 	}
 
 	protected void sendMessage(ICommandSender sender, String message, Object... obs) {
-		sender.addChatMessage(new ChatComponentTranslation(message, obs));
+		sender.addChatMessage(new TextComponentTranslation(message, obs));
 	}
 
 	@Retention(value = RetentionPolicy.RUNTIME)
@@ -73,7 +74,7 @@ public abstract class CommandNoppesBase extends CommandBase{
 	    int permission() default 2;	
 	}
 
-	public void processSubCommand(ICommandSender sender, String command, String[] args) throws CommandException {
+	public void executeSub(MinecraftServer server, ICommandSender sender, String command, String[] args) throws CommandException {
 		Method m = subcommands.get(command.toLowerCase());
 		if(m == null)
 			throw new CommandException("Unknown subcommand " + command);
@@ -82,7 +83,7 @@ public abstract class CommandNoppesBase extends CommandBase{
 		if(!sender.canCommandSenderUseCommand(sc.permission(), "commands.noppes." + getCommandName().toLowerCase() + "." + command.toLowerCase()))
 			throw new CommandException("You are not allowed to use this command");
 		
-		canRun(sender, sc.usage(), args);			
+		canRun(server, sender, sc.usage(), args);			
 		try {
 			m.invoke(this, sender, args);
 		} catch (Exception e) {
@@ -90,7 +91,7 @@ public abstract class CommandNoppesBase extends CommandBase{
 		}		
 	}
 	
-	public void canRun(ICommandSender sender, String usage, String[] args) throws CommandException{
+	public void canRun(MinecraftServer server, ICommandSender sender, String usage, String[] args) throws CommandException{
         String[] np = usage.split(" ");
         List<String> required = new ArrayList<String>();
         for(int i = 0; i < np.length; i++){
@@ -99,7 +100,7 @@ public abstract class CommandNoppesBase extends CommandBase{
         		required.add(command);
         	}
         	if(command.equals("<player>")){
-        		CommandBase.getPlayer(sender, args[i]); //throws PlayerNotFoundException if no player is found
+        		CommandBase.getPlayer(server, sender, args[i]); //throws PlayerNotFoundException if no player is found
         	}
         		
         }
