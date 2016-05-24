@@ -11,7 +11,7 @@ public class AnimationType {
 	public static final int DANCE = 5;
 	public static final int AIM = 6;
 	public static final int CRAWL = 7;
-	public static final int POINT = 7;
+	public static final int POINT = 8;
 	public static final int CRY = 9;
 	public static final int WAVE = 10;
 	public static final int BOW = 11;

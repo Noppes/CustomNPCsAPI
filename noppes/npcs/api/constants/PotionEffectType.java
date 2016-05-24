@@ -18,13 +18,13 @@ public final class PotionEffectType {
 	
 	public static Potion getMCType(int effect) {
 		switch(effect){
-			case POISON : return MobEffects.poison;
-			case HUNGER : return MobEffects.hunger;
-			case WEAKNESS : return MobEffects.weakness;
-			case SLOWNESS : return MobEffects.moveSlowdown;
-			case NAUSEA : return MobEffects.confusion;
-			case BLINDNESS : return MobEffects.blindness;
-			case WITHER : return MobEffects.wither;
+			case POISON : return MobEffects.POISON;
+			case HUNGER : return MobEffects.HUNGER;
+			case WEAKNESS : return MobEffects.WEAKNESS;
+			case SLOWNESS : return MobEffects.SLOWNESS;
+			case NAUSEA : return MobEffects.NAUSEA;
+			case BLINDNESS : return MobEffects.BLINDNESS;
+			case WITHER : return MobEffects.WITHER;
 			default : return null;
 		}
 	}
