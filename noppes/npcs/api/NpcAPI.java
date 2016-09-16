@@ -13,6 +13,7 @@ import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.handler.IFactionHandler;
 import noppes.npcs.api.handler.IRecipeHandler;
+import noppes.npcs.api.item.IItemStack;
 
 /**
  * Note this API should only be used Server side not on the client

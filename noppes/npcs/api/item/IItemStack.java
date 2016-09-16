@@ -1,4 +1,4 @@
-package noppes.npcs.api;
+package noppes.npcs.api.item;
 
 import net.minecraft.item.ItemStack;
 import noppes.npcs.api.entity.IEntityLiving;
@@ -78,6 +78,17 @@ public interface IItemStack {
 	 * @return The minecraft name for this item
 	 */
 	public String getName();
+
+	/**
+	 * @return Whether this is a writable book item. If it is check IItemBook for more info
+	 */
+	public boolean isBook();
+
+	/**
+	 * @return A copy of the ItemStack
+	 */
+	public IItemStack copy();
+	
 	/**
 	 * No support is given for this method. Dont use if you dont know what you are doing.
 	 * @return Minecraft ItemStack

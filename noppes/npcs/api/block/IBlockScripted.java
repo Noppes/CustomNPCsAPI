@@ -1,7 +1,7 @@
 package noppes.npcs.api.block;
 
-import noppes.npcs.api.IItemStack;
 import noppes.npcs.api.ITimers;
+import noppes.npcs.api.item.IItemStack;
 
 public interface IBlockScripted extends IBlock{
 

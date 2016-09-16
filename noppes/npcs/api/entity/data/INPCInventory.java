@@ -1,6 +1,6 @@
 package noppes.npcs.api.entity.data;
 
-import noppes.npcs.api.IItemStack;
+import noppes.npcs.api.item.IItemStack;
 
 public interface INPCInventory {
 

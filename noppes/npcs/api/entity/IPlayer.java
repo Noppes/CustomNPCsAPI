@@ -1,7 +1,7 @@
 package noppes.npcs.api.entity;
 
 import net.minecraft.entity.player.EntityPlayerMP;
-import noppes.npcs.api.IItemStack;
+import noppes.npcs.api.item.IItemStack;
 
 public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
