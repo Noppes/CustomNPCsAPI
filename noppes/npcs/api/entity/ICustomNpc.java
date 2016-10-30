@@ -2,6 +2,7 @@ package noppes.npcs.api.entity;
 
 import net.minecraft.entity.EntityCreature;
 import noppes.npcs.api.ITimers;
+import noppes.npcs.api.entity.data.INPCAdvanced;
 import noppes.npcs.api.entity.data.INPCAi;
 import noppes.npcs.api.entity.data.INPCDisplay;
 import noppes.npcs.api.entity.data.INPCInventory;
@@ -20,6 +21,8 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLivingBase<
 	public INPCStats getStats();
 
 	public INPCAi getAi();
+	
+	public INPCAdvanced getAdvanced();
 	
 	public IFaction getFaction();
 
