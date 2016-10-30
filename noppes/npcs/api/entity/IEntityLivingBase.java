@@ -1,7 +1,7 @@
 package noppes.npcs.api.entity;
 
 import net.minecraft.entity.EntityLivingBase;
-import noppes.npcs.api.IItemStack;
+import noppes.npcs.api.item.IItemStack;
 
 public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T>{
 

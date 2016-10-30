@@ -5,6 +5,7 @@ import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IPlayer;
 import noppes.npcs.api.entity.data.IData;
+import noppes.npcs.api.item.IItemStack;
 
 public interface IWorld {
 
@@ -95,7 +96,9 @@ public interface IWorld {
 
 	public String getBiomeName(int x, int z);
 
-	public IEntity spawnClone(int x, int y, int z, int tab, String name);
+	public IEntity spawnClone(double x, double y, double z, int tab, String name);
+	
+	public IEntity getClone(int tab, String name);
 
 	/**
 	 * @return value between 0 and 16

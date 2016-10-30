@@ -22,6 +22,8 @@ public interface IEntityLiving<T extends EntityLiving> extends IEntityLivingBase
 	 */
 	public void navigateTo(double x, double y, double z, double speed);
 
+	public void jump();
+
 	@Override
 	public T getMCEntity();
 	

@@ -1,9 +1,9 @@
 package noppes.npcs.api.entity;
 
 import net.minecraft.entity.Entity;
-import noppes.npcs.api.IItemStack;
 import noppes.npcs.api.IWorld;
 import noppes.npcs.api.entity.data.IData;
+import noppes.npcs.api.item.IItemStack;
 
 public interface IEntity<T extends Entity> {
 	
@@ -101,6 +101,11 @@ public interface IEntity<T extends Entity> {
 	 * Despawns this entity. Removes it permanently
 	 */
 	public void despawn();
+	
+	/**
+	 * Spawns this entity into the world (For NPCs dont forget to set their home position)
+	 */
+	public void spawn();
 		
 	/**
 	 * @return Return whether or not this entity is on fire

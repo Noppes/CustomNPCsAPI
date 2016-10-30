@@ -1,7 +1,7 @@
 package noppes.npcs.api.block;
 
-import noppes.npcs.api.IItemStack;
 import noppes.npcs.api.ITimers;
+import noppes.npcs.api.item.IItemStack;
 
 public interface IBlockScripted extends IBlock{
 
@@ -71,5 +71,9 @@ public interface IBlockScripted extends IBlock{
 	 * @param command The command to be executed
 	 */
 	public void executeCommand(String command);
+
+	public boolean getIsPassible();
+	
+	public void setIsPassible(boolean bo);
 
 }
