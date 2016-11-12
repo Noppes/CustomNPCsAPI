@@ -75,5 +75,19 @@ public interface IBlockScripted extends IBlock{
 	public boolean getIsPassible();
 	
 	public void setIsPassible(boolean bo);
+	
+	/**
+	 * @return Harvesting hardness (-1 makes it unharvestable)
+	 */
+	public float getHardness();
+	
+	public void setHardness(float hardness);
+	
+	/**
+	 * @return Explosion resistance (-1 makes it unexplodable)
+	 */
+	public float getResistance();
+	
+	public void setResistance(float resistance);
 
 }

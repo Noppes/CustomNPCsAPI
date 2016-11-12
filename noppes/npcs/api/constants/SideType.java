@@ -1,7 +1,6 @@
 package noppes.npcs.api.constants;
 /**
  * Facing Types
- * @since 1.8
  */
 public class SideType {
 	public static final int DOWN = 0;

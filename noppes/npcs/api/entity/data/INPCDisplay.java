@@ -92,13 +92,11 @@ public interface INPCDisplay {
 	public float[] getModelScale(int part);
 
 	/**
-	 * @since 1.9
 	 * @return 0:Pink, 1:Blue, 2:Red, 3:Green, 4:Yellow, 5:Purple, 6:White
 	 */
 	public int getBossColor();
 
 	/**
-	 * @since 1.9
 	 * @param color 0:Pink, 1:Blue, 2:Red, 3:Green, 4:Yellow, 5:Purple, 6:White
 	 */
 	public void setBossColor(int color);

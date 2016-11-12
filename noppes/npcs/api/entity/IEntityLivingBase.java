@@ -23,34 +23,16 @@ public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T
 	
 	public boolean canSeeEntity(IEntity entity);
 
-	/**
-	 * @since 1.9
-	 */
 	public void swingMainhand();
 
-	/**
-	 * @since 1.9
-	 */
 	public void swingOffhand();
 	
-	/**
-	 * @since 1.9
-	 */
 	public IItemStack getMainhandItem();
 
-	/**
-	 * @since 1.9
-	 */
 	public void setMainhandItem(IItemStack item);
 
-	/**
-	 * @since 1.9
-	 */
 	public IItemStack getOffhandItem();
 
-	/**
-	 * @since 1.9
-	 */
 	public void setOffhandItem(IItemStack item);
 	
 	/**

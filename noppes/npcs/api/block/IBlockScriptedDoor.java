@@ -16,5 +16,19 @@ public interface IBlockScriptedDoor extends IBlock{
 	public void setBlockModel(String name);
 
 	public String getBlockModel();
+	
+	/**
+	 * @return Harvesting hardness (-1 makes it unharvestable)
+	 */
+	public float getHardness();
+	
+	public void setHardness(float hardness);
+	
+	/**
+	 * @return Explosion resistance (-1 makes it unexplodable)
+	 */
+	public float getResistance();
+	
+	public void setResistance(float resistance);
 
 }
