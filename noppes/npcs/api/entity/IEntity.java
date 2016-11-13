@@ -33,9 +33,19 @@ public interface IEntity<T extends Entity> {
 	public void setRotation(float rotation);
 	
 	/**
-	 * @return Current rotation of the npc
+	 * @return Current rotation of the entity
 	 */
 	public float getRotation();
+	
+	/**
+	 * @param pitch The viewing pitch
+	 */
+	public void setPitch(float pitch);
+	
+	/**
+	 * @return Entities viewing pitch
+	 */
+	public float getPitch();
 
 	public IEntity getMount();
 	

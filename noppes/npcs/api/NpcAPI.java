@@ -3,6 +3,8 @@ package noppes.npcs.api;
 import java.io.File;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
@@ -37,6 +39,10 @@ public abstract class NpcAPI {
 	public abstract IEntity getIEntity(Entity entity);
 
 	public abstract IBlock getIBlock(World world, BlockPos pos);
+
+	public abstract IContainer getIContainer(IInventory inventory);
+
+	public abstract IContainer getIContainer(Container container);
 	
 	public abstract IItemStack getIItemStack(ItemStack itemstack);
 	
@@ -84,5 +90,5 @@ public abstract class NpcAPI {
 			e.printStackTrace();
 		}
 		return instance;
-	}	
+	}
 }

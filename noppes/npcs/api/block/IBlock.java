@@ -2,6 +2,7 @@ package noppes.npcs.api.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
+import noppes.npcs.api.IContainer;
 import noppes.npcs.api.IWorld;
 import noppes.npcs.api.entity.data.IData;
 import noppes.npcs.api.item.IItemStack;
@@ -51,23 +52,8 @@ public interface IBlock {
 	 */
 	public boolean isContainer();
 	
-	/**
-	 * @return The amount of item slots the container has
-	 */
-	public int getContainerSize();
+	public IContainer getContainer();
 	
-	/**
-	 * @param slot The slot of the item (0-containersize - 1)
-	 * @return The item in the given slot
-	 */
-	public IItemStack getContainerSlot(int slot);
-
-	/**
-	 * @param slot The slot of the item (0-containersize - 1)
-	 * @param item Item to be set
-	 */
-	public void setContainerSlot(int slot, IItemStack item);
-
 	/**
 	 * @return Returns whether this block can store temp/stored data. Currently only works with CustomNPCs blocks.
 	 */

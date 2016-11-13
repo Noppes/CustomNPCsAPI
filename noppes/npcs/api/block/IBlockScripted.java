@@ -22,7 +22,7 @@ public interface IBlockScripted extends IBlock{
 	public void setRedstonePower(int strength);
 
 	/**
-	 * @return Returns the current redstone power (0-15)
+	 * @return Returns the current redstone power (0-15) this block is giving off
 	 */
 	public int getRedstonePower();
 
