@@ -86,49 +86,50 @@ public class PlayerEvent extends Event{
 		}
 	}
 
-//	public static class DiedEvent extends PlayerEvent{
-//		public final DamageSource mcDamageSource;
-//		
-//		public final String type;
-//		public final IEntity source;
-//		public DiedEvent(IPlayer player, DamageSource damagesource, Entity entity) {
-//			super(player);
-//			this.mcDamageSource = damagesource;
-//			type = damagesource.damageType;
-//			this.source = NpcAPI.Instance().getIEntity(entity);
-//		}
-//	}
-//	
-//	public static class KilledEntityEvent extends PlayerEvent{
-//		public final IEntityLivingBase entity;
-//		public KilledEntityEvent(IPlayer player, EntityLivingBase entity) {
-//			super(player);
-//			this.entity = (IEntityLivingBase) NpcAPI.Instance().getIEntity(entity);
-//		}
-//	}
-//
-//	@Cancelable
-//	public static class DamagedEvent extends PlayerEvent{
-//		public final IEntityLivingBase source;
-//		public final DamageSource mcDamageSource;
-//		public float damage;
-//		public boolean clearTarget = false;
-//
-//		public DamagedEvent(IPlayer player, EntityLivingBase source, float damage, DamageSource mcDamageSource) {
-//			super(player);
-//			this.source = (IEntityLivingBase) NpcAPI.Instance().getIEntity(source);
-//			this.damage = damage;
-//			this.mcDamageSource = mcDamageSource;
-//		}
-//	}
-//
-//
-//	public static class TimerEvent extends PlayerEvent{
-//		public final int id;
-//		
-//		public TimerEvent(IPlayer player, int id) {
-//			super(player);
-//			this.id = id;
-//		}
-//	}
+	@Cancelable
+	public static class DiedEvent extends PlayerEvent{
+		public final DamageSource mcDamageSource;
+		
+		public final String type;
+		public final IEntity source;
+		public DiedEvent(IPlayer player, DamageSource damagesource, Entity entity) {
+			super(player);
+			this.mcDamageSource = damagesource;
+			type = damagesource.damageType;
+			this.source = NpcAPI.Instance().getIEntity(entity);
+		}
+	}
+	
+	public static class KilledEntityEvent extends PlayerEvent{
+		public final IEntityLivingBase entity;
+		public KilledEntityEvent(IPlayer player, EntityLivingBase entity) {
+			super(player);
+			this.entity = (IEntityLivingBase) NpcAPI.Instance().getIEntity(entity);
+		}
+	}
+
+	@Cancelable
+	public static class DamagedEvent extends PlayerEvent{
+		public final IEntity source;
+		public final DamageSource mcDamageSource;
+		public float damage;
+		public boolean clearTarget = false;
+
+		public DamagedEvent(IPlayer player, Entity source, float damage, DamageSource mcDamageSource) {
+			super(player);
+			this.source = (IEntity) NpcAPI.Instance().getIEntity(source);
+			this.damage = damage;
+			this.mcDamageSource = mcDamageSource;
+		}
+	}
+
+
+	public static class TimerEvent extends PlayerEvent{
+		public final int id;
+		
+		public TimerEvent(IPlayer player, int id) {
+			super(player);
+			this.id = id;
+		}
+	}
 }

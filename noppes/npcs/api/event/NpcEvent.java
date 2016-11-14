@@ -107,14 +107,14 @@ public class NpcEvent extends Event{
 
 	@Cancelable
 	public static class DamagedEvent extends NpcEvent{
-		public final IEntityLivingBase source;
+		public final IEntity source;
 		public final DamageSource mcDamageSource;
 		public float damage;
 		public boolean clearTarget = false;
 
-		public DamagedEvent(ICustomNpc npc, EntityLivingBase source, float damage, DamageSource mcDamageSource) {
+		public DamagedEvent(ICustomNpc npc, Entity source, float damage, DamageSource mcDamageSource) {
 			super(npc);
-			this.source = (IEntityLivingBase) NpcAPI.Instance().getIEntity(source);
+			this.source = (IEntity) NpcAPI.Instance().getIEntity(source);
 			this.damage = damage;
 			this.mcDamageSource = mcDamageSource;
 		}
