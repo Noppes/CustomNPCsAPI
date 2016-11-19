@@ -115,9 +115,9 @@ public interface IEntity<T extends Entity> {
 	public boolean isBurning();
 	
 	/**
-	 * @param ticks Amount of world ticks this entity will burn. 20 ticks equals 1 second
+	 * @param seconds Amount of seconds this entity will burn. 
 	 */
-	public void setBurning(int ticks);
+	public void setBurning(int seconds);
 
 	/**
 	 * Removes fire from this entity
