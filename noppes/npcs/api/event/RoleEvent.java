@@ -72,8 +72,8 @@ public class RoleEvent extends Event {
 		
 		public TraderEvent(EntityPlayer player, ICustomNpc npc, ItemStack sold, ItemStack currency1, ItemStack currency2) {
 			super(player, npc);
-			this.currency1 = currency1 == null? null : NpcAPI.Instance().getIItemStack(currency1.copy());
-			this.currency2 = currency2 == null? null : NpcAPI.Instance().getIItemStack(currency2.copy());
+			this.currency1 = currency1.func_190926_b()? null : NpcAPI.Instance().getIItemStack(currency1.copy());
+			this.currency2 = currency2.func_190926_b()? null : NpcAPI.Instance().getIItemStack(currency2.copy());
 			this.sold = NpcAPI.Instance().getIItemStack(sold.copy());
 		}
 	}
@@ -86,8 +86,8 @@ public class RoleEvent extends Event {
 		
 		public TradeFailedEvent(EntityPlayer player, ICustomNpc npc, ItemStack sold, ItemStack currency1, ItemStack currency2) {
 			super(player, npc);
-			this.currency1 = currency1 == null? null : NpcAPI.Instance().getIItemStack(currency1.copy());
-			this.currency2 = currency2 == null? null : NpcAPI.Instance().getIItemStack(currency2.copy());
+			this.currency1 = currency1.func_190926_b()? null : NpcAPI.Instance().getIItemStack(currency1.copy());
+			this.currency2 = currency2.func_190926_b()? null : NpcAPI.Instance().getIItemStack(currency2.copy());
 			this.sold = NpcAPI.Instance().getIItemStack(sold.copy());
 		}
 	}
