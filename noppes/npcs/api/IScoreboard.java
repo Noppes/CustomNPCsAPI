@@ -62,4 +62,15 @@ public interface IScoreboard {
 
 
 	public void removeTeam(String name); 
+
+	/**
+	 * @param player the player whos team you want to get
+	 * @return The players team
+	 */
+	public IScoreboardTeam getPlayerTeam(String player);
+
+	/**
+	 * @param player The players who should be removed from his team
+	 */
+	public void removePlayerTeam(String player);
 }

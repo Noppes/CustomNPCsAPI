@@ -35,6 +35,10 @@ public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T
 
 	public void setOffhandItem(IItemStack item);
 	
+	public String getName();
+	
+	public void setName(String name);
+	
 	/**
 	 * Note not all Living Entities support this
 	 * @param slot Slot of what armor piece to get, 0:boots, 1:pants, 2:body, 3:head

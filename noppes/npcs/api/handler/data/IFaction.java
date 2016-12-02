@@ -11,6 +11,8 @@ public interface IFaction {
 	
 	public int getDefaultPoints();
 	
+	public void setDefaultPoints(int points);
+	
 	public int getColor();
 	
 	/**
@@ -19,4 +21,18 @@ public interface IFaction {
 	public int playerStatus(IPlayer player);
 	
 	public boolean hostileToNpc(ICustomNpc npc);
+	
+	public boolean hostileToFaction(int factionId);
+	
+	public int[] getHostileList();
+	
+	public void removeHostile(int id);
+	
+	public boolean getIsHidden();
+	
+	public void setIsHidden(boolean bo);
+	
+	public boolean getAttackedByMobs();
+	
+	public void setAttackedByMobs(boolean bo);
 }

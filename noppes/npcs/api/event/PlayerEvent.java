@@ -31,6 +31,11 @@ public class PlayerEvent extends Event{
 		}
 	}
 	
+	/**
+	 * Will trigger if you have an item and right click into the air
+	 * Or right click a block
+	 * Or right click an entity
+	 */
 	@Cancelable
 	public static class InteractEvent extends PlayerEvent{
 		/**
@@ -123,13 +128,33 @@ public class PlayerEvent extends Event{
 		}
 	}
 
-
 	public static class TimerEvent extends PlayerEvent{
 		public final int id;
 		
 		public TimerEvent(IPlayer player, int id) {
 			super(player);
 			this.id = id;
+		}
+	}
+
+	public static class LoginEvent extends PlayerEvent{		
+		public LoginEvent(IPlayer player) {
+			super(player);
+		}
+	}
+
+	public static class LogoutEvent extends PlayerEvent{		
+		public LogoutEvent(IPlayer player) {
+			super(player);
+		}
+	}
+
+	@Cancelable
+	public static class ChatEvent extends PlayerEvent{
+		public String message;
+		public ChatEvent(IPlayer player, String message) {
+			super(player);
+			this.message = message;
 		}
 	}
 }

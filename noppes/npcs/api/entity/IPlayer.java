@@ -6,8 +6,6 @@ import noppes.npcs.api.entity.data.IPixelmonPlayerData;
 import noppes.npcs.api.item.IItemStack;
 
 public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
-
-	public String getName();
 	
 	public String getDisplayName();
 	
@@ -41,6 +39,16 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * @param name Name of the person talking in the dialog
 	 */
 	public void showDialog(int id, String name);
+	
+	/**
+	 * @param id Removes the given id from the read dialogs list
+	 */
+	public void removeDialog(int id);
+	
+	/**
+	 * @param id Adds the given id to the read dialogs
+	 */
+	public void addDialog(int id);
 	/**
 	 * @param faction The faction id
 	 * @param points The points to increase. Use negative values to decrease

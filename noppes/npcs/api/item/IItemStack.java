@@ -11,6 +11,8 @@ public interface IItemStack {
 	 * @param size The size of the itemstack. A number between 1 and 64
 	 */
 	public void setStackSize(int size);
+
+	public int getMaxStackSize();
 	
 	/**
 	 * @return Returns the item damage of this item. For tools this is the durability for other items the color and more.
@@ -22,8 +24,10 @@ public interface IItemStack {
 	 */
 	public void setItemDamage(int value);
 	
+	public int getMaxItemDamage();
+	
 	public void damageItem(int damage, IEntityLiving living);
-
+	
 	/**
 	 * @param key The key of this NBTTag
 	 * @param value The value to be stored. Can be a Number or String

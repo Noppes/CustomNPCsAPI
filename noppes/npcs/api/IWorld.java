@@ -1,6 +1,6 @@
 package noppes.npcs.api;
 
-import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IPlayer;
@@ -103,12 +103,18 @@ public interface IWorld {
 	/**
 	 * @return value between 0 and 16
 	 */
-	int getRedstonePower(int x, int y, int z);
+	public int getRedstonePower(int x, int y, int z);
 	
 	/**
 	 * Expert users only
 	 * @return Returns minecrafts world
 	 */
-	public World getMCWorld();
+	public WorldServer getMCWorld();
+
+	/**
+	 * @param uuid entity uuid
+	 * @return Returns entity based on uuid
+	 */
+	public IEntity getEntity(String uuid);
 
 }

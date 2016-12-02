@@ -6,9 +6,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.EventBus;
 import noppes.npcs.api.block.IBlock;
@@ -46,11 +46,15 @@ public abstract class NpcAPI {
 	
 	public abstract IItemStack getIItemStack(ItemStack itemstack);
 	
-	public abstract IFactionHandler getFactions(MinecraftServer server);
+	public abstract IWorld getIWorld(WorldServer world);
+
+	public abstract IWorld[] getIWorlds();
 	
-	public abstract IRecipeHandler getRecipes(MinecraftServer server);
+	public abstract IFactionHandler getFactions();
 	
-	public abstract IQuestHandler getQuests(MinecraftServer server);
+	public abstract IRecipeHandler getRecipes();
+	
+	public abstract IQuestHandler getQuests();
 	
 	public abstract EventBus events();
 	
