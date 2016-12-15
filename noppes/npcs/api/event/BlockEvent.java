@@ -111,6 +111,7 @@ public class BlockEvent extends Event {
 		}
 	}
 	
+	@Cancelable
 	public static class HarvestedEvent extends BlockEvent{
 		public final IPlayer player;
 		public HarvestedEvent(IBlock block, EntityPlayer player) {
