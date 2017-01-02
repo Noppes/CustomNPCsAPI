@@ -72,6 +72,13 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * @return How many of this item the player has
 	 */
 	public int inventoryItemCount(IItemStack item);
+	
+	/**
+	 * @param id The items name
+	 * @param damage The damage value (give -1 for any damage value)
+	 * @return How many of this item the player has
+	 */
+	public int inventoryItemCount(String id, int damage);
 
 	/**
 	 * @return Returns a IItemStack array size 36
@@ -87,7 +94,7 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
 	/**
 	 * @param id The items name
-	 * @param damage The damage value 
+	 * @param damage The damage value (give -1 for any damage value)
 	 * @param amount How many will be removed
 	 * @return Returns true if the items were removed succesfully. Returns false incase a bigger amount than what the player has was given or item doesnt exist
 	 */

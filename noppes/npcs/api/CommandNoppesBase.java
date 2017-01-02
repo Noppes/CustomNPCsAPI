@@ -37,7 +37,7 @@ public abstract class CommandNoppesBase extends CommandBase{
 	}
 	
 	@Override
-	public String getCommandUsage(ICommandSender sender) {
+	public String getUsage(ICommandSender sender) {
 		return getDescription();
 	}
 	
@@ -55,7 +55,7 @@ public abstract class CommandNoppesBase extends CommandBase{
 	}
 
 	protected void sendMessage(ICommandSender sender, String message, Object... obs) {
-		sender.addChatMessage(new TextComponentTranslation(message, obs));
+		sender.sendMessage(new TextComponentTranslation(message, obs));
 	}
 
 	@Retention(value = RetentionPolicy.RUNTIME)
@@ -80,7 +80,7 @@ public abstract class CommandNoppesBase extends CommandBase{
 			throw new CommandException("Unknown subcommand " + command);
 
 		SubCommand sc = m.getAnnotation(SubCommand.class);
-		if(!sender.canCommandSenderUseCommand(sc.permission(), "commands.noppes." + getCommandName().toLowerCase() + "." + command.toLowerCase()))
+		if(!sender.canUseCommand(sc.permission(), "commands.noppes." + getName().toLowerCase() + "." + command.toLowerCase()))
 			throw new CommandException("You are not allowed to use this command");
 		
 		canRun(server, sender, sc.usage(), args);			
