@@ -6,7 +6,7 @@ import noppes.npcs.api.entity.data.IPixelmonPlayerData;
 import noppes.npcs.api.item.IItemStack;
 
 public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
-	
+
 	public String getDisplayName();
 	
 	public boolean hasFinishedQuest(int id);
@@ -143,6 +143,8 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	public IPixelmonPlayerData getPixelmonData();
 
 	public ITimers getTimers();
+	
+	public void closeGui();
 
 	@Override
 	public T getMCEntity();

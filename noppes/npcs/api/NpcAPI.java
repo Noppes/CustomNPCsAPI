@@ -48,6 +48,8 @@ public abstract class NpcAPI {
 	
 	public abstract IWorld getIWorld(WorldServer world);
 
+	public abstract IWorld getIWorld(int dimensionId);
+
 	public abstract IWorld[] getIWorlds();
 	
 	public abstract IFactionHandler getFactions();

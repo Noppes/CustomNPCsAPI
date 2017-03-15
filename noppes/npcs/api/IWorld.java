@@ -46,6 +46,8 @@ public interface IWorld {
 	public boolean isDay();
 
 	public boolean isRaining();
+	
+	public IDimension getDimension();
 
 	public void setRaining(boolean bo);
 

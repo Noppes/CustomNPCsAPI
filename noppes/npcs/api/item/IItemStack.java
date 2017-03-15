@@ -42,6 +42,11 @@ public interface IItemStack {
 
 	/**
 	 * @param key The key of the NBTTag
+	 */
+	public void removeTag(String key);
+
+	/**
+	 * @param key The key of the NBTTag
 	 * @return Returns the value associated with the key. Returns null of it doesnt exist. (note: you might need to cast the result to the correct type)
 	 */
 	public Object getTag(String key);
@@ -92,9 +97,16 @@ public interface IItemStack {
 	 * @return A copy of the ItemStack
 	 */
 	public IItemStack copy();
+	
 	/**
 	 * No support is given for this method. Dont use if you dont know what you are doing.
 	 * @return Minecraft ItemStack
 	 */
 	public ItemStack getMCItemStack();
+
+	/**
+	 * @param id The enchantment id
+	 * @param strenght The strenght of the enchantment
+	 */
+	public void addEnchantment(String id, int strenght);
 }
