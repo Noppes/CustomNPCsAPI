@@ -17,5 +17,15 @@ public interface IScoreboardObjective {
 	 * @return Return whether or not the objective value can be changed. E.g. player health can't be changed
 	 */
 	public boolean isReadyOnly();
+	
+	public IScoreboardScore[] getScores();
+	
+	public IScoreboardScore getScore(String player);
+	
+	public boolean hasScore(String player);
+	
+	public IScoreboardScore createScore(String player);
+	
+	public void removeScore(String player);
 
 }

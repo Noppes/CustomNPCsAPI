@@ -110,7 +110,8 @@ public class BlockEvent extends Event {
 			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 		}
 	}
-	
+
+	@Cancelable
 	public static class HarvestedEvent extends BlockEvent{
 		public final IPlayer player;
 		public HarvestedEvent(IBlock block, EntityPlayer player) {

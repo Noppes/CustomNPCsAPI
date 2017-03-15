@@ -41,6 +41,16 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * @param name Name of the person talking in the dialog
 	 */
 	public void showDialog(int id, String name);
+	
+	/**
+	 * @param id Removes the given id from the read dialogs list
+	 */
+	public void removeDialog(int id);
+	
+	/**
+	 * @param id Adds the given id to the read dialogs
+	 */
+	public void addDialog(int id);
 	/**
 	 * @param faction The faction id
 	 * @param points The points to increase. Use negative values to decrease
@@ -64,6 +74,13 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * @return How many of this item the player has
 	 */
 	public int inventoryItemCount(IItemStack item);
+	
+	/**
+	 * @param id The items name
+	 * @param damage The damage value (give -1 for any damage value)
+	 * @return How many of this item the player has
+	 */
+	public int inventoryItemCount(String id, int damage);
 
 	/**
 	 * @return Returns a IItemStack array size 36
@@ -79,7 +96,7 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
 	/**
 	 * @param id The items name
-	 * @param damage The damage value 
+	 * @param damage The damage value (give -1 for any damage value)
 	 * @param amount How many will be removed
 	 * @return Returns true if the items were removed succesfully. Returns false incase a bigger amount than what the player has was given or item doesnt exist
 	 */
@@ -128,6 +145,8 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	public IPixelmonPlayerData getPixelmonData();
 
 	public ITimers getTimers();
+	
+	public void closeGui();
 
 	@Override
 	public T getMCEntity();

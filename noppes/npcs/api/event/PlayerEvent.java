@@ -31,6 +31,11 @@ public class PlayerEvent extends Event{
 		}
 	}
 	
+	/**
+	 * Will trigger if you have an item and right click into the air
+	 * Or right click a block
+	 * Or right click an entity
+	 */
 	@Cancelable
 	public static class InteractEvent extends PlayerEvent{
 		/**

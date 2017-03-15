@@ -12,7 +12,7 @@ import noppes.npcs.api.entity.data.INPCStats;
 import noppes.npcs.api.handler.data.IFaction;
 import noppes.npcs.api.item.IItemStack;
 
-public interface ICustomNpc<T extends EntityCreature> extends IEntityLivingBase<T>{
+public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	
 	public INPCDisplay getDisplay();
 

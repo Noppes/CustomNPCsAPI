@@ -13,6 +13,8 @@ public interface IScoreboardTeam {
 
 	public void addPlayer(String player);
 
+	public boolean hasPlayer(String player);
+
 	public void removePlayer(String player);
 
 	public String[] getPlayers();
