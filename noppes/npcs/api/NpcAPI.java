@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -51,6 +52,8 @@ public abstract class NpcAPI {
 	public abstract IWorld getIWorld(int dimensionId);
 
 	public abstract IWorld[] getIWorlds();
+
+	public abstract INbt getINbt(NBTTagCompound compound);
 	
 	public abstract IFactionHandler getFactions();
 	
