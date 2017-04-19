@@ -3,7 +3,6 @@ package noppes.npcs.api.event;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.eventhandler.Cancelable;
-import net.minecraftforge.fml.common.eventhandler.Event;
 import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IPlayer;
@@ -11,7 +10,7 @@ import noppes.npcs.api.entity.data.IPlayerMail;
 import noppes.npcs.api.entity.data.role.IRoleTransporter.ITransportLocation;
 import noppes.npcs.api.item.IItemStack;
 
-public class RoleEvent extends Event {
+public class RoleEvent extends CustomNPCsEvent {
 	public final ICustomNpc npc;
 	public final IPlayer player;
 	

@@ -1,6 +1,7 @@
 package noppes.npcs.api.item;
 
 import net.minecraft.item.ItemStack;
+import noppes.npcs.api.INbt;
 import noppes.npcs.api.entity.IEntityLiving;
 
 public interface IItemStack {
@@ -27,29 +28,6 @@ public interface IItemStack {
 	public int getMaxItemDamage();
 	
 	public void damageItem(int damage, IEntityLiving living);
-	
-	/**
-	 * @param key The key of this NBTTag
-	 * @param value The value to be stored. Can be a Number or String
-	 */
-	public void setTag(String key, Object value);
-	
-	/**
-	 * @param key The key of the NBTTag
-	 * @return Returns whether or not the key exists
-	 */
-	public boolean hasTag(String key);
-
-	/**
-	 * @param key The key of the NBTTag
-	 */
-	public void removeTag(String key);
-
-	/**
-	 * @param key The key of the NBTTag
-	 * @return Returns the value associated with the key. Returns null of it doesnt exist. (note: you might need to cast the result to the correct type)
-	 */
-	public Object getTag(String key);
 	
 	public boolean isEnchanted();
 
@@ -109,4 +87,8 @@ public interface IItemStack {
 	 * @param strenght The strenght of the enchantment
 	 */
 	public void addEnchantment(String id, int strenght);
+
+	public INbt getNbt();
+
+	public boolean hasNbt();
 }

@@ -1,12 +1,11 @@
 package noppes.npcs.api.event;
 
-import net.minecraftforge.fml.common.eventhandler.Event;
 import noppes.npcs.api.handler.IFactionHandler;
 import noppes.npcs.api.handler.IRecipeHandler;
 
 public class HandlerEvent {
 
-	public static class RecipesLoadedEvent extends Event{
+	public static class RecipesLoadedEvent extends CustomNPCsEvent{
 		public final IRecipeHandler handler;
 		
 		public RecipesLoadedEvent(IRecipeHandler handler) {
@@ -14,7 +13,7 @@ public class HandlerEvent {
 		}
 	}
 
-	public static class FactionsLoadedEvent extends Event{
+	public static class FactionsLoadedEvent extends CustomNPCsEvent{
 		public final IFactionHandler handler;
 		
 		public FactionsLoadedEvent(IFactionHandler handler) {

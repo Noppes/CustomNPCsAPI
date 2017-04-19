@@ -3,14 +3,13 @@ package noppes.npcs.api.event;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.common.eventhandler.Cancelable;
-import net.minecraftforge.fml.common.eventhandler.Event;
 import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.constants.SideType;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IPlayer;
 
-public class BlockEvent extends Event {
+public class BlockEvent extends CustomNPCsEvent {
 	public IBlock block;
 	public BlockEvent(IBlock block){
 		this.block = block;
