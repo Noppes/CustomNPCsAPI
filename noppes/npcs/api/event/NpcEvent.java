@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.fml.common.eventhandler.Cancelable;
+import noppes.npcs.api.IDamageSource;
 import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
@@ -60,13 +61,13 @@ public class NpcEvent extends CustomNPCsEvent{
 	}
 
 	public static class DiedEvent extends NpcEvent{
-		public final DamageSource mcDamageSource;
+		public final IDamageSource damageSource;
 		
 		public final String type;
 		public final IEntity source;
 		public DiedEvent(ICustomNpc npc, DamageSource damagesource, Entity entity) {
 			super(npc);
-			this.mcDamageSource = damagesource;
+			this.damageSource = NpcAPI.Instance().getIDamageSource(damagesource);
 			type = damagesource.damageType;
 			this.source = NpcAPI.Instance().getIEntity(entity);
 		}
@@ -106,16 +107,16 @@ public class NpcEvent extends CustomNPCsEvent{
 
 	@Cancelable
 	public static class DamagedEvent extends NpcEvent{
+		public final IDamageSource damageSource;
 		public final IEntity source;
-		public final DamageSource mcDamageSource;
 		public float damage;
 		public boolean clearTarget = false;
 
-		public DamagedEvent(ICustomNpc npc, Entity source, float damage, DamageSource mcDamageSource) {
+		public DamagedEvent(ICustomNpc npc, Entity source, float damage, DamageSource damagesource) {
 			super(npc);
 			this.source = (IEntity) NpcAPI.Instance().getIEntity(source);
 			this.damage = damage;
-			this.mcDamageSource = mcDamageSource;
+			this.damageSource = NpcAPI.Instance().getIDamageSource(damagesource);
 		}
 	}
 

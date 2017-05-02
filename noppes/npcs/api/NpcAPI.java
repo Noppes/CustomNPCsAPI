@@ -7,6 +7,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -60,6 +61,8 @@ public abstract class NpcAPI {
 	public abstract IRecipeHandler getRecipes();
 	
 	public abstract IQuestHandler getQuests();
+
+	public abstract IDamageSource getIDamageSource(DamageSource damagesource);
 	
 	public abstract EventBus events();
 	
