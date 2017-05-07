@@ -69,8 +69,9 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 
 	/**
 	 * On servers the enable-command-block option in the server.properties needs to be set to true
+	 * Return The commands feedback
 	 */
-	public void executeCommand(String command);
+	public String executeCommand(String command);
 
 	@Override
 	public T getMCEntity();

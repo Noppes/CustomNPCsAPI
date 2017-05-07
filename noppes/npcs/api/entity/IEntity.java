@@ -84,6 +84,13 @@ public interface IEntity<T extends Entity> {
 	public boolean inLava();
 	
 	/**
+	 * Stores the entity as clone server side
+	 * @param tab
+	 * @param name
+	 */
+	public void storeAsClone(int tab, String name);
+	
+	/**
 	 * Temp data stores anything but only untill it's reloaded
 	 */
 	public IData getTempdata();

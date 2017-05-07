@@ -24,7 +24,7 @@ public interface INPCDisplay {
 
 	public boolean getHasLivingAnimation();
 
-	public void setHashLivingAnimation(boolean enabled);
+	public void setHasLivingAnimation(boolean enabled);
 
 	/**
 	 * @return 0:visible, 1:invisible, 2:semi-invisible
