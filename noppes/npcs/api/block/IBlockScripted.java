@@ -69,8 +69,9 @@ public interface IBlockScripted extends IBlock{
 	/**
 	 * On servers the enable-command-block option in the server.properties needs to be set to true
 	 * @param command The command to be executed
+	 * @return Returns the commands output
 	 */
-	public void executeCommand(String command);
+	public String executeCommand(String command);
 
 	public boolean getIsPassible();
 	

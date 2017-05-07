@@ -1,6 +1,7 @@
 package noppes.npcs.api.entity;
 
 import net.minecraft.entity.Entity;
+import noppes.npcs.api.INbt;
 import noppes.npcs.api.IWorld;
 import noppes.npcs.api.entity.data.IData;
 import noppes.npcs.api.item.IItemStack;
@@ -92,6 +93,11 @@ public interface IEntity<T extends Entity> {
 	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved
 	 */
 	public IData getStoreddata();
+	
+	/**
+	 * @return The Entity's extra stored NBT data
+	 */
+	public INbt getNbt();
 	
 	public boolean isAlive();
 	/**
