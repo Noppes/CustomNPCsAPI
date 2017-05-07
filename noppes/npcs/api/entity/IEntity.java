@@ -157,4 +157,11 @@ public interface IEntity<T extends Entity> {
 	public T getMCEntity();
 	
 	public String getUUID();
+	
+	/**
+	 * Stores the entity as clone server side
+	 * @param tab
+	 * @param name
+	 */
+	public void storeAsClone(int tab, String name);
 }
