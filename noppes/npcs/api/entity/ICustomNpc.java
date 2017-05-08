@@ -9,6 +9,7 @@ import noppes.npcs.api.entity.data.INPCInventory;
 import noppes.npcs.api.entity.data.INPCJob;
 import noppes.npcs.api.entity.data.INPCRole;
 import noppes.npcs.api.entity.data.INPCStats;
+import noppes.npcs.api.handler.data.IDialog;
 import noppes.npcs.api.handler.data.IFaction;
 import noppes.npcs.api.item.IItemStack;
 
@@ -66,6 +67,16 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	 * If the player can't carry the item it will fall on the ground. (unless the player is in creative)
 	 */
 	public void giveItem(IPlayer player, IItemStack item);
+
+	/**
+	 * @param slot (0-11)
+	 */
+	public void setDialog(int slot, IDialog dialog);
+	
+	/**
+	 * @param slot (0-11)
+	 */
+	public IDialog getDialog(int slot);
 
 	/**
 	 * On servers the enable-command-block option in the server.properties needs to be set to true

@@ -10,4 +10,6 @@ public interface IDialog {
 	public IQuest getQuest();
 
 	public List<IDialogOption> getOptions();
+	
+	public IAvailability getAvailability();
 }
