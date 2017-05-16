@@ -9,5 +9,5 @@ public interface IQuestHandler {
 	
 	public List<IQuestCategory> categories();
 	
-	public IQuest getQuest(int id);
+	public IQuest get(int id);
 }

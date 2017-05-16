@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.EventBus;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
+import noppes.npcs.api.handler.IDialogHandler;
 import noppes.npcs.api.handler.IFactionHandler;
 import noppes.npcs.api.handler.IQuestHandler;
 import noppes.npcs.api.handler.IRecipeHandler;
@@ -61,6 +62,8 @@ public abstract class NpcAPI {
 	public abstract IRecipeHandler getRecipes();
 	
 	public abstract IQuestHandler getQuests();
+	
+	public abstract IDialogHandler getDialogs();
 
 	public abstract IDamageSource getIDamageSource(DamageSource damagesource);
 	
