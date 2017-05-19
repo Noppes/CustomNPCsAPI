@@ -88,7 +88,15 @@ public interface IItemStack {
 	 */
 	public void addEnchantment(String id, int strenght);
 
+	/**
+	 * @return Used to get the extra NBT, which is used by enchantments and customname
+	 */
 	public INbt getNbt();
 
 	public boolean hasNbt();
+	
+	/**
+	 * @return The entire item as nbt
+	 */
+	public INbt getItemNbt();
 }

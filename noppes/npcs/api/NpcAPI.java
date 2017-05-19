@@ -66,6 +66,8 @@ public abstract class NpcAPI {
 	public abstract IDialogHandler getDialogs();
 
 	public abstract IDamageSource getIDamageSource(DamageSource damagesource);
+
+	public abstract INbt stringToNbt(String str);
 	
 	public abstract EventBus events();
 	

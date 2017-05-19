@@ -83,6 +83,8 @@ public interface IWorld {
 
 	public IItemStack createItem(String name, int damage, int size);
 
+	public IItemStack createItemFromNbt(INbt nbt);
+
 	
 	/**
 	 * @param x Position x
@@ -97,6 +99,8 @@ public interface IWorld {
 	public IPlayer[] getAllPlayers();
 
 	public String getBiomeName(int x, int z);
+
+	public void spawnEntity(IEntity entity);
 
 	public IEntity spawnClone(double x, double y, double z, int tab, String name);
 	
@@ -118,5 +122,9 @@ public interface IWorld {
 	 * @return Returns entity based on uuid
 	 */
 	public IEntity getEntity(String uuid);
+
+	public IEntity createEntityFromNBT(INbt nbt);
+
+	public IEntity createEntity(String id);
 
 }

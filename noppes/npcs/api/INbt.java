@@ -76,4 +76,6 @@ public interface INbt {
 	public int getType(String key);
 	
 	public NBTTagCompound getMCNBT();
+	
+	public String toJsonString();
 }

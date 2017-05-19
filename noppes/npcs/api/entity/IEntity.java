@@ -158,10 +158,23 @@ public interface IEntity<T extends Entity> {
 	
 	public String getUUID();
 	
+	public String generateNewUUID();
+	
 	/**
 	 * Stores the entity as clone server side
 	 * @param tab
 	 * @param name
 	 */
 	public void storeAsClone(int tab, String name);
+
+	/**
+	 * This is not a function you should be calling every tick.
+	 * Returns the entire entity as nbt
+	 */
+	public INbt getEntityNbt();
+
+	/**
+	 * This is not a function you should be calling every tick
+	 */
+	public void setEntityNbt(INbt nbt);
 }
