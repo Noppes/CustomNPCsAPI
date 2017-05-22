@@ -27,6 +27,8 @@ public interface IItemStack {
 	
 	public int getMaxItemDamage();
 	
+	public double getAttackDamage();
+	
 	public void damageItem(int damage, IEntityLiving living);
 	
 	public boolean isEnchanted();
