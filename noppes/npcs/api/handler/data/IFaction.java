@@ -35,4 +35,6 @@ public interface IFaction {
 	public boolean getAttackedByMobs();
 	
 	public void setAttackedByMobs(boolean bo);
+	
+	public void save();
 }
