@@ -27,5 +27,15 @@ public interface IQuest {
 	
 	public IQuestCategory getCategory();
 	
+	/**
+	 * @return The npcs name where this quest can be completed
+	 */
+	public String getNpcName();
+	
+	/**
+	 * @param name The npcs name where this quest can be completed
+	 */
+	public void setNpcName(String name);
+	
 	public void save();
 }
