@@ -6,6 +6,8 @@ public interface IDialog {
 	public int getId();
 
 	public String getName();
+	
+	public String getText();
 
 	public IQuest getQuest();
 
