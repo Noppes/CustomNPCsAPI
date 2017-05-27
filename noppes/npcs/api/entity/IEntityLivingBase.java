@@ -1,6 +1,7 @@
 package noppes.npcs.api.entity;
 
 import net.minecraft.entity.EntityLivingBase;
+import noppes.npcs.api.entity.data.IMark;
 import noppes.npcs.api.item.IItemStack;
 
 public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T>{
@@ -64,6 +65,12 @@ public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T
 	public void clearPotionEffects();
 	
 	public int getPotionEffect(int effect);
+	
+	public IMark addMark(int type);
+	
+	public void removeMark(IMark mark);
+	
+	public IMark[] getMarks();
 	
 	public boolean isChild();
 
