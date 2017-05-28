@@ -87,7 +87,10 @@ public abstract class CommandNoppesBase extends CommandBase{
 		try {
 			m.invoke(this, server, sender, args);
 		} catch (Exception e) {
-			e.printStackTrace();
+			if(e.getCause() instanceof CommandException){
+				throw (CommandException)e.getCause();
+			}
+			e.printStackTrace();			
 		}		
 	}
 	
