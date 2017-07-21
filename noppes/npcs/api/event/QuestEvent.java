@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.eventhandler.Cancelable;
 import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.entity.IPlayer;
 import noppes.npcs.api.handler.data.IQuest;
+import noppes.npcs.api.item.IItemStack;
 
 public class QuestEvent extends CustomNPCsEvent {
 	public final IQuest quest;
@@ -32,6 +33,8 @@ public class QuestEvent extends CustomNPCsEvent {
 	}
 
 	public static class QuestTurnedInEvent extends QuestEvent{
+		public int expReward;		
+		public IItemStack[] itemRewards = new IItemStack[0];
 
 		public QuestTurnedInEvent(EntityPlayer player, IQuest quest) {
 			super(player, quest);
