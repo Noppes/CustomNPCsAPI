@@ -71,7 +71,7 @@ public abstract class CommandNoppesBase extends CommandBase{
 	
 	    String desc();
 	
-	    int permission() default 2;	
+	    int permission() default 4;	
 	}
 
 	public void executeSub(MinecraftServer server, ICommandSender sender, String command, String[] args) throws CommandException {
