@@ -101,4 +101,9 @@ public interface IItemStack {
 	 * @return The entire item as nbt
 	 */
 	public INbt getItemNbt();
+
+	/**
+	 * @return Returns true if this itemstack is air or the stacksize is 0
+	 */
+	boolean isEmpty();
 }
