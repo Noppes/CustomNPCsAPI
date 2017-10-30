@@ -1,6 +1,7 @@
 package noppes.npcs.api.handler.data;
 
 import noppes.npcs.api.constants.QuestType;
+import noppes.npcs.api.entity.IPlayer;
 
 public interface IQuest {
 	public int getId();
@@ -24,6 +25,8 @@ public interface IQuest {
 	public IQuest getNextQuest();
 	
 	public void setNextQuest(IQuest quest);
+	
+	public String[] getObjective(IPlayer player);
 	
 	public IQuestCategory getCategory();
 	
