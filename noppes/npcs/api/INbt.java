@@ -67,6 +67,10 @@ public interface INbt {
 	
 	public void setList(String key, Object[] value);
 	
+	public INbt getCompound(String key);
+	
+	public void setCompound(String key, INbt value);
+	
 	public String[] getKeys();
 	
 	/**

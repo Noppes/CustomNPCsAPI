@@ -2,6 +2,7 @@ package noppes.npcs.api.entity;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import noppes.npcs.api.ITimers;
+import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.data.IPixelmonPlayerData;
 import noppes.npcs.api.item.IItemStack;
 
@@ -148,5 +149,9 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
 	@Override
 	public T getMCEntity();
+
+	public IBlock getSpawnPoint();
+
+	public void setSpawnPoint(IBlock block);
 
 }

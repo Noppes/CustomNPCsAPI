@@ -26,6 +26,13 @@ public class DialogEvent extends NpcEvent {
     	
     }
 
+    public static class CloseEvent extends DialogEvent {
+		public CloseEvent(ICustomNpc npc, EntityPlayer player, IDialog dialog) {
+			super(npc, player, dialog);
+		}
+    	
+    }
+
 	@Cancelable
     public static class OptionEvent extends DialogEvent {
     	public final IDialogOption option;

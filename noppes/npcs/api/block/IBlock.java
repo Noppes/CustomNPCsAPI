@@ -3,6 +3,7 @@ package noppes.npcs.api.block;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import noppes.npcs.api.IContainer;
+import noppes.npcs.api.INbt;
 import noppes.npcs.api.IWorld;
 import noppes.npcs.api.entity.data.IData;
 import noppes.npcs.api.item.IItemStack;
@@ -34,6 +35,8 @@ public interface IBlock {
 	 */
 	public boolean isRemoved();
 	
+	public boolean isAir();
+	
 	/*
 	 * @param name Sets the block to replace this one using the blocks name
 	 * @return Returns the new block
@@ -46,6 +49,7 @@ public interface IBlock {
 	 */
 	public IBlock setBlock(IBlock block);
 	
+	public boolean hasTileEntity();
 
 	/**
 	 * @return Returns whether it has items stored inside it (e.g. chests, droppers, hoppers, etc)
@@ -55,32 +59,34 @@ public interface IBlock {
 	public IContainer getContainer();
 	
 	/**
-	 * @return Returns whether this block can store temp/stored data. Currently only works with CustomNPCs blocks.
-	 */
-	public boolean canStoreData();
-
-	/**
-	 * Temp data stores anything but only untill it's reloaded
+	 * Temp data stores anything but only untill it's reloaded. 
+	 * (works only for customnpcs blocks)
 	 */
 	public IData getTempdata();
 	
 	/**
-	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved
+	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved 
+	 * (works only for blocks with TileEntities)
 	 */
 	public IData getStoreddata();
 		
 	public IWorld getWorld();
 	
-	/**
-	 * Expert users only
-	 * @return Returns minecrafts block
-	 */
-	public Block getMCBlock();
+
+	public INbt getTileEntityNBT();
+
+	public void setTileEntityNBT(INbt nbt);
 	
 	/**
 	 * Expert users only
 	 * @return Returns minecrafts tilentity
 	 */
 	public TileEntity getMCTileEntity();
+	
+	/**
+	 * Expert users only
+	 * @return Returns minecrafts block
+	 */
+	public Block getMCBlock();
 
 }

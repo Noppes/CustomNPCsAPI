@@ -127,4 +127,8 @@ public interface IWorld {
 
 	public IEntity createEntity(String id);
 
+	public IBlock getSpawnPoint();
+
+	public void setSpawnPoint(IBlock block);
+
 }

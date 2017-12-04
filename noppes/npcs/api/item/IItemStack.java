@@ -39,9 +39,12 @@ public interface IItemStack {
 	boolean hasEnchant(int id);
 	
 	/**
+	 * @deprecated
 	 * @return Returns whether or not this item is a block
 	 */
 	public boolean isBlock();
+	
+	public boolean isWearable();
 	
 	/**
 	 * @return Return whether or not the item has a custom name
@@ -69,6 +72,7 @@ public interface IItemStack {
 	public String getName();
 
 	/**
+	 * @deprecated
 	 * @return Whether this is a writable book item. If it is check IItemBook for more info
 	 */
 	public boolean isBook();
@@ -105,5 +109,7 @@ public interface IItemStack {
 	/**
 	 * @return Returns true if this itemstack is air or the stacksize is 0
 	 */
-	boolean isEmpty();
+	public boolean isEmpty();
+	
+	public int getType();
 }

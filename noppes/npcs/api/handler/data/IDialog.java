@@ -24,6 +24,12 @@ public interface IDialog {
 
 	public List<IDialogOption> getOptions();
 	
+	/**
+	 * @param slot (0-5)
+	 * @return
+	 */
+	public IDialogOption getOption(int slot);
+	
 	public IAvailability getAvailability();
 	
 	public IDialogCategory getCategory();
