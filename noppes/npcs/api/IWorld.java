@@ -1,5 +1,6 @@
 package noppes.npcs.api;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldServer;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.IEntity;
@@ -116,6 +117,12 @@ public interface IWorld {
 	 * @return Returns minecrafts world
 	 */
 	public WorldServer getMCWorld();
+	
+	/**
+	 * Expert users only
+	 * @return Returns minecraft BlockPos object
+	 */
+	public BlockPos getMCBlockPos(int x, int y, int z);
 
 	/**
 	 * @param uuid entity uuid
