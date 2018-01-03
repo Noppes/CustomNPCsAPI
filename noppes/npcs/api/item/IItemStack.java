@@ -112,4 +112,8 @@ public interface IItemStack {
 	public boolean isEmpty();
 	
 	public int getType();
+	
+	public String[] getLore();
+	
+	public void setLore(String[] lore);
 }

@@ -10,4 +10,5 @@ public class EntityType {
 	public static final int MONSTER = 3;
 	public static final int ANIMAL = 4;
 	public static final int LIVING = 5;
+	public static final int ITEM = 6;
 }
