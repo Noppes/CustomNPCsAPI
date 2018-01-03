@@ -65,4 +65,47 @@ public class ItemEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * Will trigger if you have an item and right click into the air Or right
+	 * click a block Or right click an entity
+	 */
+	@Cancelable
+	public static class InteractEvent extends ItemEvent {
+		/**
+		 * 0:air, 1:entity, 2:block
+		 */
+		public final int type;
+		public final Object target;
+		public IPlayer player;
+
+		public InteractEvent(IItemScripted item, IPlayer player, int type, Object target) {
+			super(item);
+			this.type = type;
+			this.target = target;
+			this.player = player;
+		}
+	}
+
+	/**
+	 * Will trigger if you have an item and left click into the air or left
+	 * click a block or left click an entity
+	 */
+	@Cancelable
+	public static class AttackEvent extends ItemEvent {
+		/**
+		 * 0:air, 1:entity, 2:block
+		 */
+		public final int type;
+		
+		public final Object target;
+		public IPlayer player;
+
+		public AttackEvent(IItemScripted item, IPlayer player, int type, Object target) {
+			super(item);
+			this.type = type;
+			this.target = target;
+			this.player = player;
+		}
+	}
+
 }

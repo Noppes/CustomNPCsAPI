@@ -116,4 +116,22 @@ public interface IItemStack {
 	public String[] getLore();
 	
 	public void setLore(String[] lore);
+
+	/**
+	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
+	 * @param value
+	 */
+	public void setAttribute(String name, double value);
+
+	/**
+	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
+	 * @return Returns the value of this attribute
+	 */
+	public double getAttribute(String name);
+
+	/**
+	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
+	 * @return Whether or not this item has the attribute
+	 */
+	public boolean hasAttribute(String name);
 }
