@@ -15,6 +15,11 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	public boolean hasActiveQuest(int id);
 	
 	public void startQuest(int id);
+		
+	/**
+	 * @return Returns -1:Unfriendly, 0:Neutral, 1:Friendly
+	 */
+	public int factionStatus(int factionId);
 	
 	/**
 	 * Add the quest from finished quest list

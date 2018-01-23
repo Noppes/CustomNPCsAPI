@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.EventBus;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
+import noppes.npcs.api.handler.ICloneHandler;
 import noppes.npcs.api.handler.IDialogHandler;
 import noppes.npcs.api.handler.IFactionHandler;
 import noppes.npcs.api.handler.IQuestHandler;
@@ -64,11 +65,17 @@ public abstract class NpcAPI {
 	public abstract IQuestHandler getQuests();
 	
 	public abstract IDialogHandler getDialogs();
+	
+	public abstract ICloneHandler getClones();
 
 	public abstract IDamageSource getIDamageSource(DamageSource damagesource);
 
 	public abstract INbt stringToNbt(String str);
 	
+	/**
+	 * Used by modders
+	 * @return The event bus where you register CustomNPCEvents
+	 */
 	public abstract EventBus events();
 	
 	

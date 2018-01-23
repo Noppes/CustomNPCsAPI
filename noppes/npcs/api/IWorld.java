@@ -103,8 +103,16 @@ public interface IWorld {
 
 	public void spawnEntity(IEntity entity);
 
+	/**
+	 * Depricated, use the API.clones.spawn instead
+	 */
+	@Deprecated
 	public IEntity spawnClone(double x, double y, double z, int tab, String name);
-	
+
+	/**
+	 * Depricated, use the API.clones.get instead
+	 */
+	@Deprecated
 	public IEntity getClone(int tab, String name);
 
 	/**

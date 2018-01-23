@@ -111,4 +111,8 @@ public abstract class CommandNoppesBase extends CommandBase{
             throw new CommandException("Missing parameter: " + required.get(args.length));
         }
 	}
+
+    public int getRequiredPermissionLevel(){
+        return 2;
+    }
 }

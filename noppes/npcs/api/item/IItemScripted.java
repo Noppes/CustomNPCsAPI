@@ -4,8 +4,18 @@ public interface IItemScripted extends IItemStack {
 	
 	public boolean hasTexture(int damage);
 
+	/**
+	 * @param damage
+	 * @return Returns the texture associated with this damage value
+	 */
 	public String getTexture(int damage);
 	
+	/**
+	 * All scripted items with the same damage value have the same texture.
+	 * To change the actual texture of the item call setItemDamage afterwards with the same damage value
+	 * @param damage The damage value
+	 * @param texture Texture you want this damage value to have
+	 */
 	public void setTexture(int damage, String texture);
 
 	public void setMaxStackSize(int size);

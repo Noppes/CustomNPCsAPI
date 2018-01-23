@@ -39,6 +39,16 @@ public interface IEntity<T extends Entity> {
 	public float getRotation();
 	
 	/**
+	 * @return Returns the height of the bounding box
+	 */
+	public float getHeight();
+		
+	/**
+	 * @return Returns the width of the bounding box
+	 */
+	public float getWidth();
+	
+	/**
 	 * @param pitch The viewing pitch
 	 */
 	public void setPitch(float pitch);

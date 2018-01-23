@@ -3,6 +3,7 @@ package noppes.npcs.api.item;
 import net.minecraft.item.ItemStack;
 import noppes.npcs.api.INbt;
 import noppes.npcs.api.entity.IEntityLiving;
+import noppes.npcs.api.entity.data.IData;
 
 public interface IItemStack {
 
@@ -134,4 +135,14 @@ public interface IItemStack {
 	 * @return Whether or not this item has the attribute
 	 */
 	public boolean hasAttribute(String name);
+	
+	/**
+	 * Temp data stores anything but only untill it's reloaded
+	 */
+	public IData getTempdata();
+	
+	/**
+	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved
+	 */
+	public IData getStoreddata();
 }
