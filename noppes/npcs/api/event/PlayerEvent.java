@@ -12,6 +12,7 @@ import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IEntityLivingBase;
 import noppes.npcs.api.entity.IPlayer;
+import noppes.npcs.api.handler.data.IFaction;
 import noppes.npcs.api.item.IItemStack;
 
 public class PlayerEvent extends CustomNPCsEvent {
@@ -207,5 +208,26 @@ public class PlayerEvent extends CustomNPCsEvent {
 			super(player);
 			this.message = message;
 		}
+	}
+
+	/**
+	 * Called when a players faction points change 
+	 */
+	public static class FactionUpdateEvent extends PlayerEvent {
+		public final IFaction faction;
+		public int points;
+		
+		/**
+		 * true if it's setting the default points to the player
+		 */
+		public boolean init;
+
+		public FactionUpdateEvent(IPlayer player, IFaction faction, int points, boolean init) {
+			super(player);
+			this.faction = faction;
+			this.points = points;
+			this.init = init;
+		}
+		
 	}
 }

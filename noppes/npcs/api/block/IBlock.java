@@ -93,7 +93,7 @@ public interface IBlock {
 	 * @param type Event type
 	 * @param data Event data
 	 * Example: 
-	 * 	Chests - type:1 data:1 opens the lid, type:0 data:1 closes the lid
+	 * 	Chests - type:1 data:1 opens the lid, type:1 data:0 closes the lid
 	 * 	Note block - type:(0-9) data:(0-24) plays different notes
 	 * 
 	 */
