@@ -99,6 +99,16 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	@Cancelable
+	public static class PickUpEvent extends PlayerEvent {
+		public final IItemStack item;
+
+		public PickUpEvent(IPlayer player, IItemStack item) {
+			super(player);
+			this.item = item;
+		}
+	}
+
 	public static class ContainerOpen extends PlayerEvent {
 		public final IContainer container;
 
