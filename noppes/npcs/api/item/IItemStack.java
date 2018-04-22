@@ -145,4 +145,9 @@ public interface IItemStack {
 	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved
 	 */
 	public IData getStoreddata();
+
+	/**
+	 * @return Returns 0 if the item isnt food and otherwise the amount it restores hunger
+	 */
+	public int getFoodLevel();
 }

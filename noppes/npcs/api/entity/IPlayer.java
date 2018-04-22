@@ -159,4 +159,8 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
 	public void setSpawnPoint(IBlock block);
 
+	public int getHunger();
+
+	public void setHunger(int level);
+
 }

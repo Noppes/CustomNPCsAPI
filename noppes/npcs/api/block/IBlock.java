@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import noppes.npcs.api.IContainer;
 import noppes.npcs.api.INbt;
+import noppes.npcs.api.IPos;
 import noppes.npcs.api.IWorld;
 import noppes.npcs.api.entity.data.IData;
 import noppes.npcs.api.item.IItemStack;
@@ -15,6 +16,8 @@ public interface IBlock {
 	public int getY();
 	
 	public int getZ();
+	
+	public IPos getPos();
 	
 	public int getMetadata();
 	

@@ -2,6 +2,8 @@ package noppes.npcs.api.entity;
 
 import net.minecraft.entity.Entity;
 import noppes.npcs.api.INbt;
+import noppes.npcs.api.IPos;
+import noppes.npcs.api.IRayTrace;
 import noppes.npcs.api.IWorld;
 import noppes.npcs.api.entity.data.IData;
 import noppes.npcs.api.item.IItemStack;
@@ -25,6 +27,10 @@ public interface IEntity<T extends Entity> {
 	public int getBlockY();
 	
 	public int getBlockZ();
+	
+	public IPos getPos();
+	
+	public void setPos(IPos pos);
 	
 	public void setPosition(double x, double y, double z);
 		
@@ -105,6 +111,7 @@ public interface IEntity<T extends Entity> {
 	public IData getStoreddata();
 	
 	/**
+	 * The Entity's extra stored NBT data
 	 * @return The Entity's extra stored NBT data
 	 */
 	public INbt getNbt();
@@ -187,4 +194,13 @@ public interface IEntity<T extends Entity> {
 	 * This is not a function you should be calling every tick
 	 */
 	public void setEntityNbt(INbt nbt);
+
+	/**
+	 * Gets the first block within distance
+	 * @param distance
+	 * @param stopOnLiquid
+	 * @param ignoreBlockWithoutBoundingBox
+	 * @return
+	 */
+	public IRayTrace rayTraceBlock(double distance, boolean stopOnLiquid, boolean ignoreBlockWithoutBoundingBox);
 }
