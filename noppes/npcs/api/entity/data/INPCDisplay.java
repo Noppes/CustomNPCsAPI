@@ -88,6 +88,7 @@ public interface INPCDisplay {
 
 	/**
 	 * @param part 0:Head, 1:Body, 2:ArmLeft, 3:ArmRight, 4:LegLeft, 5:LegRight
+	 * @return Returns a float array
 	 */
 	public float[] getModelScale(int part);
 

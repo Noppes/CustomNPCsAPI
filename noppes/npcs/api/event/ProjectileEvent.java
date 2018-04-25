@@ -9,12 +9,18 @@ public class ProjectileEvent extends CustomNPCsEvent {
 		this.projectile = projectile;
 	}
 
+	/**
+	 * projectileTick
+	 */
 	public static class UpdateEvent extends ProjectileEvent {
 		public UpdateEvent(IEntityProjectile projectile) {
 			super(projectile);
 		}
 	}
 
+	/**
+	 * projectileImpact
+	 */
 	public static class ImpactEvent extends ProjectileEvent {
 		/**
 		 * 0:entity, 1:block

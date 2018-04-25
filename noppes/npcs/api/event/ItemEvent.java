@@ -12,6 +12,9 @@ public class ItemEvent extends CustomNPCsEvent {
 		this.item = item;
 	}
 
+	/**
+	 * init
+	 */
 	public static class InitEvent extends ItemEvent {
 		public InitEvent(IItemScripted item) {
 			super(item);
@@ -19,6 +22,7 @@ public class ItemEvent extends CustomNPCsEvent {
 	}
 
 	/**
+	 * tick <br>
 	 * When the item is in an inventory this will be called every 10 ticks (0.5 seconds)
 	 */
 	public static class UpdateEvent extends ItemEvent {
@@ -29,6 +33,9 @@ public class ItemEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * spawn
+	 */
 	@Cancelable
 	public static class SpawnEvent extends ItemEvent {
 		public IEntityItem entity;
@@ -39,6 +46,7 @@ public class ItemEvent extends CustomNPCsEvent {
 	}
 
 	/**
+	 * toss <br>
 	 * When Cancelled it prevents the item from spawning in the world, the item still disappears from the inventory
 	 */
 	@Cancelable
@@ -53,6 +61,7 @@ public class ItemEvent extends CustomNPCsEvent {
 	}
 
 	/**
+	 * pickedUp <br>
 	 * When Cancelled it prevents the item from spawning in the world, the item still disappears from the inventory
 	 */
 	public static class PickedUpEvent extends ItemEvent {
@@ -66,6 +75,7 @@ public class ItemEvent extends CustomNPCsEvent {
 	}
 
 	/**
+	 * interact <br>
 	 * Will trigger if you have an item and right click into the air Or right
 	 * click a block Or right click an entity
 	 */
@@ -87,6 +97,7 @@ public class ItemEvent extends CustomNPCsEvent {
 	}
 
 	/**
+	 * attack <br>
 	 * Will trigger if you have an item and left click into the air or left
 	 * click a block or left click an entity
 	 */

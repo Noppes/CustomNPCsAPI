@@ -18,6 +18,9 @@ public class DialogEvent extends NpcEvent {
 		this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 	}
 
+	/**
+	 * dialog
+	 */
 	@Cancelable
     public static class OpenEvent extends DialogEvent {
 		public OpenEvent(ICustomNpc npc, EntityPlayer player, IDialog dialog) {
@@ -26,6 +29,9 @@ public class DialogEvent extends NpcEvent {
     	
     }
 
+	/**
+	 * dialogClose
+	 */
     public static class CloseEvent extends DialogEvent {
 		public CloseEvent(ICustomNpc npc, EntityPlayer player, IDialog dialog) {
 			super(npc, player, dialog);
@@ -33,6 +39,9 @@ public class DialogEvent extends NpcEvent {
     	
     }
 
+	/**
+	 * dialogOption
+	 */
 	@Cancelable
     public static class OptionEvent extends DialogEvent {
     	public final IDialogOption option;

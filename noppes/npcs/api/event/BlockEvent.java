@@ -15,6 +15,9 @@ public class BlockEvent extends CustomNPCsEvent {
 		this.block = block;
 	}
 	
+	/**
+	 * fallenUpon
+	 */
 	@Cancelable
 	public static class EntityFallenUponEvent extends BlockEvent{
 		public final IEntity entity;
@@ -25,7 +28,10 @@ public class BlockEvent extends CustomNPCsEvent {
 			this.entity = NpcAPI.Instance().getIEntity(entity);
 		}
 	}
-
+	
+	/**
+	 * interact
+	 */
 	@Cancelable
 	public static class InteractEvent extends BlockEvent{
 		public final IPlayer player;
@@ -48,7 +54,10 @@ public class BlockEvent extends CustomNPCsEvent {
 		}
 		
 	}
-
+	
+	/**
+	 * redstone
+	 */
 	public static class RedstoneEvent extends BlockEvent{
 		public final int prevPower, power;
 		public RedstoneEvent(IBlock block, int prevPower, int power) {
@@ -58,6 +67,9 @@ public class BlockEvent extends CustomNPCsEvent {
 		}
 	}
 	
+	/**
+	 * doorToggle
+	 */
 	@Cancelable
 	public static class DoorToggleEvent extends BlockEvent{
 		public DoorToggleEvent(IBlock block) {
@@ -65,12 +77,18 @@ public class BlockEvent extends CustomNPCsEvent {
 		}
 	}
 	
+	/**
+	 * broken
+	 */
 	public static class BreakEvent extends BlockEvent{
 		public BreakEvent(IBlock block) {
 			super(block);
 		}
 	}
 	
+	/**
+	 * exploded
+	 */
 	@Cancelable
 	public static class ExplodedEvent extends BlockEvent{
 		public ExplodedEvent(IBlock block) {
@@ -78,30 +96,45 @@ public class BlockEvent extends CustomNPCsEvent {
 		}
 	}
 	
+	/**
+	 * rainFilled
+	 */
 	public static class RainFillEvent extends BlockEvent{
 		public RainFillEvent(IBlock block) {
 			super(block);
 		}
 	}
 	
+	/**
+	 * neighborChanged
+	 */
 	public static class NeighborChangedEvent extends BlockEvent{
 		public NeighborChangedEvent(IBlock block) {
 			super(block);
 		}
 	}
 	
+	/**
+	 * init
+	 */
 	public static class InitEvent extends BlockEvent{
 		public InitEvent(IBlock block) {
 			super(block);
 		}
 	}
-	
+
+	/**
+	 * tick
+	 */
 	public static class UpdateEvent extends BlockEvent{
 		public UpdateEvent(IBlock block) {
 			super(block);
 		}
 	}
-	
+
+	/**
+	 * clicked
+	 */
 	public static class ClickedEvent extends BlockEvent{
 		public final IPlayer player;
 		public ClickedEvent(IBlock block, EntityPlayer player) {
@@ -109,7 +142,10 @@ public class BlockEvent extends CustomNPCsEvent {
 			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 		}
 	}
-	
+
+	/**
+	 * harvested
+	 */
 	@Cancelable
 	public static class HarvestedEvent extends BlockEvent{
 		public final IPlayer player;
@@ -118,7 +154,10 @@ public class BlockEvent extends CustomNPCsEvent {
 			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 		}
 	}
-	
+
+	/**
+	 * collide
+	 */
 	public static class CollidedEvent extends BlockEvent{
 		public final IEntity entity;
 		public CollidedEvent(IBlock block, Entity entity) {
@@ -127,6 +166,9 @@ public class BlockEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * timer
+	 */
 	public static class TimerEvent extends BlockEvent{
 		public final int id;
 		

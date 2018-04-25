@@ -17,19 +17,28 @@ public class NpcEvent extends CustomNPCsEvent{
 	public NpcEvent(ICustomNpc npc) {
 		this.npc = npc;
 	}
-	
+
+	/**
+	 * init
+	 */
 	public static class InitEvent extends NpcEvent{
 		public InitEvent(ICustomNpc npc) {
 			super(npc);
 		}
 	}
-	
+
+	/**
+	 * tick
+	 */
 	public static class UpdateEvent extends NpcEvent{
 		public UpdateEvent(ICustomNpc npc) {
 			super(npc);
 		}
 	}
 
+	/**
+	 * target
+	 */
 	@Cancelable
 	public static class TargetEvent extends NpcEvent{
 		public IEntityLivingBase entity;
@@ -39,6 +48,9 @@ public class NpcEvent extends CustomNPCsEvent{
 		}
 	}
 
+	/**
+	 * targetLost
+	 */
 	@Cancelable
 	public static class TargetLostEvent extends NpcEvent{
 		/**
@@ -51,6 +63,9 @@ public class NpcEvent extends CustomNPCsEvent{
 		}
 	}
 
+	/**
+	 * interact
+	 */
 	@Cancelable
 	public static class InteractEvent extends NpcEvent{
 		public final IPlayer player;
@@ -60,6 +75,9 @@ public class NpcEvent extends CustomNPCsEvent{
 		}
 	}
 
+	/**
+	 * died
+	 */
 	public static class DiedEvent extends NpcEvent{
 		public final IDamageSource damageSource;
 		
@@ -72,7 +90,10 @@ public class NpcEvent extends CustomNPCsEvent{
 			this.source = NpcAPI.Instance().getIEntity(entity);
 		}
 	}
-	
+
+	/**
+	 * kill
+	 */
 	public static class KilledEntityEvent extends NpcEvent{
 		public final IEntityLivingBase entity;
 		public KilledEntityEvent(ICustomNpc npc, EntityLivingBase entity) {
@@ -81,6 +102,9 @@ public class NpcEvent extends CustomNPCsEvent{
 		}
 	}
 
+	/**
+	 * meleeAttack
+	 */
 	@Cancelable
 	public static class MeleeAttackEvent extends NpcEvent{
 		public final IEntityLivingBase target;
@@ -93,6 +117,9 @@ public class NpcEvent extends CustomNPCsEvent{
 		}
 	}
 
+	/**
+	 * rangedAttack
+	 */
 	@Cancelable
 	public static class RangedLaunchedEvent extends NpcEvent{
 		public final IEntityLivingBase target;
@@ -105,6 +132,9 @@ public class NpcEvent extends CustomNPCsEvent{
 		}
 	}
 
+	/**
+	 * damaged
+	 */
 	@Cancelable
 	public static class DamagedEvent extends NpcEvent{
 		public final IDamageSource damageSource;
@@ -120,6 +150,9 @@ public class NpcEvent extends CustomNPCsEvent{
 		}
 	}
 
+	/**
+	 * collide
+	 */
 	public static class CollideEvent extends NpcEvent{
 		public final IEntity entity;
 
@@ -129,6 +162,9 @@ public class NpcEvent extends CustomNPCsEvent{
 		}
 	}
 
+	/**
+	 * timer
+	 */
 	public static class TimerEvent extends NpcEvent{
 		public final int id;
 		

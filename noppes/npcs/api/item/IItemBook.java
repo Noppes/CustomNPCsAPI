@@ -8,7 +8,7 @@ public interface IItemBook extends IItemStack{
 	public String[] getText();
 	
 	/**
-	 * @return Set the text for multiple pages
+	 * Set the text for multiple pages
 	 */
 	public void setText(String[] pages);
 

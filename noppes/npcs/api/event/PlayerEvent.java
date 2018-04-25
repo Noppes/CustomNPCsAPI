@@ -22,12 +22,18 @@ public class PlayerEvent extends CustomNPCsEvent {
 		this.player = player;
 	}
 
+	/**
+	 * init
+	 */
 	public static class InitEvent extends PlayerEvent {
 		public InitEvent(IPlayer player) {
 			super(player);
 		}
 	}
 
+	/**
+	 * tick
+	 */
 	public static class UpdateEvent extends PlayerEvent {
 		public UpdateEvent(IPlayer player) {
 			super(player);
@@ -35,6 +41,7 @@ public class PlayerEvent extends CustomNPCsEvent {
 	}
 
 	/**
+	 * interact <br>
 	 * Will trigger if you have an item and right click into the air Or right
 	 * click a block Or right click an entity
 	 */
@@ -55,6 +62,7 @@ public class PlayerEvent extends CustomNPCsEvent {
 	}
 
 	/**
+	 * attack <br>
 	 * Will trigger if you have an item and left click into the air or left
 	 * click a block or left click an entity
 	 */
@@ -74,6 +82,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * broken
+	 */
 	@Cancelable
 	public static class BreakEvent extends PlayerEvent {
 		public final IBlock block;
@@ -89,6 +100,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * toss
+	 */
 	@Cancelable
 	public static class TossEvent extends PlayerEvent {
 		public final IItemStack item;
@@ -99,6 +113,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * pickedUp
+	 */
 	@Cancelable
 	public static class PickUpEvent extends PlayerEvent {
 		public final IItemStack item;
@@ -109,6 +126,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * containerOpen
+	 */
 	public static class ContainerOpen extends PlayerEvent {
 		public final IContainer container;
 
@@ -118,6 +138,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * containerClosed
+	 */
 	public static class ContainerClosed extends PlayerEvent {
 		public final IContainer container;
 
@@ -127,6 +150,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * damagedEntity
+	 */
 	@Cancelable
 	public static class DamagedEntityEvent extends PlayerEvent {
 		public final IDamageSource damageSource;
@@ -142,6 +168,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * rangedLaunched
+	 */
 	@Cancelable
 	public static class RangedLaunchedEvent extends PlayerEvent {
 
@@ -150,6 +179,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * died
+	 */
 	@Cancelable
 	public static class DiedEvent extends PlayerEvent {
 		public final IDamageSource damageSource;
@@ -165,6 +197,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * kill
+	 */
 	public static class KilledEntityEvent extends PlayerEvent {
 		public final IEntityLivingBase entity;
 
@@ -174,6 +209,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * damaged
+	 */
 	@Cancelable
 	public static class DamagedEvent extends PlayerEvent {
 		public final IDamageSource damageSource;
@@ -189,6 +227,9 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * timer
+	 */
 	public static class TimerEvent extends PlayerEvent {
 		public final int id;
 
@@ -198,18 +239,43 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 	}
 
+	/**
+	 * login
+	 */
 	public static class LoginEvent extends PlayerEvent {
 		public LoginEvent(IPlayer player) {
 			super(player);
 		}
 	}
 
+	/**
+	 * logout
+	 */
 	public static class LogoutEvent extends PlayerEvent {
 		public LogoutEvent(IPlayer player) {
 			super(player);
 		}
 	}
 
+	/**
+	 * levelUp <br>
+	 * Called when a players level changes
+	 */
+	public static class LevelUpEvent extends PlayerEvent {
+		/**
+		 * The amount the level of the player changed
+		 */
+		private final int change;
+		
+		public LevelUpEvent(IPlayer player, int change) {
+			super(player);
+			this.change = change;
+		}
+	}
+
+	/**
+	 * chat
+	 */
 	@Cancelable
 	public static class ChatEvent extends PlayerEvent {
 		public String message;
@@ -221,6 +287,7 @@ public class PlayerEvent extends CustomNPCsEvent {
 	}
 
 	/**
+	 * factionUpdate <br>
 	 * Called when a players faction points change 
 	 */
 	public static class FactionUpdateEvent extends PlayerEvent {
