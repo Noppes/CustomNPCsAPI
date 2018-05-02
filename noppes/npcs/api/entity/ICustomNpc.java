@@ -53,11 +53,6 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	public void sayTo(IPlayer player, String message);
 
 	/**
-	 * Kill the npc, doesnt't despawn it
-	 */
-	public void kill();
-
-	/**
 	 * @param item The item you want to shoot
 	 * @param accuracy Accuracy of the shot (1-100)
 	 */

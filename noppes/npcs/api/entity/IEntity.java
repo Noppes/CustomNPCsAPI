@@ -131,6 +131,11 @@ public interface IEntity<T extends Entity> {
 	 * Spawns this entity into the world (For NPCs dont forget to set their home position)
 	 */
 	public void spawn();
+
+	/**
+	 * Kill the entity, doesnt't despawn it
+	 */
+	public void kill();
 		
 	/**
 	 * @return Return whether or not this entity is on fire
@@ -203,4 +208,15 @@ public interface IEntity<T extends Entity> {
 	 * @return
 	 */
 	public IRayTrace rayTraceBlock(double distance, boolean stopOnLiquid, boolean ignoreBlockWithoutBoundingBox);
+	
+	/**
+	 * Tags are used by scoreboards and can be used in commands
+	 */
+	public String[] getTags();
+	
+	public void addTag(String tag);
+	
+	public boolean hasTag(String tag);
+	
+	public void removeTag(String tag);
 }

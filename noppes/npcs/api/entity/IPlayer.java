@@ -163,4 +163,9 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
 	public void setHunger(int level);
 
+	/**
+	 * @param message The message the player gets when kicked
+	 */
+	public void kick(String message);
+
 }

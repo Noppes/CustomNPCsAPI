@@ -101,5 +101,9 @@ public interface INPCDisplay {
 	 * @param color 0:Pink, 1:Blue, 2:Red, 3:Green, 4:Yellow, 5:Purple, 6:White
 	 */
 	public void setBossColor(int color);
+	
+	public void setModel(String model);
+	
+	public String getModel();
 
 }
