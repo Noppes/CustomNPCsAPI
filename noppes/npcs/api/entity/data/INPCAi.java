@@ -40,6 +40,16 @@ public interface INPCAi {
 	public void setMovingType(int type);
 
 	/**
+	 * @return type 0:Ground, 1:Flying, 2:Swimming
+	 */
+	public int getNavigationType();
+
+	/**
+	 * @param type 0:Ground, 1:Flying, 2:Swimming
+	 */
+	public void setNavigationType(int type);
+
+	/**
 	 * @return 0:RotateBody, 1:NoRotation, 2:Stalking, 3:HeadRotation
 	 */
 	public int getStandingType();
