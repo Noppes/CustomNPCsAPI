@@ -168,4 +168,11 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 */
 	public void kick(String message);
 
+	/**
+	 * @param title Title of the notification
+	 * @param msg Message of the notification
+	 * @param type (0-3) notification background type
+	 */
+	public void sendNotification(String title, String msg, int type);
+
 }

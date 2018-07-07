@@ -37,7 +37,7 @@ public interface IItemStack {
 	/**
 	 * @param id The enchantment id
 	 */
-	boolean hasEnchant(int id);
+	public boolean hasEnchant(int id);
 	
 	/**
 	 * @deprecated
@@ -150,4 +150,5 @@ public interface IItemStack {
 	 * @return Returns 0 if the item isnt food and otherwise the amount it restores hunger
 	 */
 	public int getFoodLevel();
+	
 }
