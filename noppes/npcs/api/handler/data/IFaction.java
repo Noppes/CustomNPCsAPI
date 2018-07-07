@@ -26,7 +26,11 @@ public interface IFaction {
 	
 	public int[] getHostileList();
 	
+	public void addHostile(int id);
+	
 	public void removeHostile(int id);
+	
+	public boolean hasHostile(int id);
 	
 	public boolean getIsHidden();
 	

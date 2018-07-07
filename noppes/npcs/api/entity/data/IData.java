@@ -9,6 +9,8 @@ public interface IData {
 	public void remove(String key);
 	
 	public boolean has(String key);
+	
+	public String[] getKeys();
 
 	/**
 	 * Removes all data

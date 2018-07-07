@@ -102,6 +102,9 @@ public interface INPCDisplay {
 	 */
 	public void setBossColor(int color);
 	
+	/**
+	 * @param model Entity id from <a href="https://minecraft.gamepedia.com/Java_Edition_data_values/Entity_IDs">here</a>
+	 */
 	public void setModel(String model);
 	
 	public String getModel();

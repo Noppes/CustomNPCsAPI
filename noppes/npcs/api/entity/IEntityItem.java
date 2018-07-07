@@ -1,6 +1,7 @@
 package noppes.npcs.api.entity;
 
 import net.minecraft.entity.item.EntityItem;
+import noppes.npcs.api.item.IItemStack;
 
 public interface IEntityItem<T extends EntityItem> extends IEntity<T>{
 
@@ -44,4 +45,8 @@ public interface IEntityItem<T extends EntityItem> extends IEntity<T>{
 	 * @param age Age at which the item despawns
 	 */
 	public void setLifeSpawn(int age);
+
+	public IItemStack getItem();
+
+	public void setItem(IItemStack item);
 }

@@ -74,11 +74,13 @@ public interface IWorld {
 
 	/**
 	 * Stores any type of data, but will be gone on restart
+	 * Temp data is the same cross dimension
 	 */
 	public IData getTempdata();
 
 	/**
-	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved
+	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved.
+	 * Stored data is the same cross dimension
 	 */
 	public IData getStoreddata();
 

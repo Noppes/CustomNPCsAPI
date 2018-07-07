@@ -14,4 +14,6 @@ public interface IFactionHandler {
 	 * Example: create("Bandits", 0xFF0000)
 	 */
 	public IFaction create(String name, int color);
+	
+	public IFaction get(int id);
 }

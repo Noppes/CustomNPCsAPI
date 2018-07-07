@@ -40,8 +40,15 @@ public interface IPos {
 
 	public BlockPos getMCBlockPos();
 
+	/**
+	 * @param direction {@link noppes.npcs.api.constants.SideType} 
+	 */
 	public IPos offset(int direction);
 
+	/**
+	 * @param direction {@link noppes.npcs.api.constants.SideType} 
+	 * @param n how many positions
+	 */
 	public IPos offset(int direction, int n);
 
 }

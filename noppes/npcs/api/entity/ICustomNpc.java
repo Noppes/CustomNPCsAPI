@@ -56,13 +56,14 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	 * @param item The item you want to shoot
 	 * @param accuracy Accuracy of the shot (1-100)
 	 */
-	public void shootItem(IEntityLivingBase target, IItemStack item, int accuracy);
+	public IEntityProjectile shootItem(IEntityLivingBase target, IItemStack item, int accuracy);
 
 	/**
 	 * @param item The item you want to shoot
 	 * @param accuracy Accuracy of the shot (1-100)
+	 * @return 
 	 */
-	public void shootItem(double x, double y, double z, IItemStack item, int accuracy);
+	public IEntityProjectile shootItem(double x, double y, double z, IItemStack item, int accuracy);
 
 	/**
 	 * If the player can't carry the item it will fall on the ground. (unless the player is in creative)
@@ -78,6 +79,11 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	 * @param slot (0-11)
 	 */
 	public IDialog getDialog(int slot);
+	
+	/**
+	 * Force update client. Normally it updates client once every 10 ticks
+	 */
+	public void updateClient();
 
 	/**
 	 * On servers the enable-command-block option in the server.properties needs to be set to true

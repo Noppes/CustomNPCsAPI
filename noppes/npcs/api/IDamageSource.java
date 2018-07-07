@@ -1,6 +1,7 @@
 package noppes.npcs.api;
 
 import net.minecraft.util.DamageSource;
+import noppes.npcs.api.entity.IEntity;
 
 public interface IDamageSource {
 
@@ -9,6 +10,10 @@ public interface IDamageSource {
 	public boolean isUnblockable();
 	
 	public boolean isProjectile();
+	
+	public IEntity getTrueSource();
+	
+	public IEntity getImmediateSource();
 	
 	public DamageSource getMCDamageSource();
 }

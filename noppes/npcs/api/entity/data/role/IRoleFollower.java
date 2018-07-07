@@ -16,11 +16,17 @@ public interface IRoleFollower extends INPCRole{
 	public boolean getGuiDisabled();
 
 	public void setGuiDisabled(boolean disabled);
-
-	public boolean isFollowing();
 	
 	public IPlayer getFollowing();
 	
 	public void setFollowing(IPlayer player);
+	
+	public boolean isFollowing();
+	
+	public void reset();
+
+	public void setRefuseSoulstone(boolean refuse);
+
+	public boolean getRefuseSoulstone();
 
 }
