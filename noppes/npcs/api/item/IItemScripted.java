@@ -56,7 +56,7 @@ public interface IItemScripted extends IItemStack {
 	public int getColor();
 
 	/**
-	 * @param color Set a custom color hex value for durability bar. -1 to remove the color
+	 * @param color Set a custom color hex value for the item tint. -1 to remove the color
 	 */
 	public void setColor(int color);
 }
