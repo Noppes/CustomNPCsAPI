@@ -174,5 +174,10 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * @param type (0-3) notification background type
 	 */
 	public void sendNotification(String title, String msg, int type);
+	
+	/**
+	 * WANRING, REMOVES ALL PLAYER DATA (data only from CustomNPCs, does not clear inventory etc)
+	 */
+	public void clearData();
 
 }

@@ -10,15 +10,15 @@ import noppes.npcs.api.item.IItemStack;
 public class QuestEvent extends CustomNPCsEvent {
 	public final IQuest quest;
 	public final IPlayer player;
-	public QuestEvent(EntityPlayer player, IQuest quest) {
+	public QuestEvent(IPlayer player, IQuest quest) {
 		this.quest = quest;
-		this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
+		this.player = player;
 	}
 
 	@Cancelable
 	public static class QuestStartEvent extends QuestEvent{
 
-		public QuestStartEvent(EntityPlayer player, IQuest quest) {
+		public QuestStartEvent(IPlayer player, IQuest quest) {
 			super(player, quest);
 		}
 		
@@ -26,7 +26,7 @@ public class QuestEvent extends CustomNPCsEvent {
 
 	public static class QuestCompletedEvent extends QuestEvent{
 		
-		public QuestCompletedEvent(EntityPlayer player, IQuest quest) {
+		public QuestCompletedEvent(IPlayer player, IQuest quest) {
 			super(player, quest);
 		}
 		
@@ -36,7 +36,7 @@ public class QuestEvent extends CustomNPCsEvent {
 		public int expReward;		
 		public IItemStack[] itemRewards = new IItemStack[0];
 
-		public QuestTurnedInEvent(EntityPlayer player, IQuest quest) {
+		public QuestTurnedInEvent(IPlayer player, IQuest quest) {
 			super(player, quest);
 		}
 		

@@ -2,6 +2,7 @@ package noppes.npcs.api.entity;
 
 import net.minecraft.entity.monster.EntityMob;
 
-public interface IMonster<T extends EntityMob> extends IEntityLiving<T>{
+public interface IVillager<T extends EntityMob> extends IEntityLiving<T>{
 
+	
 }

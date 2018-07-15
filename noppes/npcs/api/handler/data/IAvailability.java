@@ -47,7 +47,7 @@ public interface IAvailability {
 	/**
 	 * @param i (0-3)
 	 * @param id Quest id
-	 * @param type 0:Always, 1:After, 2:Before, 3:Active, 4:NotActive
+	 * @param type 0:Always, 1:After, 2:Before, 3:Active, 4:NotActive, 5:Completed
 	 */
 	public void setQuest(int i, int id, int type);
 

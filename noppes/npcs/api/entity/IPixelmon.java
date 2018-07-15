@@ -91,8 +91,5 @@ public interface IPixelmon<T extends EntityTameable> extends IAnimal<T>{
 	public String getMove(int slot);
 
 	public void setMove(int slot, String move);
-
-	@Override
-	public T getMCEntity();
 	
 }

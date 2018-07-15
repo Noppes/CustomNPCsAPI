@@ -91,8 +91,5 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	 * @return Returns the commands output
 	 */
 	public String executeCommand(String command);
-
-	@Override
-	public T getMCEntity();
 	
 }

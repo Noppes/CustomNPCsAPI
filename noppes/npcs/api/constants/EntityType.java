@@ -4,6 +4,7 @@ package noppes.npcs.api.constants;
  * Entity Types
  */
 public class EntityType {
+	public static final int ANY = -1;
 	public static final int UNKNOWN = 0;
 	public static final int PLAYER = 1;
 	public static final int NPC = 2;
@@ -13,4 +14,5 @@ public class EntityType {
 	public static final int ITEM = 6;
 	public static final int PROJECTILE = 7;
 	public static final int PIXELMON = 8;
+	public static final int VILLAGER = 9;
 }

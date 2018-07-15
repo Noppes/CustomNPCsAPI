@@ -201,13 +201,22 @@ public interface IEntity<T extends Entity> {
 	public void setEntityNbt(INbt nbt);
 
 	/**
-	 * Gets the first block within distance
+	 * Gets the first block within distance the npc is looking at
 	 * @param distance
 	 * @param stopOnLiquid
 	 * @param ignoreBlockWithoutBoundingBox
 	 * @return
 	 */
 	public IRayTrace rayTraceBlock(double distance, boolean stopOnLiquid, boolean ignoreBlockWithoutBoundingBox);
+
+	/**
+	 * Gets the entities within distance the npc is looking at sorted by distance
+	 * @param distance
+	 * @param stopOnLiquid
+	 * @param ignoreBlockWithoutBoundingBox
+	 * @return
+	 */
+	public IEntity[] rayTraceEntities(double distance, boolean stopOnLiquid, boolean ignoreBlockWithoutBoundingBox);
 	
 	/**
 	 * Tags are used by scoreboards and can be used in commands

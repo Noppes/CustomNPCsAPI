@@ -15,6 +15,13 @@ public interface IWorld {
 	public IEntity getClosestEntity(int x, int y, int z, int range, int type);
 
 	/**
+	 * This gets all currently loaded entities in a world
+	 * @param type {@link noppes.npcs.api.constants.EntityType}}
+	 * @return An array of all entities
+	 */
+	public IEntity[] getAllEntities(int type);
+
+	/**
 	 * @return The world time
 	 */
 	public long getTime();
