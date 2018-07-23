@@ -48,6 +48,11 @@ public interface IEntity<T extends Entity> {
 	 * @return Returns the height of the bounding box
 	 */
 	public float getHeight();
+
+	/**
+	 * @return Returns the eye height of the entity, used in this like canSee and such
+	 */
+	public float getEyeHeight();
 		
 	/**
 	 * @return Returns the width of the bounding box

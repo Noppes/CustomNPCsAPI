@@ -102,7 +102,7 @@ public abstract class CommandNoppesBase extends CommandBase{
         	if(command.startsWith("<")){
         		required.add(command);
         	}
-        	if(command.equals("<player>")){
+        	if(command.equals("<player>") && args.length > i){
         		CommandBase.getPlayer(server, sender, args[i]); //throws PlayerNotFoundException if no player is found
         	}
         		

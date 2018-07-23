@@ -1,6 +1,7 @@
 package noppes.npcs.api;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 
 public interface IPos {
 
@@ -37,6 +38,12 @@ public interface IPos {
 	public IPos add(int x, int y, int z);
 
 	public IPos add(IPos pos);
+
+	public IPos subtract(int x, int y, int z);
+
+	public IPos subtract(IPos pos);
+	
+	public double[] normalize();
 
 	public BlockPos getMCBlockPos();
 
