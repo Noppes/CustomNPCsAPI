@@ -14,8 +14,8 @@ import noppes.npcs.api.item.IItemStack;
 /**
  * Called for most Forge events. For the events I use the forges name and make the first letter lowercase. <br>
  * Eg: <br>
- * - EntityEvent.EntityJoinWorldEvent becomes entityJoinWorldEvent <br>
- * - PlayerEvent.StartTracking becomes startTracking <br>
+ * - EntityEvent.EntityJoinWorldEvent becomes entityEventEntityJoinWorldEvent <br>
+ * - PlayerEvent.StartTracking becomes playerEventStartTracking <br>
  * - etc <br>
  * 
  * Note that these events can change anytime and that I have no control over these. Use at own risk
