@@ -29,6 +29,16 @@ public class ForgeEvent extends CustomNPCsEvent {
 	}
 
 	/**
+	 * init <br>
+	 * The init event has no forge event 
+	 */
+	public static class InitEvent extends ForgeEvent {
+		public InitEvent() {
+			super(null);
+		}
+	}
+
+	/**
 	 * This event is used for every forge event which extends EntityEvent <br>
 	 * <a href="http://maven.thiakil.com/forge-1.12-javadoc/net/minecraftforge/event/entity/EntityEvent.html">EventyEvent</a> <br>
 	 * <a href="http://maven.thiakil.com/forge-1.12-javadoc/net/minecraftforge/event/entity/living/LivingEvent.html">LivingEvent</a> <br>
