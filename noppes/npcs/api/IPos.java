@@ -3,6 +3,9 @@ package noppes.npcs.api;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
+/**
+ * All the methods in IPos create a new IPos object
+ */
 public interface IPos {
 
 	public int getX();
@@ -57,5 +60,7 @@ public interface IPos {
 	 * @param n how many positions
 	 */
 	public IPos offset(int direction, int n);
+	
+	public double distanceTo(IPos pos);
 
 }

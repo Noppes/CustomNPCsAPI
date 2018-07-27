@@ -33,4 +33,6 @@ public interface ITimers {
 	 * Resets the timer back to 0
 	 */
 	public void reset(int id);
+	
+	public void clear();
 }

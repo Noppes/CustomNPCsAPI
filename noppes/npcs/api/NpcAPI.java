@@ -57,6 +57,8 @@ public abstract class NpcAPI {
 	public abstract IWorld[] getIWorlds();
 
 	public abstract INbt getINbt(NBTTagCompound compound);
+
+	public abstract IPos getIPos(double x, double y, double z);
 	
 	public abstract IFactionHandler getFactions();
 	
