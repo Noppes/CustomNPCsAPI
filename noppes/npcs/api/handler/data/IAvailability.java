@@ -68,4 +68,12 @@ public interface IAvailability {
 	 * @param i (0-1)
 	 */
 	public void removeFaction(int i);
+
+	/**
+	 * @param i (0-1)
+	 * @param objective Scoreboard Objective
+	 * @param type 0:Smalle, 1:Equals, 2:Bigger
+	 * @param value Scoreboard score value
+	 */
+	public void setScoreboard(int i, String objective, int type, int value);
 }

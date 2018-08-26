@@ -10,9 +10,19 @@ import noppes.npcs.api.item.IItemStack;
 
 public interface IWorld {
 
+	/**
+	 * @deprecated
+	 */
 	public IEntity[] getNearbyEntities(int x, int y, int z, int range, int type);
 
+	public IEntity[] getNearbyEntities(IPos pos, int range, int type);
+
+	/**
+	 * @deprecated
+	 */
 	public IEntity getClosestEntity(int x, int y, int z, int range, int type);
+
+	public IEntity getClosestEntity(IPos pos, int range, int type);
 
 	/**
 	 * This gets all currently loaded entities in a world

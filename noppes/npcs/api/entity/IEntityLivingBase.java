@@ -76,4 +76,16 @@ public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T
 
 	@Override
 	public T getMCEntity();
+
+	public float getMoveForward();
+
+	public void setMoveForward(float move);
+
+	public float getMoveStrafing();
+
+	public void setMoveStrafing(float move);
+
+	public float getMoveVertical();
+
+	public void setMoveVertical(float move);
 }
