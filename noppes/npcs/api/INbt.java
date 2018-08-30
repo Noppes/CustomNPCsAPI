@@ -82,4 +82,19 @@ public interface INbt {
 	public NBTTagCompound getMCNBT();
 	
 	public String toJsonString();
+
+	/**
+	 * Compares if two nbt tags are the same/contain the same data
+	 */
+	public boolean isEqual(INbt nbt);
+	
+	/**
+	 * Clears all tags
+	 */
+	public void clear();
+
+	/**
+	 * Merges two nbt tabs, note that nbt tags will be overwritten if they have the same keys
+	 */
+	public void merge(INbt nbt);
 }

@@ -100,7 +100,15 @@ public interface IItemStack {
 	 */
 	public INbt getNbt();
 
+	/**
+	 * @return Returns false if the nbt of this itemstack is null or empty
+	 */
 	public boolean hasNbt();
+	
+	/**
+	 * Removes the nbt from the itemstack
+	 */
+	public void removeNbt();
 	
 	/**
 	 * @return The entire item as nbt
