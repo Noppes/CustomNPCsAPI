@@ -265,11 +265,41 @@ public class PlayerEvent extends CustomNPCsEvent {
 		/**
 		 * The amount the level of the player changed
 		 */
-		private final int change;
+		public final int change;
 		
 		public LevelUpEvent(IPlayer player, int change) {
 			super(player);
 			this.change = change;
+		}
+	}
+
+	/**
+	 * keyPressed <br>
+	 * Called when a players press and releases a button, Wont be called when a gui or chat is opened or if a button is held for a longer time. <br>
+	 * Button has to be held less then 0.5 seconds. <br>
+	 * Currently does not support multiple button presses, <br>
+	 *   eg: pressing 'a' and then 'd' and then releasing 'a' and then 'd' will no cause the event to trigger
+	 */
+	public static class KeyPressedEvent extends PlayerEvent {
+		/**
+		 * Keyboard button pressed, (<a href="https://minecraft.gamepedia.com/Key_codes">key codes</a>
+		 */
+		public final int key;
+		public final boolean isCtrlPressed;
+		public final boolean isAltPressed;
+		public final boolean isShiftPressed;
+		/**
+		 * This is the windows or apple key
+		 */
+		public final boolean isMetaPressed;
+		
+		public KeyPressedEvent(IPlayer player, int key, boolean isCtrlPressed, boolean isAltPressed, boolean isShiftPressed, boolean isMetaPressed) {
+			super(player);
+			this.key = key;
+			this.isCtrlPressed = isCtrlPressed;
+			this.isAltPressed = isAltPressed;
+			this.isShiftPressed = isShiftPressed;
+			this.isMetaPressed = isMetaPressed;
 		}
 	}
 

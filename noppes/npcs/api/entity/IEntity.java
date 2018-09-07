@@ -233,4 +233,11 @@ public interface IEntity<T extends Entity> {
 	public boolean hasTag(String tag);
 	
 	public void removeTag(String tag);
+
+	/**
+	 * Play specific minecraft animations client side
+	 * 0 and 3 are for EntityLivingBase entities and 2 is only for players
+	 * @param type 0:Swing main hand, 1:Hurt animation, 2:Wakeup Player 3:Swing offhand hand, 4:Crit particle, 5:Spell crit particle
+	 */
+	public void playAnimation(int type);
 }
