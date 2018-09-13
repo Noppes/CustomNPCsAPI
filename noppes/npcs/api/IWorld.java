@@ -165,4 +165,6 @@ public interface IWorld {
 
 	public void setSpawnPoint(IBlock block);
 
+	public String getName();
+
 }
