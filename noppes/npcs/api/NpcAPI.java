@@ -117,4 +117,12 @@ public abstract class NpcAPI {
 		}
 		return instance;
 	}
+
+	/**
+	 * @param permission Permission node, best if it's lowercase and contains '.' (e.g. <code>"modid.subgroup.permission_id"</code>)
+	 * @param defaultType 0:ALL, 1:OP, 2:NONE. This determines who can use the permission by default everybody, only ops or nobody
+	 */
+	public abstract void registerPermissionNode(String permission, int defaultType);
+
+	public abstract boolean hasPermissionNode(String permission);
 }
