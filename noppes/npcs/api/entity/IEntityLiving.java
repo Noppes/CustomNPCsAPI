@@ -1,6 +1,7 @@
 package noppes.npcs.api.entity;
 
 import net.minecraft.entity.EntityLiving;
+import noppes.npcs.api.IPos;
 
 public interface IEntityLiving<T extends EntityLiving> extends IEntityLivingBase<T>{
 
@@ -26,5 +27,7 @@ public interface IEntityLiving<T extends EntityLiving> extends IEntityLivingBase
 
 	@Override
 	public T getMCEntity();
+
+	public IPos getNavigationPath();
 	
 }
