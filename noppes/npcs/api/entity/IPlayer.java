@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import noppes.npcs.api.ITimers;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.data.IPixelmonPlayerData;
+import noppes.npcs.api.handler.data.IQuest;
 import noppes.npcs.api.item.IItemStack;
 
 public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
@@ -179,5 +180,9 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * WANRING, REMOVES ALL PLAYER DATA (data only from CustomNPCs, does not clear inventory etc)
 	 */
 	public void clearData();
+
+	public IQuest[] getActiveQuests();
+
+	public IQuest[] getFinishedQuests();
 
 }
