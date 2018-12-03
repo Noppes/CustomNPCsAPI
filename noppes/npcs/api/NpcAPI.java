@@ -125,4 +125,11 @@ public abstract class NpcAPI {
 	public abstract void registerPermissionNode(String permission, int defaultType);
 
 	public abstract boolean hasPermissionNode(String permission);
+
+	/**
+	 * @param world The world in which the command is executed
+	 * @param command The Command to execute
+	 * @return
+	 */
+	public abstract String executeCommand(IWorld world, String command);
 }

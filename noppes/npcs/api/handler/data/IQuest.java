@@ -26,9 +26,11 @@ public interface IQuest {
 	
 	public void setNextQuest(IQuest quest);
 	
-	public String[] getObjective(IPlayer player);
+	public IQuestObjective[] getObjectives(IPlayer player);
 	
 	public IQuestCategory getCategory();
+	
+	
 	
 	/**
 	 * @return The npcs name where this quest can be completed
