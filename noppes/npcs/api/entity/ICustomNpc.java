@@ -40,6 +40,11 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	public int getHomeY();
 
 	public int getHomeZ();
+	
+	/**
+	 * @return Incase the npc is a Follower or Companion it will return the one who its following. Also works for scene followers
+	 */
+	public IEntityLivingBase getOwner();
 
 	public void setHome(int x, int y, int z);
 

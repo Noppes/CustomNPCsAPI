@@ -1,6 +1,7 @@
 package noppes.npcs.api.entity;
 
 import net.minecraft.entity.player.EntityPlayerMP;
+import noppes.npcs.api.IContainer;
 import noppes.npcs.api.ITimers;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.data.IPixelmonPlayerData;
@@ -90,7 +91,7 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	/**
 	 * @return Returns a IItemStack array size 36
 	 */
-	public IItemStack[] getInventory();
+	public IContainer getInventory();
 	
 	/**
 	 * @param item The Item type to be removed

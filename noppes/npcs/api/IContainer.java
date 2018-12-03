@@ -23,4 +23,14 @@ public interface IContainer {
 	 * @return Returns minecrafts container
 	 */
 	public Container getMCContainer();
+
+	/**
+	 * @param item
+	 * @param ignoreDamage Whether to ignore the item_damage value when comparing
+	 * @param ignoreNBT Whether to ignore NBT when comparing
+	 * @return
+	 */
+	public int count(IItemStack item, boolean ignoreDamage, boolean ignoreNBT);
+	
+	public IItemStack[] getItems();
 }
