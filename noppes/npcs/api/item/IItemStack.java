@@ -31,13 +31,25 @@ public interface IItemStack {
 	public double getAttackDamage();
 	
 	public void damageItem(int damage, IEntityLiving living);
+
+	/**
+	 * @param id The enchantment id
+	 * @param strenght The strenght of the enchantment
+	 */
+	public void addEnchantment(String id, int strenght);
 	
 	public boolean isEnchanted();
 
 	/**
 	 * @param id The enchantment id
 	 */
-	public boolean hasEnchant(int id);
+	public boolean hasEnchant(String id);
+
+	/**
+	 * @param id The enchantment id
+	 * @return Returns whether something was removed or not
+	 */
+	public boolean removeEnchant(String id);
 	
 	/**
 	 * @deprecated
@@ -88,12 +100,6 @@ public interface IItemStack {
 	 * @return Minecraft ItemStack
 	 */
 	public ItemStack getMCItemStack();
-
-	/**
-	 * @param id The enchantment id
-	 * @param strenght The strenght of the enchantment
-	 */
-	public void addEnchantment(String id, int strenght);
 
 	/**
 	 * @return Used to get the extra NBT, which is used by enchantments and customname
