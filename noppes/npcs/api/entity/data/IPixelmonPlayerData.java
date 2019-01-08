@@ -8,4 +8,6 @@ public interface IPixelmonPlayerData {
 
 	public IPixelmon getPartySlot(int slot);
 
+	public boolean isBattling();
+
 }
