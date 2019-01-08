@@ -109,4 +109,8 @@ public interface INPCDisplay {
 	
 	public String getModel();
 
+	public void setIsStatue(boolean bo);
+
+	public boolean getIsStatue();
+
 }
