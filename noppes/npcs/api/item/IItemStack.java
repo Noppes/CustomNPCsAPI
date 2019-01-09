@@ -135,8 +135,16 @@ public interface IItemStack {
 	/**
 	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
 	 * @param value
+	 * @deprecated Replaced by setAttribute(String name, double value, int slot)
 	 */
 	public void setAttribute(String name, double value);
+
+	/**
+	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
+	 * @param value
+	 * @param slot Slot in which the attribute is active -1:ALL, 0:MAINHAND, 1:OFFHAND, 2:FEET, 3:LEGS, 4:CHEST, 5:HEAD 
+	 */
+	public void setAttribute(String name, double value, int slot);
 
 	/**
 	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
