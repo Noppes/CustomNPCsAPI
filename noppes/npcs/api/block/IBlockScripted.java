@@ -94,4 +94,8 @@ public interface IBlockScripted extends IBlock{
 	
 	public void setResistance(float resistance);
 
+	public ITextPlane getTextPlane();
+
+	public ITextPlane getTextPlane2();
+
 }
