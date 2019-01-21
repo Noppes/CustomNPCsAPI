@@ -240,4 +240,6 @@ public interface IEntity<T extends Entity> {
 	 * @param type 0:Swing main hand, 1:Hurt animation, 2:Wakeup Player 3:Swing offhand hand, 4:Crit particle, 5:Spell crit particle
 	 */
 	public void playAnimation(int type);
+
+	public void damage(float amount);
 }
