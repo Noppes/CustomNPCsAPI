@@ -16,6 +16,9 @@ public interface ITextPlane {
 
 	public void setRotationY(int y);
 
+	/**
+	 * @param z Default: 0.5
+	 */
 	public void setRotationZ(int z);
 
 	public float getOffsetX();
@@ -32,5 +35,8 @@ public interface ITextPlane {
 
 	public float getScale();
 
+	/**
+	 * @param scale Default: 1
+	 */
 	public void setScale(float scale);
 }

@@ -242,4 +242,16 @@ public interface IEntity<T extends Entity> {
 	public void playAnimation(int type);
 
 	public void damage(float amount);
+
+	public double getMotionX();
+	
+	public double getMotionY();
+	
+	public double getMotionZ();
+
+	public void setMotionX(double motion);
+	
+	public void setMotionY(double motion);
+	
+	public void setMotionZ(double motion);
 }
