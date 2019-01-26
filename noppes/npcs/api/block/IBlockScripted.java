@@ -98,4 +98,12 @@ public interface IBlockScripted extends IBlock{
 
 	public ITextPlane getTextPlane2();
 
+	public ITextPlane getTextPlane3();
+
+	public ITextPlane getTextPlane4();
+
+	public ITextPlane getTextPlane5();
+
+	public ITextPlane getTextPlane6();
+
 }
