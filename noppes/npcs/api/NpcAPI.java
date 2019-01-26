@@ -75,6 +75,13 @@ public abstract class NpcAPI {
 	public abstract INbt stringToNbt(String str);
 	
 	/**
+	 * Get player data even if they are offline
+	 * @param uuid
+	 * @return
+	 */
+	public abstract INbt getRawPlayerData(String uuid);
+	
+	/**
 	 * Used by modders
 	 * @return The event bus where you register CustomNPCEvents
 	 */
