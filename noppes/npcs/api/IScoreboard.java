@@ -73,4 +73,7 @@ public interface IScoreboard {
 	 * @param player The players who should be removed from his team
 	 */
 	public void removePlayerTeam(String player);
+
+
+	public String[] getPlayerList();
 }
