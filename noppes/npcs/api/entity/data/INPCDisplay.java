@@ -109,8 +109,8 @@ public interface INPCDisplay {
 	
 	public String getModel();
 
-	public void setIsStatue(boolean bo);
+	public void setHasHitbox(boolean bo);
 
-	public boolean getIsStatue();
+	public boolean getHasHitbox();
 
 }
