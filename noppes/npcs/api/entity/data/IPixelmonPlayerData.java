@@ -1,13 +1,18 @@
 package noppes.npcs.api.entity.data;
 
-import noppes.npcs.api.entity.IPixelmon;
-
+/**
+ * Returns objects from the Pixelmon API see <a href="https://reforged.gg/docs/">https://reforged.gg/docs/</a>
+ */
 public interface IPixelmonPlayerData {
 
-	public int countPCPixelmon();
+	/**
+	 * Returns <a href="https://reforged.gg/docs/com/pixelmonmod/pixelmon/api/storage/PartyStorage.html">PartyStorage</a>
+	 */
+	public Object getParty();
 
-	public IPixelmon getPartySlot(int slot);
-
-	public boolean isBattling();
-
+	/**
+	 * Returns <a href="https://reforged.gg/docs/com/pixelmonmod/pixelmon/api/storage/PCStorage.html">PCStorage</a>
+	 */
+	public Object getPC();
+	
 }

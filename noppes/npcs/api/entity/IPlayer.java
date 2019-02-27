@@ -148,7 +148,7 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	
 	public boolean hasPermission(String permission);
 
-	public IPixelmonPlayerData getPixelmonData();
+	public Object getPixelmonData();
 
 	public ITimers getTimers();
 	
@@ -185,5 +185,10 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	public IQuest[] getActiveQuests();
 
 	public IQuest[] getFinishedQuests();
+
+	/**
+	 * Syncs inventory changes to the client side. Also checks Item Quests for completion
+	 */
+	public void updatePlayerInventory();
 
 }
