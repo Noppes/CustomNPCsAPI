@@ -254,4 +254,21 @@ public interface IEntity<T extends Entity> {
 	public void setMotionY(double motion);
 	
 	public void setMotionZ(double motion);
+	
+	/**
+	 * @return Returns the current name displayed by the entity
+	 */
+	public String getName();
+	
+	/**
+	 * @param name Set a custom name for this entity
+	 */
+	public void setName(String name);
+
+	public boolean hasCustomName();
+
+	/**
+	 * @return Returns the original name incase a custom name has been set
+	 */
+	public String getEntityName();
 }

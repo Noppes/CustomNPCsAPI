@@ -20,7 +20,15 @@ public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T
 	
 	public IEntityLivingBase getAttackTarget();
 	
+	/**
+	 * @return Returns the last Entity this Entity attacked
+	 */
 	public IEntityLivingBase getLastAttacked();
+
+	/**
+	 * @return Returns the age of this entity when it was last attacked
+	 */
+	public int getLastAttackedTime();
 	
 	public boolean canSeeEntity(IEntity entity);
 
@@ -35,10 +43,6 @@ public interface IEntityLivingBase<T extends EntityLivingBase> extends IEntity<T
 	public IItemStack getOffhandItem();
 
 	public void setOffhandItem(IItemStack item);
-	
-	public String getName();
-	
-	public void setName(String name);
 	
 	/**
 	 * Note not all Living Entities support this
