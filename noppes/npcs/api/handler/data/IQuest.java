@@ -43,4 +43,6 @@ public interface IQuest {
 	public void setNpcName(String name);
 	
 	public void save();
+
+	public boolean getIsRepeatable();
 }

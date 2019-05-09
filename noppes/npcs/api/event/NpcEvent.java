@@ -1,5 +1,8 @@
 package noppes.npcs.api.event;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,6 +13,7 @@ import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IEntityLivingBase;
+import noppes.npcs.api.entity.IEntityProjectile;
 import noppes.npcs.api.entity.IPlayer;
 
 public class NpcEvent extends CustomNPCsEvent{
@@ -120,10 +124,10 @@ public class NpcEvent extends CustomNPCsEvent{
 	/**
 	 * rangedAttack
 	 */
-	@Cancelable
 	public static class RangedLaunchedEvent extends NpcEvent{
 		public final IEntityLivingBase target;
 		public float damage;
+		public List<IEntityProjectile> projectiles = new ArrayList<IEntityProjectile>();
 
 		public RangedLaunchedEvent(ICustomNpc npc, EntityLivingBase target, float damage) {
 			super(npc);

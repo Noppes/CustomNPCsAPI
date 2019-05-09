@@ -190,5 +190,25 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * Syncs inventory changes to the client side. Also checks Item Quests for completion
 	 */
 	public void updatePlayerInventory();
+	
+	/**
+	 * @param sound Sounds resource name
+	 * @param volume default 1
+	 * @param pitch default 1
+	 */
+	public void playSound(String sound, float volume, float pitch);
+	
+	/**
+	 * @param rows (1-6)
+	 * @return Returns the IContainer of the chest gui
+	 */
+	public IContainer showChestGui(int rows);
+	
+	/**
+	 * @return Returns the container of the player if he has a container gui open. Returns the inventory container if none is open
+	 */
+	public IContainer getOpenContainer();
+
+	public boolean canQuestBeAccepted(int id);
 
 }

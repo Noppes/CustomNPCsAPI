@@ -72,6 +72,15 @@ public interface IWorld {
 	public void thunderStrike(double x, double y, double z);
 	
 	/**
+	 * Sound will be played in a 16 block range
+	 * @param pos Pos at which to play
+	 * @param sound Sound resource name
+	 * @param volume default 1
+	 * @param pitch default 1
+	 */
+	public void playSoundAt(IPos pos, String sound, float volume, float pitch);
+	
+	/**
 	 * Sends a packet from the server to the client everytime its called. Probably should not use this too much.
 	 * @param particle Particle name. Particle name list: http://minecraft.gamepedia.com/Particles
 	 * @param x The x position

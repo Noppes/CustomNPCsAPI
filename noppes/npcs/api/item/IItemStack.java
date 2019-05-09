@@ -172,5 +172,7 @@ public interface IItemStack {
 	 * @return Returns 0 if the item isnt food and otherwise the amount it restores hunger
 	 */
 	public int getFoodLevel();
+
+	public boolean compare(IItemStack item, boolean ignoreNBT);
 	
 }

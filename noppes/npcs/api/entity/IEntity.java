@@ -97,7 +97,7 @@ public interface IEntity<T extends Entity> {
 	
 	public boolean isSprinting();
 	
-	public void dropItem(IItemStack item);
+	public IEntityItem dropItem(IItemStack item);
 	
 	public boolean inWater();
 	

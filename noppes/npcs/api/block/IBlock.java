@@ -1,6 +1,7 @@
 package noppes.npcs.api.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import noppes.npcs.api.IContainer;
 import noppes.npcs.api.INbt;
@@ -104,4 +105,15 @@ public interface IBlock {
 
 	public String getDisplayName();
 
+	/**
+	 * Expert users only
+	 * @return Returns minecrafts iblockstate
+	 */
+	public IBlockState getMCBlockState();
+
+	/**
+	 * Simulates a player interacting with this block (can give weird results)
+	 * @param side The side of the block interacted with
+	 */
+	public void interact(int side);
 }
