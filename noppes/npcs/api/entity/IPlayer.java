@@ -5,6 +5,7 @@ import noppes.npcs.api.IContainer;
 import noppes.npcs.api.ITimers;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.data.IPixelmonPlayerData;
+import noppes.npcs.api.entity.data.IPlayerMail;
 import noppes.npcs.api.handler.data.IQuest;
 import noppes.npcs.api.item.IItemStack;
 
@@ -76,15 +77,14 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	public void setGamemode(int mode);
 	
 	/**
-	 * @param item The item to be checked
-	 * @return How many of this item the player has
+	 * Use getInventory().count instead
+	 * @deprecated
 	 */
 	public int inventoryItemCount(IItemStack item);
 	
 	/**
-	 * @param id The items name
-	 * @param damage The damage value (give -1 for any damage value)
-	 * @return How many of this item the player has
+	 * Use getInventory().count instead
+	 * @deprecated
 	 */
 	public int inventoryItemCount(String id, int damage);
 
@@ -176,6 +176,8 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * @param type (0-3) notification background type
 	 */
 	public void sendNotification(String title, String msg, int type);
+	
+	public void sendMail(IPlayerMail mail);
 	
 	/**
 	 * WANRING, REMOVES ALL PLAYER DATA (data only from CustomNPCs, does not clear inventory etc)

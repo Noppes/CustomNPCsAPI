@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.EventBus;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
+import noppes.npcs.api.entity.data.IPlayerMail;
 import noppes.npcs.api.handler.ICloneHandler;
 import noppes.npcs.api.handler.IDialogHandler;
 import noppes.npcs.api.handler.IFactionHandler;
@@ -73,6 +74,8 @@ public abstract class NpcAPI {
 	public abstract IDamageSource getIDamageSource(DamageSource damagesource);
 
 	public abstract INbt stringToNbt(String str);
+	
+	public abstract IPlayerMail createMail(String sender, String subject);
 	
 	/**
 	 * Get player data even if they are offline
