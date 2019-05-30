@@ -61,14 +61,14 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	 * @param item The item you want to shoot
 	 * @param accuracy Accuracy of the shot (1-100)
 	 */
-	public IEntityProjectile shootItem(IEntityLivingBase target, IItemStack item, int accuracy);
+	public IProjectile shootItem(IEntityLivingBase target, IItemStack item, int accuracy);
 
 	/**
 	 * @param item The item you want to shoot
 	 * @param accuracy Accuracy of the shot (1-100)
 	 * @return 
 	 */
-	public IEntityProjectile shootItem(double x, double y, double z, IItemStack item, int accuracy);
+	public IProjectile shootItem(double x, double y, double z, IItemStack item, int accuracy);
 
 	/**
 	 * If the player can't carry the item it will fall on the ground. (unless the player is in creative)

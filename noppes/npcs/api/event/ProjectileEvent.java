@@ -1,11 +1,11 @@
 package noppes.npcs.api.event;
 
-import noppes.npcs.api.entity.IEntityProjectile;
+import noppes.npcs.api.entity.IProjectile;
 
 public class ProjectileEvent extends CustomNPCsEvent {
-	public IEntityProjectile projectile;
+	public IProjectile projectile;
 
-	public ProjectileEvent(IEntityProjectile projectile) {
+	public ProjectileEvent(IProjectile projectile) {
 		this.projectile = projectile;
 	}
 
@@ -13,7 +13,7 @@ public class ProjectileEvent extends CustomNPCsEvent {
 	 * projectileTick
 	 */
 	public static class UpdateEvent extends ProjectileEvent {
-		public UpdateEvent(IEntityProjectile projectile) {
+		public UpdateEvent(IProjectile projectile) {
 			super(projectile);
 		}
 	}
@@ -28,7 +28,7 @@ public class ProjectileEvent extends CustomNPCsEvent {
 		public final int type;
 		public final Object target;
 
-		public ImpactEvent(IEntityProjectile projectile, int type, Object target) {
+		public ImpactEvent(IProjectile projectile, int type, Object target) {
 			super(projectile);
 			this.type = type;
 			this.target = target;
