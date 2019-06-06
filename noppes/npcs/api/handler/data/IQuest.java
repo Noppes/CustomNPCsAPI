@@ -1,5 +1,6 @@
 package noppes.npcs.api.handler.data;
 
+import noppes.npcs.api.IContainer;
 import noppes.npcs.api.constants.QuestType;
 import noppes.npcs.api.entity.IPlayer;
 
@@ -30,7 +31,7 @@ public interface IQuest {
 	
 	public IQuestCategory getCategory();
 	
-	
+	public IContainer getRewards();
 	
 	/**
 	 * @return The npcs name where this quest can be completed
