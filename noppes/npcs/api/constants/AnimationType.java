@@ -17,4 +17,5 @@ public class AnimationType {
 	public static final int BOW = 11;
 	public static final int NO = 12;
 	public static final int YES = 13;
+	public static final int DEATH = 14;
 }
