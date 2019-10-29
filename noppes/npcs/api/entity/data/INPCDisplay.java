@@ -72,7 +72,32 @@ public interface INPCDisplay {
 	 * @param type 0:visible, 1:invisible, 2:when-attacking
 	 */
 	public void setShowName(int type);
+	
+	public int getMarkovGender();
+	
+	/**
+	 * 
+	 * @param gender 0:random, 1:male, 2:female
+	 */
+	
+	public void setMarkovGender(int gender);
+	/**
+	 * 
+	 * @return 0:random, 1:male, 2:female
+	 */
+	
+	public int getMarkovGeneratorId();
+	/**
+	 * 
+	 * @param generator 0:roman, 1:japanese, 2:slavic, 3:welsh, 4:saami, 5:old-norse, 6:ancient-greek, 7:aztec, 8:cnpcs-classic, 9:spanish
+	 */
 
+	public void setMarkovGeneratorId(int id);
+	/**
+	 * 
+	 * @return 0:roman, 1:japanese, 2:slavic, 3:welsh, 4:saami, 5:old-norse, 6:ancient-greek, 7:aztec, 8:cnpcs-classic, 9:spanish
+	 */
+	
 	public void setCapeTexture(String texture);
 
 	public String getCapeTexture();
