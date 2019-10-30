@@ -1,5 +1,9 @@
 package noppes.npcs.api.entity.data;
 
+import java.util.List;
+
+import net.minecraft.util.math.BlockPos;
+
 public interface INPCAi {
 
 	public int getAnimation();
@@ -151,4 +155,87 @@ public interface INPCAi {
 
 	public void setTacticalRange(int range);
 	
+	//Halloween 2019
+	/**
+	 * 
+	 * @return Returns a list of arrays of 3 integers corresponding to x, y, z
+	 */
+	public List<int[]> getMovingPath();
+	/**
+	 * 
+	 * @param list A list of arrays of 3 integers corresponding to x, y, z
+	 */
+	public void setMovingPath(List<int[]> list);
+	/**
+	 * 
+	 * @return Returns a BlockPos with the starting position
+	 */
+	public BlockPos startPos();
+	/**
+	 * 
+	 * @return Returns an array of 3 integers corresponding to x, y, z
+	 */
+	public int[] getStartArray();
+	/**
+	 * 
+	 * @return Returns an array of 3 integers corresponding to x, y, z
+	 */
+	public int[] getCurrentMovingPath();
+	
+	public void incrementMovingPath();
+
+	public void decreaseMovingPath();
+	/**
+	 * 
+	 * @return Returns distance to the current path point
+	 */
+	public double getDistanceSqToPathPoint();
+
+	public void setStartPos(BlockPos pos);
+	
+	//these below are new, but useful. now fully procedural path generation is possible!
+	
+	/**
+	 * Clears the moving path, leaving only starting position
+	 */
+	public void clearMovingPath();
+	/**
+	 * 
+	 * @param pos An array of 3 integers corresponding to x, y, z
+	 */
+	public void appendMovingPath(int[] pos);
+	/**
+	 * 
+	 * @return Returns the size of moving path
+	 */
+	public int getMovingPathSize();
+
+	/**
+	 * 
+	 * @param pos Position (index) of the moving path
+	 */
+	public void setMovingPos(int pos);
+	
+	/**
+	 *
+	 * @return Returns position (index) of the moving path
+	 */
+	public int getMovingPos();
+
+	/**
+	 * 
+	 * @param m_pos Position (index) of the moving path
+	 * @param pos An array of 3 integers corresponding to x, y, z
+	 */
+	public void setMovingPathPos(int m_pos, int[] pos);
+
+	/**
+	 * 
+	 * @param m_pos Position (index) of the moving path
+	 * @return Returns an array of 3 integers corresponding to x, y, z
+	 */
+	public int[] getMovingPathPos(int m_pos);
+
+	public void setStartPos(double x, double y, double z);
+		
 }
