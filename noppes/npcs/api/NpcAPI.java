@@ -142,4 +142,14 @@ public abstract class NpcAPI {
 	 * @return
 	 */
 	public abstract String executeCommand(IWorld world, String command);
+	
+	//markovnames
+	
+	/**
+	 * 
+	 * @param dictionary 0:roman, 1:japanese, 2:slavic, 3:welsh, 4:saami, 5:old-norse, 6:ancient-greek, 7:aztec, 8:classic-cnpcs, 9:spanish
+	 * @param gender 0:random, 1:male, 2:female
+	 * @return Returns a randomly generated name
+	 */
+	public abstract String getRandomName(int dictionary, int gender);
 }
