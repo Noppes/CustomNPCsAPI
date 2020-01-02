@@ -56,4 +56,6 @@ public interface INPCInventory {
 	 */
 	public void setExp(int min, int max);
 
+	public IItemStack[] getItemsRNG();
+
 }

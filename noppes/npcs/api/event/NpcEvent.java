@@ -14,6 +14,8 @@ import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IEntityLivingBase;
 import noppes.npcs.api.entity.IProjectile;
+import noppes.npcs.api.entity.data.ILine;
+import noppes.npcs.api.item.IItemStack;
 import noppes.npcs.api.entity.IPlayer;
 
 public class NpcEvent extends CustomNPCsEvent{
@@ -87,6 +89,10 @@ public class NpcEvent extends CustomNPCsEvent{
 		
 		public final String type;
 		public final IEntity source;
+		
+		public IItemStack[] droppedItems;
+		public int expDropped;
+		public ILine line;
 		public DiedEvent(ICustomNpc npc, DamageSource damagesource, Entity entity) {
 			super(npc);
 			this.damageSource = NpcAPI.Instance().getIDamageSource(damagesource);
