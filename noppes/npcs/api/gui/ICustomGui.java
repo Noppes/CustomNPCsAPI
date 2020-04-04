@@ -1,6 +1,5 @@
 package noppes.npcs.api.gui;
 
-import net.minecraft.nbt.NBTTagCompound;
 import noppes.npcs.api.item.IItemStack;
 
 import java.util.List;
@@ -13,46 +12,42 @@ public interface ICustomGui {
     List<ICustomGuiComponent> getComponents();
     List<ICustomGuiComponent> getSlots();
 
+    /** Set what should handle the script events from this GUI.
+     *  If not set, defaults to Forge scripts.
+     * @param scriptHolder - an NPC/Scripted Block etc. to send this GUI's script events to.
+     */
     void setScriptHandler(Object scriptHolder);
-    Object getScriptHandler();
 
     void setSize(int width, int height);
 
     void setDoesPauseGame(boolean pauseGame);
-    boolean getDoesPauseGame();
 
     void setBackgroundTexture(String resourceLocation);
-    String getBackgroundTexture();
 
-    void addButton(int id, String label, int x, int y);
-    void addButton(int id, String label, int x, int y, int width, int height);
+    ICustomGuiComponent addButton(int id, String label, int x, int y);
+    ICustomGuiComponent addButton(int id, String label, int x, int y, int width, int height);
 
-    void addTexturedButton(int id, String label, int x, int y, int width, int height, String texture);
-    void addTexturedButton(int id, String label, int x, int y, int width, int height, String texture, int textureX, int textureY);
+    ICustomGuiComponent addTexturedButton(int id, String label, int x, int y, int width, int height, String texture);
+    ICustomGuiComponent addTexturedButton(int id, String label, int x, int y, int width, int height, String texture, int textureX, int textureY);
 
-    void addLabel(int id, String label, int x, int y, int width, int height);
-    void addLabel(int id, String label, int x, int y, int width, int height, int color);
+    ICustomGuiComponent addLabel(int id, String label, int x, int y, int width, int height);
+    ICustomGuiComponent addLabel(int id, String label, int x, int y, int width, int height, int color);
 
-    void addTextField(int id, int x, int y, int width, int height);
+    ICustomGuiComponent addTextField(int id, int x, int y, int width, int height);
 
-    void addTexturedRect(String texture, int x, int y, int width, int height);
-    void addTexturedRect(String texture, int x, int y, int width, int height, float scale);
-    void addTexturedRect(String texture, int x, int y, int width, int height, int textureX, int textureY);
-    void addTexturedRect(String texture, int x, int y, int width, int height, int textureX, int textureY, float scale);
+    ICustomGuiComponent addTexturedRect(String texture, int x, int y, int width, int height);
+    ICustomGuiComponent addTexturedRect(String texture, int x, int y, int width, int height, float scale);
+    ICustomGuiComponent addTexturedRect(String texture, int x, int y, int width, int height, int textureX, int textureY);
+    ICustomGuiComponent addTexturedRect(String texture, int x, int y, int width, int height, int textureX, int textureY, float scale);
 
     void addItemSlot(int x, int y);
     void addItemSlot(int x, int y, IItemStack stack);
 
-    void addScroll(int id, int x, int y, int width, int height, String[] list);
-    void addScroll(int id, int x, int y, int width, int height, String[] list, boolean multiSelect);
+    ICustomGuiComponent addScroll(int id, int x, int y, int width, int height, String[] list);
+    ICustomGuiComponent addScroll(int id, int x, int y, int width, int height, String[] list, int defaultSelection);
+    ICustomGuiComponent addScroll(int id, int x, int y, int width, int height, String[] list, boolean multiSelect);
+    ICustomGuiComponent addScroll(int id, int x, int y, int width, int height, String[] list, int defaultSelection, boolean multiSelect);
 
     void showPlayerInventory(int x, int y);
 
-    ICustomGui fromNBT(NBTTagCompound nbt);
-    NBTTagCompound toNBT();
-
-    boolean getShowPlayerInv();
-
-    int getPlayerInvX();
-    int getPlayerInvY();
 }
