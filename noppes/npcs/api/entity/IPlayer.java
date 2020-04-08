@@ -215,9 +215,9 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	public boolean canQuestBeAccepted(int id);
 
 	/**
-	 * @param scriptHolder The ScriptHandler (ScriptedBlock, NPC, etc.) that should receive the GUI events.
+	 * Open a ICustomGui to this player.
 	 * @param gui Custom GUI to be displayed to the player.
 	*/
-	public void showCustomGui(Object scriptHolder, ICustomGui gui);
+	public void showCustomGui(ICustomGui gui);
 
 }

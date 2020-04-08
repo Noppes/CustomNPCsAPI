@@ -8,23 +8,20 @@ public class CustomGuiEvent extends CustomNPCsEvent {
 
     public IPlayer player;
     public INbt[] data;
+    public IItemStack[] guiSlotContents;
     public int guiId;
 
-    public CustomGuiEvent(IPlayer player, int guiId) {
-        this.player = player;
-        this.guiId = guiId;
-    }
-
-    public CustomGuiEvent(IPlayer player, INbt[] data, int guiId) {
+    public CustomGuiEvent(IPlayer player, INbt[] data, IItemStack[] guiSlotContents, int guiId) {
         this.player = player;
         this.data = data;
         this.guiId = guiId;
+        this.guiSlotContents = guiSlotContents;
     }
 
     public static class CloseEvent extends CustomGuiEvent {
 
-        public CloseEvent(IPlayer player, INbt[] data, int guiId) {
-            super(player, data, guiId);
+        public CloseEvent(IPlayer player, INbt[] data, IItemStack[] guiSlotContents, int guiId) {
+            super(player,data,guiSlotContents,guiId);
         }
 
     }
@@ -32,8 +29,8 @@ public class CustomGuiEvent extends CustomNPCsEvent {
     public static class ButtonEvent extends CustomGuiEvent {
         public int buttonId;
 
-        public ButtonEvent(IPlayer player, INbt[] data, int guiId, int buttonId) {
-            super(player, data, guiId);
+        public ButtonEvent(IPlayer player, INbt[] data, IItemStack[] guiSlotContents, int guiId, int buttonId) {
+            super(player,data,guiSlotContents,guiId);
             this.buttonId = buttonId;
         }
 
@@ -43,8 +40,8 @@ public class CustomGuiEvent extends CustomNPCsEvent {
         public int slotId;
         public IItemStack stack;
 
-        public SlotEvent(IPlayer player, int guiId, int slotId, IItemStack stack) {
-            super(player,guiId);
+        public SlotEvent(IPlayer player, INbt[] data, IItemStack[] guiSlotContents, int guiId, int slotId, IItemStack stack) {
+            super(player,data,guiSlotContents,guiId);
             this.slotId = slotId;
             this.stack = stack;
         }
@@ -56,8 +53,8 @@ public class CustomGuiEvent extends CustomNPCsEvent {
         public String[] selection;
         public boolean doubleClick;
 
-        public ScrollEvent(IPlayer player, int guiId, int scrollId, String[] selection, boolean doubleClick) {
-            super(player,guiId);
+        public ScrollEvent(IPlayer player, INbt[] data, IItemStack[] guiSlotContents, int guiId, int scrollId, String[] selection, boolean doubleClick) {
+            super(player,data,guiSlotContents,guiId);
             this.scrollId = scrollId;
             this.selection = selection;
             this.doubleClick = doubleClick;
