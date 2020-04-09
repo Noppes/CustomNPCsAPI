@@ -13,7 +13,7 @@ public interface ICustomGui {
     int getWidth();
     int getHeight();
     List<ICustomGuiComponent> getComponents();
-    List<ICustomGuiComponent> getSlots();
+    List<IItemSlot> getSlots();
 
     /**
      * Set an NPC to send GUI events from this GUI to. (i.e. Button Click events etc.)
@@ -42,7 +42,7 @@ public interface ICustomGui {
      * @param x - X Position, relative to the Left side of the GUI window.
      * @param y - Y Position, relative to the Top of the GUI window.
      */
-    ICustomGuiComponent addButton(int id, String label, int x, int y);
+    IButton addButton(int id, String label, int x, int y);
 
     /**
      * Add a regular, Minecraft style button to this GUI, with a defined width and height.
@@ -53,7 +53,7 @@ public interface ICustomGui {
      * @param width - Width of this button.
      * @param height - Height of this button.
      */
-    ICustomGuiComponent addButton(int id, String label, int x, int y, int width, int height);
+    IButton addButton(int id, String label, int x, int y, int width, int height);
 
     /**
      * Add a button with a custom texture to this GUI.
@@ -67,7 +67,8 @@ public interface ICustomGui {
      * @param height - Height of this button and texture.
      * @param texture - Resource Location of the texture to use. (For Example: "minecraft:textures/gui/widgets.png")
      */
-    ICustomGuiComponent addTexturedButton(int id, String label, int x, int y, int width, int height, String texture);
+    ITexturedButton addTexturedButton(int id, String label, int x, int y, int width, int height, String texture);
+
     /**
      * Add a button with a custom texture to this GUI, with a texture offset.
      * Hover Texture is taken from directly beneath the base texture.
@@ -94,6 +95,7 @@ public interface ICustomGui {
      * @param height - Height of this label. (Does Not Change the font size.)
      */
     ICustomGuiComponent addLabel(int id, String label, int x, int y, int width, int height);
+
     /**
      * Add a Label to the GUI.
      * @param id - Unique ID for identifying this label.
@@ -118,25 +120,18 @@ public interface ICustomGui {
 
     /**
      * Add a texture to be drawn within the GUI.
+     * @param id - Unique ID for identifying this texture.
      * @param texture - Resource Location of the texture to use. (For Example: "minecraft:textures/gui/widgets.png")
      * @param x - X Position, relative to the Left side of the GUI window.
      * @param y - Y Position, relative to the Top of the GUI window.
      * @param width - Width of the texture.
      * @param height - Height of the texture.
      */
-    ICustomGuiComponent addTexturedRect(String texture, int x, int y, int width, int height);
+    ICustomGuiComponent addTexturedRect(int id, String texture, int x, int y, int width, int height);
+
     /**
      * Add a texture to be drawn within the GUI.
-     * @param texture - Resource Location of the texture to use. (For Example: "minecraft:textures/gui/widgets.png")
-     * @param x - X Position, relative to the Left side of the GUI window.
-     * @param y - Y Position, relative to the Top of the GUI window.
-     * @param width - Width of the texture.
-     * @param height - Height of the texture.
-     * @param scale - Float to scale this texture by. (For Example: 2.0 would be 2x the size of the original texture)
-     */
-    ICustomGuiComponent addTexturedRect(String texture, int x, int y, int width, int height, float scale);
-    /**
-     * Add a texture to be drawn within the GUI.
+     * @param id - Unique ID for identifying this texture.
      * @param texture - Resource Location of the texture to use. (For Example: "minecraft:textures/gui/widgets.png")
      * @param x - X Position, relative to the Left side of the GUI window.
      * @param y - Y Position, relative to the Top of the GUI window.
@@ -145,19 +140,7 @@ public interface ICustomGui {
      * @param textureX - X offset of the desired texture within the defined texture file. Should refer to the Top-Left of the desired texture.
      * @param textureY - Y offset of the desired texture within the defined texture file. Should refer to the Top-Left of the desired texture.
      */
-    ICustomGuiComponent addTexturedRect(String texture, int x, int y, int width, int height, int textureX, int textureY);
-    /**
-     * Add a texture to be drawn within the GUI.
-     * @param texture - Resource Location of the texture to use. (For Example: "minecraft:textures/gui/widgets.png")
-     * @param x - X Position, relative to the Left side of the GUI window.
-     * @param y - Y Position, relative to the Top of the GUI window.
-     * @param width - Width of the texture.
-     * @param height - Height of the texture.
-     * @param textureX - X offset of the desired texture within the defined texture file. Should refer to the Top-Left of the desired texture.
-     * @param textureY - Y offset of the desired texture within the defined texture file. Should refer to the Top-Left of the desired texture.
-     * @param scale - Float to scale this texture by. (For Example: 2.0 would be 2x the size of the original texture)
-     */
-    ICustomGuiComponent addTexturedRect(String texture, int x, int y, int width, int height, int textureX, int textureY, float scale);
+    ICustomGuiComponent addTexturedRect(int id, String texture, int x, int y, int width, int height, int textureX, int textureY);
 
     /**
      * Add a Scroll List to the GUI, for the player to select from.
@@ -169,40 +152,6 @@ public interface ICustomGui {
      * @param list - List of String options for the player to choose from.
      */
     ICustomGuiComponent addScroll(int id, int x, int y, int width, int height, String[] list);
-    /**
-     * Add a Scroll List to the GUI, for the player to select from.
-     * @param id - Unique ID for identifying this scroll.
-     * @param x - X Position, relative to the Left side of the GUI window.
-     * @param y - Y Position, relative to the Top of the GUI window.
-     * @param width - Width of the Scroll List.
-     * @param height - Height of the Scroll List.
-     * @param list - List of String options for the player to choose from.
-     * @param defaultSelection - Index of the list item to be selected by default.
-     */
-    ICustomGuiComponent addScroll(int id, int x, int y, int width, int height, String[] list, int defaultSelection);
-    /**
-     * Add a Scroll List to the GUI, for the player to select from.
-     * @param id - Unique ID for identifying this scroll.
-     * @param x - X Position, relative to the Left side of the GUI window.
-     * @param y - Y Position, relative to the Top of the GUI window.
-     * @param width - Width of the Scroll List.
-     * @param height - Height of the Scroll List.
-     * @param list - List of String options for the player to choose from.
-     * @param multiSelect - If this Scroll should allow multiple items to be selected at once.
-     */
-    ICustomGuiComponent addScroll(int id, int x, int y, int width, int height, String[] list, boolean multiSelect);
-    /**
-     * Add a Scroll List to the GUI, for the player to select from.
-     * @param id - Unique ID for identifying this scroll.
-     * @param x - X Position, relative to the Left side of the GUI window.
-     * @param y - Y Position, relative to the Top of the GUI window.
-     * @param width - Width of the Scroll List.
-     * @param height - Height of the Scroll List.
-     * @param list - List of String options for the player to choose from.
-     * @param defaultSelection - Index of the list item to be selected by default.
-     * @param multiSelect - If this Scroll should allow multiple items to be selected at once.
-     */
-    ICustomGuiComponent addScroll(int id, int x, int y, int width, int height, String[] list, int defaultSelection, boolean multiSelect);
 
     /**
      * Add an Item Slot to the GUI.
@@ -210,7 +159,8 @@ public interface ICustomGui {
      * @param x - X Position, relative to the Left side of the GUI window.
      * @param y - Y Position, relative to the Top of the GUI window.
      */
-    void addItemSlot(int x, int y);
+    IItemSlot addItemSlot(int x, int y);
+
     /**
      * Add an Item Slot to the GUI with an IItemStack already in it.
      * CAUTION: Handling Item Storage can be complicated. Once the GUI closes, any items in it will be lost unless you handle storing/saving this information yourself.
@@ -218,7 +168,7 @@ public interface ICustomGui {
      * @param y - Y Position, relative to the Top of the GUI window.
      * @param stack - IItemStack to be in this slot upon opening the GUI.
      */
-    void addItemSlot(int x, int y, IItemStack stack);
+    IItemSlot addItemSlot(int x, int y, IItemStack stack);
 
     /**
      * Add a display of the Player's Inventory to the GUI.
