@@ -1,7 +1,6 @@
 package noppes.npcs.api;
 
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 
 /**
  * All the methods in IPos create a new IPos object

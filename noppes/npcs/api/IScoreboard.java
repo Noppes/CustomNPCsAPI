@@ -24,29 +24,13 @@ public interface IScoreboard {
 	 */
 	public IScoreboardObjective addObjective(String objective, String criteria);
 
+	public void setPlayerScore(String player, String objective, int score);
 
-	/**
-	 * @param datatag Can be left empty
-	 */
-	public void setPlayerScore(String player, String objective, int score, String datatag);
+	public int getPlayerScore(String player, String objective);
 
+	public boolean hasPlayerObjective(String player, String objective);
 
-	/**
-	 * @param datatag Can be left empty
-	 */
-	public int getPlayerScore(String player, String objective, String datatag);
-
-
-	/**
-	 * @param datatag Can be left empty
-	 */
-	public boolean hasPlayerObjective(String player, String objective, String datatag);
-
-
-	/**
-	 * @param datatag Can be left empty
-	 */
-	public void deletePlayerScore(String player, String objective, String datatag);
+	public void deletePlayerScore(String player, String objective);
 
 
 	public IScoreboardTeam[] getTeams();

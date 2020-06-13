@@ -42,13 +42,27 @@ public interface IWorld {
 	 * @return The total world time (doesn't change with the /time set command
 	 */
 	public long getTotalTime();
-	
+
+	/**
+	 * @deprecated
+	 */
+	public IBlock getBlock(int x, int y, int z);
+
 	/**
 	 * @return The block at the given position. Returns null if there isn't a block
 	 */
-	public IBlock getBlock(int x, int y, int z);
+	public IBlock getBlock(IPos pos);
+
+	/**
+	 * @deprecated metadata nolonger exists
+	 */
 	public void setBlock(int x, int y, int z, String name, int meta);
+	public IBlock setBlock(IPos pos, String name);
+	/**
+	 * @deprecated
+	 */
 	public void removeBlock(int x, int y, int z);
+	public void removeBlock(IPos pos);
 
 	/**
 	 * @return Returns a value between 0 and 1
@@ -110,7 +124,7 @@ public interface IWorld {
 	 */
 	public IData getStoreddata();
 
-	public IItemStack createItem(String name, int damage, int size);
+	public IItemStack createItem(String name, int size);
 
 	public IItemStack createItemFromNbt(INbt nbt);
 

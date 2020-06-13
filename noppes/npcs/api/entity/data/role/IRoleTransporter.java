@@ -10,7 +10,7 @@ public interface IRoleTransporter extends INPCRole {
 
 		public int getId();
 
-		public int getDimension();
+		public String getDimension();
 
 		public int getX();
 

@@ -11,8 +11,9 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.eventhandler.EventBus;
+import net.minecraft.world.dimension.DimensionType;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
@@ -53,7 +54,7 @@ public abstract class NpcAPI {
 	
 	public abstract IWorld getIWorld(WorldServer world);
 
-	public abstract IWorld getIWorld(int dimensionId);
+	public abstract IWorld getIWorld(DimensionType dimension);
 
 	public abstract IWorld[] getIWorlds();
 
@@ -88,13 +89,13 @@ public abstract class NpcAPI {
 	 * Used by modders
 	 * @return The event bus where you register CustomNPCEvents
 	 */
-	public abstract EventBus events();
+	public abstract IEventBus events();
 	
 	
 	/**
 	 * Use to register your own /noppes subcommand
 	 */
-	public abstract void registerCommand(CommandNoppesBase command);
+	//public abstract void registerCommand(CommandNoppesBase command);
 
 	/**
 	 * @return Returns the .minecraft/customnpcs folder or [yourserverfolder]/customnpcs
@@ -107,7 +108,7 @@ public abstract class NpcAPI {
 	public abstract File getWorldDir();
 			
 	public static boolean IsAvailable(){
-		return Loader.isModLoaded("customnpcs");
+		return ModList.get().isLoaded("customnpcs");
 	}
 	
 	public static NpcAPI Instance(){

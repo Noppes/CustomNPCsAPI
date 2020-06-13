@@ -15,21 +15,22 @@ public interface IItemStack {
 	public void setStackSize(int size);
 
 	public int getMaxStackSize();
-	
+
+	public boolean isDamageable();
 	/**
-	 * @return Returns the item damage of this item. For tools this is the durability for other items the color and more.
+	 * @return Returns the damage of this item. Only for items that have durability.
 	 */
-	public int getItemDamage();	
+	public int getDamage();
 
 	/**
-	 * @param value The value to be set as item damage. For tools this is the durability for other items the color and more.
+	 * @param value The value to be set as item damage. Only for items that have durability.
 	 */
-	public void setItemDamage(int value);
+	public void setDamage(int value);
 	
-	public int getMaxItemDamage();
+	public int getMaxDamage();
 	
 	public double getAttackDamage();
-	
+
 	public void damageItem(int damage, IEntityLiving living);
 
 	/**

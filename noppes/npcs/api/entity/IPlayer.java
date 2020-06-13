@@ -86,7 +86,7 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * Use getInventory().count instead
 	 * @deprecated
 	 */
-	public int inventoryItemCount(String id, int damage);
+	public int inventoryItemCount(String id);
 
 	/**
 	 * @return Returns a IItemStack array size 36
@@ -102,11 +102,10 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
 	/**
 	 * @param id The items name
-	 * @param damage The damage value (give -1 for any damage value)
 	 * @param amount How many will be removed
 	 * @return Returns true if the items were removed succesfully. Returns false incase a bigger amount than what the player has was given or item doesnt exist
 	 */
-	public boolean removeItem(String id, int damage, int amount);
+	public boolean removeItem(String id, int amount);
 
 	public void removeAllItems(IItemStack item);
 	
@@ -119,11 +118,10 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	
 	/**
 	 * @param id The items name
-	 * @param damage The damage value
 	 * @param amount The amount of the item to be added
 	 * @return Returns whether or not it gave the item succesfully
 	 */
-	public boolean giveItem(String id, int damage, int amount);
+	public boolean giveItem(String id, int amount);
 
 	
 	/**
@@ -140,7 +138,7 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	 * @param achievement The achievement id. For a complete list see <a href="http://minecraft.gamepedia.com/Achievements>Achievements</a>
 	 * @return Returns whether or not the player has this achievement
 	 */
-	public boolean hasAchievement(String achievement);
+	public boolean hasAdvancement(String achievement);
 	
 	public int getExpLevel();
 	

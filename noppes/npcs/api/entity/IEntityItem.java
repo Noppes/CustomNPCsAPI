@@ -11,7 +11,7 @@ public interface IEntityItem<T extends EntityItem> extends IEntity<T>{
 	public String getOwner();
 
 	/**
-	 * @param name The owner of the item, only the owner can pick up the item
+	 * @param name The UUID for the owner of the item, only the owner can pick up the item
 	 * (note that the item can also be picked up if the lifetime - age is equal or smaller than 200)
 	 */
 	public void setOwner(String name);

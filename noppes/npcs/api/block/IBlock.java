@@ -20,9 +20,11 @@ public interface IBlock {
 	
 	public IPos getPos();
 	
-	public int getMetadata();
+	public Object getProperty(String name);
 	
-	public void setMetadata(int i);
+	public void setProperty(String name, Object val);
+
+	public String[] getProperties();
 	
 	/**
 	 * @return Returns this blocks name

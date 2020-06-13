@@ -11,8 +11,6 @@ public interface IBlockFluidContainer extends IBlock{
 
 	public float getFuildTemperature();
 
-	public float getFluidValue();
-
 	public String getFluidName();
 
 }
