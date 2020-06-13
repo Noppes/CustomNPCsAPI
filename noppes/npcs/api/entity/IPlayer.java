@@ -6,8 +6,12 @@ import noppes.npcs.api.ITimers;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.data.IPixelmonPlayerData;
 import noppes.npcs.api.entity.data.IPlayerMail;
+import noppes.npcs.api.gui.ICustomGui;
+import noppes.npcs.api.gui.ICustomGuiComponent;
 import noppes.npcs.api.handler.data.IQuest;
 import noppes.npcs.api.item.IItemStack;
+
+import javax.annotation.Nullable;
 
 public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
@@ -201,6 +205,7 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	public void playSound(String sound, float volume, float pitch);
 	
 	/**
+	 * @deprecated Its better to use showCustomGui
 	 * @param rows (1-6)
 	 * @return Returns the IContainer of the chest gui
 	 */
@@ -212,5 +217,11 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	public IContainer getOpenContainer();
 
 	public boolean canQuestBeAccepted(int id);
+
+	/**
+	 * Open a ICustomGui to this player.
+	 * @param gui Custom GUI to be displayed to the player.
+	*/
+	public void showCustomGui(ICustomGui gui);
 
 }

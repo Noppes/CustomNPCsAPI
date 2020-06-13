@@ -17,6 +17,7 @@ import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.data.IPlayerMail;
+import noppes.npcs.api.gui.ICustomGui;
 import noppes.npcs.api.handler.ICloneHandler;
 import noppes.npcs.api.handler.IDialogHandler;
 import noppes.npcs.api.handler.IFactionHandler;
@@ -76,6 +77,11 @@ public abstract class NpcAPI {
 	public abstract INbt stringToNbt(String str);
 	
 	public abstract IPlayerMail createMail(String sender, String subject);
+
+	/**
+	 * @author Ryan
+	 */
+	public abstract ICustomGui createCustomGui(int id, int width, int height, boolean pauseGame);	
 	
 	/**
 	 * Get player data even if they are offline
