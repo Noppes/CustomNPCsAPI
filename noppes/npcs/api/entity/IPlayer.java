@@ -6,8 +6,12 @@ import noppes.npcs.api.ITimers;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.data.IPixelmonPlayerData;
 import noppes.npcs.api.entity.data.IPlayerMail;
+import noppes.npcs.api.gui.ICustomGui;
+import noppes.npcs.api.gui.ICustomGuiComponent;
 import noppes.npcs.api.handler.data.IQuest;
 import noppes.npcs.api.item.IItemStack;
+
+import javax.annotation.Nullable;
 
 public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 
@@ -210,5 +214,19 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	public IContainer getOpenContainer();
 
 	public boolean canQuestBeAccepted(int id);
+
+	/**
+	 * Open a ICustomGui to this player.
+	 * @param gui Custom GUI to be displayed to the player.
+	*/
+	public void showCustomGui(ICustomGui gui);
+
+	/**
+	 * Update this player's currently opened Custom GUI, if one exists, with altered or new components.
+	 * Replaces components with the same ID.
+	 * @param updateComponents Components to be sent to the player's Custom GUI, either to add or replace existing components.
+	 * @param removeComponents IDs of components to remove. Not necessary for replacing existing components.
+	*/
+	public boolean updateCustomGui(@Nullable ICustomGuiComponent[] updateComponents, @Nullable int[] removeComponents);
 
 }
