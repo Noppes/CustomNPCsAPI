@@ -16,22 +16,6 @@ public interface ICustomGui {
     List<ICustomGuiComponent> getComponents();
     List<IItemSlot> getSlots();
 
-    /**
-     * Set an NPC to send GUI events from this GUI to. (i.e. Button Click events etc.)
-     * @param npc - NPC with a script to send events to.
-     */
-    void setScriptHandler(ICustomNpc npc);
-    /**
-     * Set a Scripted Block to send GUI events from this GUI to. (i.e. Button Click events etc.)
-     * @param block - Scripted Block with a script to send events to.
-     */
-    void setScriptHandler(IBlockScripted block);
-    /**
-     * Set a Scripted Item to send GUI events from this GUI to. (i.e. Button Click events etc.)
-     * @param item - Scripted Item with a script to send events to.
-     */
-    void setScriptHandler(IItemScripted item);
-
     void setSize(int width, int height);
     void setDoesPauseGame(boolean pauseGame);
     void setBackgroundTexture(String resourceLocation);

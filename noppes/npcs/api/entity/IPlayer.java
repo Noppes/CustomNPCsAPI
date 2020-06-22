@@ -221,7 +221,14 @@ public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
 	/**
 	 * Open a ICustomGui to this player.
 	 * @param gui Custom GUI to be displayed to the player.
+	 * @author RyanV
 	*/
 	public void showCustomGui(ICustomGui gui);
+	
+	/**
+	 * 
+	 * @return Returns the currently opened custom gui
+	 */
+	public ICustomGui getCustomGui();
 
 }

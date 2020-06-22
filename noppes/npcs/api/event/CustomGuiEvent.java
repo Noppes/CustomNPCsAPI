@@ -6,8 +6,8 @@ import noppes.npcs.api.item.IItemStack;
 
 public class CustomGuiEvent extends CustomNPCsEvent {
 
-    public IPlayer player;
-    public ICustomGui gui;
+    public final IPlayer player;
+    public final ICustomGui gui;
 
     public CustomGuiEvent(IPlayer player, ICustomGui gui) {
         this.player = player;
@@ -23,7 +23,7 @@ public class CustomGuiEvent extends CustomNPCsEvent {
     }
 
     public static class ButtonEvent extends CustomGuiEvent {
-        public int buttonId;
+        public final int buttonId;
 
         public ButtonEvent(IPlayer player, ICustomGui gui, int buttonId) {
             super(player,gui);
@@ -33,8 +33,8 @@ public class CustomGuiEvent extends CustomNPCsEvent {
     }
 
     public static class SlotEvent extends CustomGuiEvent {
-        public int slotId;
-        public IItemStack stack;
+        public final int slotId;
+        public final IItemStack stack;
 
         public SlotEvent(IPlayer player, ICustomGui gui, int slotId, IItemStack stack) {
             super(player,gui);
@@ -45,15 +45,17 @@ public class CustomGuiEvent extends CustomNPCsEvent {
     }
 
     public static class ScrollEvent extends CustomGuiEvent {
-        public int scrollId;
-        public String[] selection;
-        public boolean doubleClick;
+        public final int scrollId;
+        public final String[] selection;
+        public final boolean doubleClick;
+        public final int scrollIndex;
 
-        public ScrollEvent(IPlayer player, ICustomGui gui, int scrollId, String[] selection, boolean doubleClick) {
+        public ScrollEvent(IPlayer player, ICustomGui gui, int scrollId, int scrollIndex, String[] selection, boolean doubleClick) {
             super(player,gui);
             this.scrollId = scrollId;
             this.selection = selection;
             this.doubleClick = doubleClick;
+            this.scrollIndex = scrollIndex;
         }
 
     }
