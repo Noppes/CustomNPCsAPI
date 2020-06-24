@@ -1,14 +1,9 @@
 package noppes.npcs.api.constants;
 
-import com.mojang.brigadier.StringReader;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.init.Particles;
 import net.minecraft.network.PacketBuffer;
-import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.RedstoneParticleData;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.IRegistry;
 
 public class ParticleType {
 	public static final int NONE = 0;

@@ -124,7 +124,7 @@ public interface INPCAi {
 	public boolean getAttackLOS();
 
 	/**
-	 * @param mustSee Whether the NPC requires Direct Line of Sight to Attack
+	 * @param enabled Whether the NPC requires Direct Line of Sight to Attack
 	 */
 	public void setAttackLOS(boolean enabled);
 
