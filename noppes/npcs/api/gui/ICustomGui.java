@@ -177,12 +177,6 @@ public interface ICustomGui {
     void removeComponent(int id);
 
     /**
-     * Update a given component in this GUI, if a component with a matching ID exists.
-     * @param component
-     */
-    void updateComponent(ICustomGuiComponent component);
-
-    /**
      * Update the given player's CustomGUI with this one.
      * @param player - Player to send this CustomGUI to.
      */
