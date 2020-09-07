@@ -1,5 +1,7 @@
 package noppes.npcs.api.entity.data;
 
+import noppes.npcs.api.entity.IPlayer;
+
 public interface INPCDisplay {
 
 	public String getName();
@@ -35,6 +37,11 @@ public interface INPCDisplay {
 	 * @param type 0:visible, 1:invisible, 2:semi-invisible
 	 */
 	public void setVisible(int type);
+
+	/**
+	 * If the availability is set, you can check if its visible to the player or not
+	 */
+	public boolean isVisibleTo(IPlayer player);
 
 	/**
 	 * @return 0:invisible, 1:visible, 2:when-attacking
