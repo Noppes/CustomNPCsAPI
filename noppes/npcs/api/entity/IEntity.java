@@ -5,6 +5,7 @@ import noppes.npcs.api.INbt;
 import noppes.npcs.api.IPos;
 import noppes.npcs.api.IRayTrace;
 import noppes.npcs.api.IWorld;
+import noppes.npcs.api.constants.EntitiesType;
 import noppes.npcs.api.entity.data.IData;
 import noppes.npcs.api.item.IItemStack;
 
@@ -167,13 +168,13 @@ public interface IEntity<T extends Entity> {
 	 */
 	public String getTypeName();
 	/**
-	 * @return Returns the {@link noppes.npcs.api.constants.EntityType} of this entity
+	 * @return Returns the {@link EntitiesType} of this entity
 	 */
 	public int getType();
 	
 	/**
-	 * @param type {@link noppes.npcs.api.constants.EntityType} to check
-	 * @return Returns whether the entity is type of the given {@link noppes.npcs.api.constants.EntityType}
+	 * @param type {@link EntitiesType} to check
+	 * @return Returns whether the entity is type of the given {@link EntitiesType}
 	 */
 	public boolean typeOf(int type);
 
@@ -236,7 +237,7 @@ public interface IEntity<T extends Entity> {
 
 	/**
 	 * Play specific minecraft animations client side
-	 * 0 and 3 are for EntityLivingBase entities and 2 is only for players
+	 * 0 and 3 are for LivingEntity entities and 2 is only for players
 	 * @param type 0:Swing main hand, 1:Hurt animation, 2:Wakeup Player 3:Swing offhand hand, 4:Crit particle, 5:Spell crit particle
 	 */
 	public void playAnimation(int type);

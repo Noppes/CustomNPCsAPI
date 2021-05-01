@@ -1,6 +1,6 @@
 package noppes.npcs.api;
 
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.CompoundNBT;
 
 /**
  * @author Karel
@@ -42,7 +42,7 @@ public interface INbt {
 	
 	public String getString(String key);
 	
-	public void setString(String key, String value);
+	public void putString(String key, String value);
 	
 	public byte[] getByteArray(String key);
 	
@@ -79,7 +79,7 @@ public interface INbt {
 	 */
 	public int getType(String key);
 	
-	public NBTTagCompound getMCNBT();
+	public CompoundNBT getMCNBT();
 	
 	public String toJsonString();
 

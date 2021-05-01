@@ -135,20 +135,5 @@ public interface INPCAi {
 	public boolean getLeapAtTarget();
 
 	public void setLeapAtTarget(boolean leap);
-
-	/**
-	 * @see noppes.npcs.api.constants.TacticalType
-	 */
-	public int getTacticalType();
-
-	
-	/**
-	 * @see noppes.npcs.api.constants.TacticalType
-	 */
-	public void setTacticalType(int type);
-
-	public int getTacticalRange();
-
-	public void setTacticalRange(int range);
 	
 }

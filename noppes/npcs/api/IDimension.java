@@ -2,7 +2,7 @@ package noppes.npcs.api;
 
 public interface IDimension {
 
-	public int getId();
+	public String getId();
 	
 	public String getName();
 	

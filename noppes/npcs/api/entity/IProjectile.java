@@ -1,9 +1,9 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.entity.projectile.ThrowableEntity;
 import noppes.npcs.api.item.IItemStack;
 
-public interface IProjectile<T extends EntityThrowable> extends IThrowable<T> {
+public interface IProjectile<T extends ThrowableEntity> extends IThrowable<T> {
 
 	public IItemStack getItem();
 	

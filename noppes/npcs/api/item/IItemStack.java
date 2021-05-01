@@ -2,7 +2,7 @@ package noppes.npcs.api.item;
 
 import net.minecraft.item.ItemStack;
 import noppes.npcs.api.INbt;
-import noppes.npcs.api.entity.IEntityLiving;
+import noppes.npcs.api.entity.IMob;
 import noppes.npcs.api.entity.data.IData;
 
 public interface IItemStack {
@@ -31,7 +31,7 @@ public interface IItemStack {
 	
 	public double getAttackDamage();
 
-	public void damageItem(int damage, IEntityLiving living);
+	public void damageItem(int damage, IMob living);
 
 	/**
 	 * @param id The enchantment id

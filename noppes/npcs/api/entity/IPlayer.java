@@ -1,19 +1,15 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import noppes.npcs.api.IContainer;
 import noppes.npcs.api.ITimers;
 import noppes.npcs.api.block.IBlock;
-import noppes.npcs.api.entity.data.IPixelmonPlayerData;
 import noppes.npcs.api.entity.data.IPlayerMail;
 import noppes.npcs.api.gui.ICustomGui;
-import noppes.npcs.api.gui.ICustomGuiComponent;
 import noppes.npcs.api.handler.data.IQuest;
 import noppes.npcs.api.item.IItemStack;
 
-import javax.annotation.Nullable;
-
-public interface IPlayer<T extends EntityPlayerMP> extends IEntityLivingBase<T>{
+public interface IPlayer<T extends ServerPlayerEntity> extends IEntityLiving<T> {
 
 	public String getDisplayName();
 	

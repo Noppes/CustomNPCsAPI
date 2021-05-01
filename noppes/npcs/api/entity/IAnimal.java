@@ -1,7 +1,7 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.passive.AnimalEntity;
 
-public interface IAnimal<T extends EntityAnimal> extends IEntityLiving<T>{
+public interface IAnimal<T extends AnimalEntity> extends IMob<T> {
 	
 }

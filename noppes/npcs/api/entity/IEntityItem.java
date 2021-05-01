@@ -1,9 +1,9 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.ItemEntity;
 import noppes.npcs.api.item.IItemStack;
 
-public interface IEntityItem<T extends EntityItem> extends IEntity<T>{
+public interface IEntityItem<T extends ItemEntity> extends IEntity<T>{
 
 	/**
 	 * @return The owner of the item, only the owner can pick the item up

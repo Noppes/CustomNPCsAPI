@@ -3,15 +3,15 @@ package noppes.npcs.api;
 import java.io.File;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.inventory.Container;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import noppes.npcs.api.block.IBlock;
@@ -53,13 +53,13 @@ public abstract class NpcAPI {
 	
 	public abstract IItemStack getIItemStack(ItemStack itemstack);
 	
-	public abstract IWorld getIWorld(WorldServer world);
+	public abstract IWorld getIWorld(ServerWorld world);
 
 	public abstract IWorld getIWorld(DimensionType dimension);
 
 	public abstract IWorld[] getIWorlds();
 
-	public abstract INbt getINbt(NBTTagCompound compound);
+	public abstract INbt getINbt(CompoundNBT compound);
 
 	public abstract IPos getIPos(double x, double y, double z);
 	

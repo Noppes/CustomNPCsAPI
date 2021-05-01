@@ -1,7 +1,7 @@
 package noppes.npcs.api.event;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraftforge.eventbus.api.Cancelable;
 import noppes.npcs.api.IPos;
 import noppes.npcs.api.NpcAPI;
@@ -44,7 +44,7 @@ public class BlockEvent extends CustomNPCsEvent {
 		 */
 		public final int side;
 		
-		public InteractEvent(IBlock block, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
+		public InteractEvent(IBlock block, PlayerEntity player, int side, float hitX, float hitY, float hitZ) {
 			super(block);
 			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 
@@ -140,7 +140,7 @@ public class BlockEvent extends CustomNPCsEvent {
 	 */
 	public static class ClickedEvent extends BlockEvent{
 		public final IPlayer player;
-		public ClickedEvent(IBlock block, EntityPlayer player) {
+		public ClickedEvent(IBlock block, PlayerEntity player) {
 			super(block);
 			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 		}
@@ -152,7 +152,7 @@ public class BlockEvent extends CustomNPCsEvent {
 	@Cancelable
 	public static class HarvestedEvent extends BlockEvent{
 		public final IPlayer player;
-		public HarvestedEvent(IBlock block, EntityPlayer player) {
+		public HarvestedEvent(IBlock block, PlayerEntity player) {
 			super(block);
 			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 		}

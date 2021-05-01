@@ -1,6 +1,6 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.CreatureEntity;
 import noppes.npcs.api.ITimers;
 import noppes.npcs.api.entity.data.INPCAdvanced;
 import noppes.npcs.api.entity.data.INPCAi;
@@ -13,7 +13,7 @@ import noppes.npcs.api.handler.data.IDialog;
 import noppes.npcs.api.handler.data.IFaction;
 import noppes.npcs.api.item.IItemStack;
 
-public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
+public interface ICustomNpc<T extends CreatureEntity> extends IMob<T> {
 	
 	public INPCDisplay getDisplay();
 
@@ -44,7 +44,7 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	/**
 	 * @return Incase the npc is a Follower or Companion it will return the one who its following. Also works for scene followers
 	 */
-	public IEntityLivingBase getOwner();
+	public IEntityLiving getOwner();
 
 	public void setHome(int x, int y, int z);
 
@@ -61,7 +61,7 @@ public interface ICustomNpc<T extends EntityCreature> extends IEntityLiving<T>{
 	 * @param item The item you want to shoot
 	 * @param accuracy Accuracy of the shot (1-100)
 	 */
-	public IProjectile shootItem(IEntityLivingBase target, IItemStack item, int accuracy);
+	public IProjectile shootItem(IEntityLiving target, IItemStack item, int accuracy);
 
 	/**
 	 * @param item The item you want to shoot

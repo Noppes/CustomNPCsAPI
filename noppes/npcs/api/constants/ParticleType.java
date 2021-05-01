@@ -1,8 +1,9 @@
 package noppes.npcs.api.constants;
 
-import net.minecraft.init.Particles;
+import com.mojang.serialization.Codec;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.particles.RedstoneParticleData;
 
 public class ParticleType {
@@ -18,21 +19,21 @@ public class ParticleType {
 	
 	public static IParticleData getMCType(int type){
 		if(type == SMOKE)
-			return Particles.SMOKE;
+			return ParticleTypes.SMOKE;
 		if(type == PORTAL)
-			return Particles.PORTAL;
+			return ParticleTypes.PORTAL;
 		if(type == REDSTONE)
-			return new RedstoneParticleType(Particles.DUST);//hacky fix
+			return new RedstoneParticleType(ParticleTypes.DUST);//hacky fix
 		if(type == LIGHTNING)
-			return Particles.ENCHANTED_HIT;
+			return ParticleTypes.ENCHANTED_HIT;
 		if(type == LARGE_SMOKE)
-			return Particles.LARGE_SMOKE;
+			return ParticleTypes.LARGE_SMOKE;
 		if(type == MAGIC)
-			return Particles.WITCH;
+			return ParticleTypes.WITCH;
 		if(type == ENCHANT)
-			return Particles.ENCHANT;
+			return ParticleTypes.ENCHANT;
 		if(type == CRIT)
-			return Particles.CRIT;
+			return ParticleTypes.CRIT;
 		
 		return null;
 	}
@@ -40,18 +41,26 @@ public class ParticleType {
 	static class RedstoneParticleType extends net.minecraft.particles.ParticleType<RedstoneParticleData> implements IParticleData {
 
 		protected RedstoneParticleType(net.minecraft.particles.ParticleType<RedstoneParticleData> type) {
-			super(type.getId(), type.getAlwaysShow(), RedstoneParticleData.DESERIALIZER);
+			super(type.getOverrideLimiter(), RedstoneParticleData.DESERIALIZER);
 		}
 
+		@Override
 		public net.minecraft.particles.ParticleType<net.minecraft.particles.RedstoneParticleData> getType() {
-			return Particles.DUST;
+			return ParticleTypes.DUST;
 		}
 
-		public void write(PacketBuffer p_197553_1_) {
+		@Override
+		public void writeToNetwork(PacketBuffer p_197553_1_) {
 		}
 
-		public String getParameters() {
-			return this.getId().toString();
+		@Override
+		public String writeToString() {
+			return ParticleTypes.DUST.getRegistryName().toString();
+		}
+
+		@Override
+		public Codec<RedstoneParticleData> codec() {
+			return ParticleTypes.DUST.codec();
 		}
 	}
 }

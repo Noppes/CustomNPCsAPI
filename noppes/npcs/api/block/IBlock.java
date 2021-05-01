@@ -1,7 +1,7 @@
 package noppes.npcs.api.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import noppes.npcs.api.IContainer;
 import noppes.npcs.api.INbt;
@@ -79,7 +79,7 @@ public interface IBlock {
 	public IWorld getWorld();
 	
 
-	public INbt getTileEntityNBT();
+	public INbt getBlockEntityNBT();
 
 	public void setTileEntityNBT(INbt nbt);
 	
@@ -111,7 +111,7 @@ public interface IBlock {
 	 * Expert users only
 	 * @return Returns minecrafts iblockstate
 	 */
-	public IBlockState getMCBlockState();
+	public BlockState getMCBlockState();
 
 	/**
 	 * Simulates a player interacting with this block (can give weird results)

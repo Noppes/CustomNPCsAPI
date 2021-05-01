@@ -1,16 +1,15 @@
 package noppes.npcs.api.event;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.eventbus.api.Cancelable;
 import noppes.npcs.api.IContainer;
 import noppes.npcs.api.IDamageSource;
 import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.block.IBlock;
-import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
-import noppes.npcs.api.entity.IEntityLivingBase;
+import noppes.npcs.api.entity.IEntityLiving;
 import noppes.npcs.api.entity.IPlayer;
 import noppes.npcs.api.handler.data.IFaction;
 import noppes.npcs.api.item.IItemStack;
@@ -192,7 +191,7 @@ public class PlayerEvent extends CustomNPCsEvent {
 		public DiedEvent(IPlayer player, DamageSource damagesource, Entity entity) {
 			super(player);
 			this.damageSource = NpcAPI.Instance().getIDamageSource(damagesource);
-			type = damagesource.damageType;
+			type = damagesource.msgId;
 			this.source = NpcAPI.Instance().getIEntity(entity);
 		}
 	}
@@ -201,11 +200,11 @@ public class PlayerEvent extends CustomNPCsEvent {
 	 * kill
 	 */
 	public static class KilledEntityEvent extends PlayerEvent {
-		public final IEntityLivingBase entity;
+		public final IEntityLiving entity;
 
-		public KilledEntityEvent(IPlayer player, EntityLivingBase entity) {
+		public KilledEntityEvent(IPlayer player, LivingEntity entity) {
 			super(player);
-			this.entity = (IEntityLivingBase) NpcAPI.Instance().getIEntity(entity);
+			this.entity = (IEntityLiving) NpcAPI.Instance().getIEntity(entity);
 		}
 	}
 

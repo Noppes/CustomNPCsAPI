@@ -1,8 +1,9 @@
 package noppes.npcs.api;
 
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.WorldServer;
+import net.minecraft.world.server.ServerWorld;
 import noppes.npcs.api.block.IBlock;
+import noppes.npcs.api.constants.EntitiesType;
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IPlayer;
 import noppes.npcs.api.entity.data.IData;
@@ -26,7 +27,7 @@ public interface IWorld {
 
 	/**
 	 * This gets all currently loaded entities in a world
-	 * @param type {@link noppes.npcs.api.constants.EntityType}}
+	 * @param type {@link EntitiesType}}
 	 * @return An array of all entities
 	 */
 	public IEntity[] getAllEntities(int type);
@@ -166,7 +167,7 @@ public interface IWorld {
 	 * Expert users only
 	 * @return Returns minecrafts world
 	 */
-	public WorldServer getMCWorld();
+	public ServerWorld getMCWorld();
 	
 	/**
 	 * Expert users only
