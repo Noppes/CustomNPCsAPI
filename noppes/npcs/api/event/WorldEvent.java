@@ -14,8 +14,8 @@ public class WorldEvent extends CustomNPCsEvent{
 		public final String[] arguments;
 		public final IPos pos;
 		
-		public ScriptCommandEvent(IWorld world, IPos pos, String[] arguments) {
-			super(world);
+		public ScriptCommandEvent(IWorld level, IPos pos, String[] arguments) {
+			super(level);
 			this.arguments = arguments;
 			this.pos = pos;
 		}

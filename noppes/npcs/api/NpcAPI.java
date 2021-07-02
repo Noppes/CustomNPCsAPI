@@ -41,11 +41,11 @@ public abstract class NpcAPI {
 	/**
 	 * Creates and spawns an npc
 	 */
-	public abstract ICustomNpc spawnNPC(World world, int x, int y, int z);
+	public abstract ICustomNpc spawnNPC(World level, int x, int y, int z);
 
 	public abstract IEntity getIEntity(Entity entity);
 
-	public abstract IBlock getIBlock(World world, BlockPos pos);
+	public abstract IBlock getIBlock(World level, BlockPos pos);
 
 	public abstract IContainer getIContainer(IInventory inventory);
 
@@ -148,7 +148,7 @@ public abstract class NpcAPI {
 	 * @param command The Command to execute
 	 * @return
 	 */
-	public abstract String executeCommand(IWorld world, String command);
+	public abstract String executeCommand(IWorld level, String command);
 	
 	/**
 	 * @author Nikedemos

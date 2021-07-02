@@ -47,7 +47,7 @@ public class ItemEvent extends CustomNPCsEvent {
 
 	/**
 	 * toss <br>
-	 * When Cancelled it prevents the item from spawning in the world, the item still disappears from the inventory
+	 * When Cancelled it prevents the item from spawning in the level, the item still disappears from the inventory
 	 */
 	@Cancelable
 	public static class TossedEvent extends ItemEvent {
@@ -62,7 +62,7 @@ public class ItemEvent extends CustomNPCsEvent {
 
 	/**
 	 * pickedUp <br>
-	 * When Cancelled it prevents the item from spawning in the world, the item still disappears from the inventory
+	 * When Cancelled it prevents the item from spawning in the level, the item still disappears from the inventory
 	 */
 	public static class PickedUpEvent extends ItemEvent {
 		public IEntityItem entity;
