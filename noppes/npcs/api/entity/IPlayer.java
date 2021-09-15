@@ -92,6 +92,11 @@ public interface IPlayer<T extends ServerPlayerEntity> extends IEntityLiving<T> 
 	 * @return Returns a IItemStack array size 36
 	 */
 	public IContainer getInventory();
+
+	/**
+	 * @return Returns the itemstack the player is currently holding in a container gui
+	 */
+	public IItemStack getInventoryHeldItem();
 	
 	/**
 	 * @param item The Item type to be removed

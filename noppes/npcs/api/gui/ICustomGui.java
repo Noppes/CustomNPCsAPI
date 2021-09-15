@@ -104,6 +104,16 @@ public interface ICustomGui {
     ITextField addTextField(int id, int x, int y, int width, int height);
 
     /**
+     * Add a Text Field input to the GUI, that the player can type into.
+     * @param id - Unique ID for identifying this label.
+     * @param x - X Position, relative to the Left side of the GUI window.
+     * @param y - Y Position, relative to the Top of the GUI window.
+     * @param width - Width of this Text Field.
+     * @param height - Height of this Text Field.
+     */
+    ITextArea addTextArea(int id, int x, int y, int width, int height);
+
+    /**
      * Add a texture to be drawn within the GUI.
      * @param id - Unique ID for identifying this texture.
      * @param texture - Resource Location of the texture to use. (For Example: "minecraft:textures/gui/widgets.png")

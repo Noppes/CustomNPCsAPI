@@ -17,4 +17,6 @@ public interface IButton extends ICustomGuiComponent {
     int getTextureY();
     IButton setTextureOffset(int textureX, int textureY);
 
+    void setEnabled(boolean bo);
+    boolean getEnabled();
 }
