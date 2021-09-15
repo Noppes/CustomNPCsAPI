@@ -1,6 +1,8 @@
 package noppes.npcs.api.event;
 
 import net.minecraftforge.fml.common.eventhandler.Cancelable;
+import noppes.npcs.api.IDamageSource;
+import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.entity.IEntityItem;
 import noppes.npcs.api.entity.IPlayer;
 import noppes.npcs.api.item.IItemScripted;
@@ -109,13 +111,28 @@ public class ItemEvent extends CustomNPCsEvent {
 		public final int type;
 		
 		public final Object target;
+		
 		public IPlayer player;
+		
+		/**
+		 * The attack event for entities also has the damageSource
+		 */
+		public final IDamageSource damageSource;
 
 		public AttackEvent(IItemScripted item, IPlayer player, int type, Object target) {
 			super(item);
 			this.type = type;
 			this.target = target;
 			this.player = player;
+			this.damageSource = null;
+		}
+
+		public AttackEvent(IItemScripted item, IPlayer player, IEntity target, IDamageSource damageSource) {
+			super(item);
+			this.type = 1;
+			this.target = target;
+			this.player = player;
+			this.damageSource = damageSource;
 		}
 	}
 

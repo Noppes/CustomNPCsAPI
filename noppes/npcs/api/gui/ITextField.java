@@ -8,5 +8,8 @@ public interface ITextField extends ICustomGuiComponent {
 
     String getText();
     ITextField setText(String defaultText);
+    
+    void setEnabled(boolean bo);
+    boolean getEnabled();
 
 }

@@ -7,4 +7,5 @@ public class GuiComponentType {
     public static final int TEXT_FIELD = 3;
     public static final int SCROLL = 4;
     public static final int ITEM_SLOT = 5;
+    public static final int TEXT_AREA = 6;
 }

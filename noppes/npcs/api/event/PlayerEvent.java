@@ -74,11 +74,25 @@ public class PlayerEvent extends CustomNPCsEvent {
 		public final int type;
 		
 		public final Object target;
+		
+		
+		/**
+		 * The attack event for entities also has the damageSource
+		 */
+		public final IDamageSource damageSource;
 
 		public AttackEvent(IPlayer player, int type, Object target) {
 			super(player);
 			this.type = type;
 			this.target = target;
+			this.damageSource = null;
+		}
+
+		public AttackEvent(IPlayer player, IEntity target, IDamageSource damageSource) {
+			super(player);
+			this.type = 1;
+			this.target = target;
+			this.damageSource = damageSource;
 		}
 	}
 
