@@ -202,14 +202,7 @@ public interface IPlayer<T extends ServerPlayerEntity> extends IEntityLiving<T> 
 	 * @param pitch default 1
 	 */
 	public void playSound(String sound, float volume, float pitch);
-	
-	/**
-	 * @deprecated Its better to use showCustomGui
-	 * @param rows (1-6)
-	 * @return Returns the IContainer of the chest gui
-	 */
-	public IContainer showChestGui(int rows);
-	
+
 	/**
 	 * @return Returns the container of the player if he has a container gui open. Returns the inventory container if none is open
 	 */
