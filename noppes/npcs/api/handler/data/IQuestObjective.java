@@ -1,5 +1,7 @@
 package noppes.npcs.api.handler.data;
 
+import net.minecraft.util.text.ITextComponent;
+
 public interface IQuestObjective {
 
 	public int getProgress();
@@ -13,6 +15,8 @@ public interface IQuestObjective {
 	public int getMaxProgress();
 	
 	public boolean isCompleted();
-	
+
 	public String getText();
+
+	public ITextComponent getMCText();
 }
