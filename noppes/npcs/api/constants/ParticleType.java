@@ -23,7 +23,7 @@ public class ParticleType {
 		if(type == PORTAL)
 			return ParticleTypes.PORTAL;
 		if(type == REDSTONE)
-			return new RedstoneParticleType(ParticleTypes.DUST);//hacky fix
+			return new RedstoneParticleType();//hacky fix
 		if(type == LIGHTNING)
 			return ParticleTypes.ENCHANTED_HIT;
 		if(type == LARGE_SMOKE)
@@ -38,10 +38,10 @@ public class ParticleType {
 		return null;
 	}
 
-	static class RedstoneParticleType extends net.minecraft.particles.ParticleType<RedstoneParticleData> implements IParticleData {
+	static class RedstoneParticleType extends RedstoneParticleData {
 
-		protected RedstoneParticleType(net.minecraft.particles.ParticleType<RedstoneParticleData> type) {
-			super(type.getOverrideLimiter(), RedstoneParticleData.DESERIALIZER);
+		protected RedstoneParticleType() {
+			super(1,0,0, 1);
 		}
 
 		@Override
@@ -56,11 +56,6 @@ public class ParticleType {
 		@Override
 		public String writeToString() {
 			return ParticleTypes.DUST.getRegistryName().toString();
-		}
-
-		@Override
-		public Codec<RedstoneParticleData> codec() {
-			return ParticleTypes.DUST.codec();
 		}
 	}
 }
