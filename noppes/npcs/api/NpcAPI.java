@@ -47,13 +47,18 @@ public abstract class NpcAPI {
 
 	public abstract IBlock getIBlock(World level, BlockPos pos);
 
-	public abstract IContainer getIContainer(IInventory inventory);
+    public abstract IContainer getIContainer(IInventory inventory);
 
 	public abstract IContainer getIContainer(Container container);
 	
 	public abstract IItemStack getIItemStack(ItemStack itemstack);
 	
 	public abstract IWorld getIWorld(ServerWorld world);
+
+	/**
+	 * @param dimension 'minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end'
+	 */
+	public abstract IWorld getIWorld(String dimension);
 
 	public abstract IWorld getIWorld(DimensionType dimension);
 
