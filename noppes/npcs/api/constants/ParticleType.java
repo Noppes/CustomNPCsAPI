@@ -1,6 +1,5 @@
 package noppes.npcs.api.constants;
 
-import com.mojang.serialization.Codec;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.ParticleTypes;
