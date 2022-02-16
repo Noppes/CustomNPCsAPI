@@ -6,6 +6,7 @@ import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.entity.IPlayer;
 import noppes.npcs.api.item.IItemStack;
 
+@Deprecated
 public class CustomContainerEvent extends CustomNPCsEvent {
 	public final IContainer container;
 	public final IPlayer player;
@@ -14,6 +15,7 @@ public class CustomContainerEvent extends CustomNPCsEvent {
 		this.player = player;
 	}
 
+	@Deprecated
 	public static class CloseEvent extends CustomContainerEvent{
 		
 		public CloseEvent(IPlayer player, IContainer container) {
@@ -22,6 +24,7 @@ public class CustomContainerEvent extends CustomNPCsEvent {
 		
 	}
 
+	@Deprecated
 	public static class SlotClickedEvent extends CustomContainerEvent{
 		public IItemStack slotItem;
 		public IItemStack heldItem;

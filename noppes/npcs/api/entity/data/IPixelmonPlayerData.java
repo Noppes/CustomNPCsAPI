@@ -2,6 +2,8 @@ package noppes.npcs.api.entity.data;
 
 /**
  * Returns objects from the Pixelmon API see <a href="https://reforged.gg/docs/">https://reforged.gg/docs/</a>
+ * 
+ * For API information with Pixelmon Generations join https://discord.gg/mesAfQNf
  */
 public interface IPixelmonPlayerData {
 
