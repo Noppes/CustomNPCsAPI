@@ -16,6 +16,9 @@ public class CustomGuiEvent extends CustomNPCsEvent {
         this.gui = gui;
     }
 
+    /**
+     * customGuiClosed
+     */
     public static class CloseEvent extends CustomGuiEvent {
 
         public CloseEvent(IPlayer player, ICustomGui gui) {
@@ -24,6 +27,9 @@ public class CustomGuiEvent extends CustomNPCsEvent {
 
     }
 
+    /**
+     * customGuiButton
+     */
     public static class ButtonEvent extends CustomGuiEvent {
         public final int buttonId;
 
@@ -34,6 +40,9 @@ public class CustomGuiEvent extends CustomNPCsEvent {
 
     }
 
+    /**
+     * customGuiSlot
+     */
     public static class SlotEvent extends CustomGuiEvent {
         public final int slotId;
         public final IItemStack stack;
@@ -45,7 +54,10 @@ public class CustomGuiEvent extends CustomNPCsEvent {
         }
 
     }
-    
+
+    /**
+     * customGuiSlotClicked
+     */
 	@Cancelable
     public static class SlotClickEvent extends CustomGuiEvent {
         public final int slotId;
@@ -65,6 +77,9 @@ public class CustomGuiEvent extends CustomNPCsEvent {
         }
 	}
 
+    /**
+     * customGuiScroll
+     */
     public static class ScrollEvent extends CustomGuiEvent {
         public final int scrollId;
         public final String[] selection;
