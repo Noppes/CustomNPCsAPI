@@ -116,8 +116,14 @@ public interface INPCDisplay {
 	
 	public String getModel();
 
-	public void setHasHitbox(boolean bo);
+	/**
+	 * @param state 0:Normal, 1:None, 2:Solid
+	 */
+	public void setHitboxState(byte state);
 
-	public boolean getHasHitbox();
+	/**
+	 * @return 0:Normal, 1:None, 2:Solid
+	 */
+	public byte getHitboxState();
 
 }
