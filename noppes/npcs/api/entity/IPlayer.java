@@ -206,8 +206,9 @@ public interface IPlayer<T extends ServerPlayerEntity> extends IEntityLiving<T> 
 	/**
 	 * @param sound Sounds resource name
 	 * @param background Whether to play the music in the background or like a jukebox in a specific location
+	 * @param loops Whether the music loops
 	 */
-	public void playMusic(String sound, boolean background);
+	public void playMusic(String sound, boolean background, boolean loops);
 
 	/**
 	 * @return Returns the container of the player if he has a container gui open. Returns the inventory container if none is open

@@ -378,4 +378,20 @@ public class PlayerEvent extends CustomNPCsEvent {
 		}
 		
 	}
+
+	/**
+	 * playSound
+	 */
+	public static class PlaySoundEvent extends PlayerEvent {
+		public final String sound;
+		public final String category;
+		public final boolean looping;
+
+		public PlaySoundEvent(IPlayer player, String sound, String category, boolean looping) {
+			super(player);
+			this.sound = sound;
+			this.category = category;
+			this.looping = looping;
+		}
+	}
 }
