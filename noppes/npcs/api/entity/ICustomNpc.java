@@ -99,5 +99,12 @@ public interface ICustomNpc<T extends CreatureEntity> extends IMob<T> {
 	 * @return Returns the commands output
 	 */
 	public String executeCommand(String command);
+
+	/**
+	 * Fires trigger event for npc scripts
+	 * @param id, Id for the event
+	 * @param arguments, arguments you can give with it
+	 */
+	public void trigger(int id, Object... arguments);
 	
 }

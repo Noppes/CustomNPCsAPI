@@ -106,4 +106,10 @@ public interface IBlockScripted extends IBlock{
 
 	public ITextPlane getTextPlane6();
 
+	/**
+	 * Fires trigger event for block scripts
+	 * @param id, Id for the event
+	 * @param arguments, arguments you can give with it
+	 */
+	public void trigger(int id, Object... arguments);
 }

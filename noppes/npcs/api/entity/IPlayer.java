@@ -225,9 +225,15 @@ public interface IPlayer<T extends ServerPlayerEntity> extends IEntityLiving<T> 
 	public void showCustomGui(ICustomGui gui);
 	
 	/**
-	 * 
 	 * @return Returns the currently opened custom gui
 	 */
 	public ICustomGui getCustomGui();
+
+	/**
+	 * Fires trigger event for player scripts
+	 * @param id, Id for the event
+	 * @param arguments, arguments you can give with it
+	 */
+	public void trigger(int id, Object... arguments);
 
 }

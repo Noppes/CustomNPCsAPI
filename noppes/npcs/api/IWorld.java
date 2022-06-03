@@ -191,4 +191,10 @@ public interface IWorld {
 
 	public String getName();
 
+	/**
+	 * Fires trigger event for forge scripts
+	 * @param id, Id for the event
+	 * @param arguments, arguments you can give with it
+	 */
+	public void trigger(int id, Object... arguments);
 }
