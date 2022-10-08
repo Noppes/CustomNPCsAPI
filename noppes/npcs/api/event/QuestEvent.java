@@ -1,6 +1,6 @@
 package noppes.npcs.api.event;
 
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.eventbus.api.Cancelable;
 import noppes.npcs.api.NpcAPI;
 import noppes.npcs.api.entity.IPlayer;

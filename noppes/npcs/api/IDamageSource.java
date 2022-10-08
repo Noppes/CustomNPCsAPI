@@ -1,6 +1,6 @@
 package noppes.npcs.api;
 
-import net.minecraft.util.DamageSource;
+import net.minecraft.world.damagesource.DamageSource;
 import noppes.npcs.api.entity.IEntity;
 
 public interface IDamageSource {

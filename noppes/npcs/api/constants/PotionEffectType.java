@@ -1,7 +1,7 @@
 package noppes.npcs.api.constants;
 
-import net.minecraft.potion.Effect;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.core.Registry;
+import net.minecraft.world.effect.MobEffect;
 
 public final class PotionEffectType {
 	public static final int NONE = 0;
@@ -43,7 +43,7 @@ public final class PotionEffectType {
 	
 
 	
-	public static Effect getMCType(int effect) {
+	public static MobEffect getMCType(int effect) {
 		if(effect == NONE || effect == FIRE)
 			return null;
 

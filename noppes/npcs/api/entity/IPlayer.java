@@ -1,6 +1,6 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.server.level.ServerPlayer;
 import noppes.npcs.api.IContainer;
 import noppes.npcs.api.ITimers;
 import noppes.npcs.api.block.IBlock;
@@ -9,7 +9,7 @@ import noppes.npcs.api.gui.ICustomGui;
 import noppes.npcs.api.handler.data.IQuest;
 import noppes.npcs.api.item.IItemStack;
 
-public interface IPlayer<T extends ServerPlayerEntity> extends IEntityLiving<T> {
+public interface IPlayer<T extends ServerPlayer> extends IEntityLiving<T> {
 
 	public String getDisplayName();
 	

@@ -1,6 +1,6 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import noppes.npcs.api.item.IItemStack;
 
 public interface IEntityItem<T extends ItemEntity> extends IEntity<T>{

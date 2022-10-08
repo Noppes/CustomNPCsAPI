@@ -3,10 +3,10 @@ package noppes.npcs.api.event;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraftforge.eventbus.api.Cancelable;
 import noppes.npcs.api.IDamageSource;
 import noppes.npcs.api.NpcAPI;
@@ -75,7 +75,7 @@ public class NpcEvent extends CustomNPCsEvent{
 	@Cancelable
 	public static class InteractEvent extends NpcEvent{
 		public final IPlayer player;
-		public InteractEvent(ICustomNpc npc, PlayerEntity player) {
+		public InteractEvent(ICustomNpc npc, Player player) {
 			super(npc);
 			this.player = (IPlayer) NpcAPI.Instance().getIEntity(player);
 		}

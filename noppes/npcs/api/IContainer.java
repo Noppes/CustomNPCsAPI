@@ -1,7 +1,7 @@
 package noppes.npcs.api;
 
-import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.IInventory;
+import net.minecraft.world.Container;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import noppes.npcs.api.item.IItemStack;
 
 public interface IContainer {
@@ -16,13 +16,13 @@ public interface IContainer {
 	 * Expert users only
 	 * @return Returns minecrafts container
 	 */
-	public IInventory getMCInventory();
+	public Container getMCInventory();
 	
 	/**
 	 * Expert users only
 	 * @return Returns minecrafts container
 	 */
-	public Container getMCContainer();
+	public AbstractContainerMenu getMCContainer();
 
 	/**
 	 * @param item

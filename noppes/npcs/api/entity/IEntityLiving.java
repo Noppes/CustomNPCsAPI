@@ -1,6 +1,6 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.entity.LivingEntity;
 import noppes.npcs.api.entity.data.IMark;
 import noppes.npcs.api.item.IItemStack;
 

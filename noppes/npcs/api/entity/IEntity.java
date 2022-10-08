@@ -1,6 +1,6 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.world.entity.Entity;
 import noppes.npcs.api.INbt;
 import noppes.npcs.api.IPos;
 import noppes.npcs.api.IRayTrace;
@@ -161,7 +161,7 @@ public interface IEntity<T extends Entity> {
 	/**
 	 * @return Returns the {@link noppes.npcs.api.IWorld}
 	 */
-	public IWorld getWorld();
+	public IWorld getLevel();
 
 	/**
 	 * @return Name as which it's registered in minecraft

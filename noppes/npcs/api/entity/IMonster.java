@@ -1,7 +1,7 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.MobEntity;
+import net.minecraft.world.entity.Mob;
 
-public interface IMonster<T extends MobEntity> extends IMob<T> {
+public interface IMonster<T extends Mob> extends IMob<T> {
 
 }

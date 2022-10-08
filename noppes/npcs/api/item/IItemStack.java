@@ -1,9 +1,11 @@
 package noppes.npcs.api.item;
 
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.ItemStack;
 import noppes.npcs.api.INbt;
 import noppes.npcs.api.entity.IMob;
 import noppes.npcs.api.entity.data.IData;
+
+
 
 public interface IItemStack {
 

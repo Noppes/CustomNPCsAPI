@@ -1,7 +1,7 @@
 package noppes.npcs.api;
 
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.constants.EntitiesType;
 import noppes.npcs.api.entity.IEntity;
@@ -167,7 +167,7 @@ public interface IWorld {
 	 * Expert users only
 	 * @return Returns minecrafts world
 	 */
-	public ServerWorld getMCWorld();
+	public ServerLevel getMCLevel();
 	
 	/**
 	 * Expert users only

@@ -1,6 +1,6 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.CreatureEntity;
+import net.minecraft.world.entity.Mob;
 import noppes.npcs.api.ITimers;
 import noppes.npcs.api.entity.data.INPCAdvanced;
 import noppes.npcs.api.entity.data.INPCAi;
@@ -13,7 +13,7 @@ import noppes.npcs.api.handler.data.IDialog;
 import noppes.npcs.api.handler.data.IFaction;
 import noppes.npcs.api.item.IItemStack;
 
-public interface ICustomNpc<T extends CreatureEntity> extends IMob<T> {
+public interface ICustomNpc<T extends Mob> extends IMob<T> {
 	
 	public INPCDisplay getDisplay();
 

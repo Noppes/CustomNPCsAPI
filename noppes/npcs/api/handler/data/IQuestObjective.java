@@ -1,6 +1,8 @@
 package noppes.npcs.api.handler.data;
 
-import net.minecraft.util.text.ITextComponent;
+import net.minecraft.network.chat.Component;
+
+
 
 public interface IQuestObjective {
 
@@ -18,5 +20,5 @@ public interface IQuestObjective {
 
 	public String getText();
 
-	public ITextComponent getMCText();
+	public Component getMCText();
 }

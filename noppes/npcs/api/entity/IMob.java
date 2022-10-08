@@ -1,9 +1,9 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.MobEntity;
+import net.minecraft.world.entity.Mob;
 import noppes.npcs.api.IPos;
 
-public interface IMob<T extends MobEntity> extends IEntityLiving<T> {
+public interface IMob<T extends Mob> extends IEntityLiving<T> {
 
 	/**
 	 * @return Whether or not this entity is navigating somewhere

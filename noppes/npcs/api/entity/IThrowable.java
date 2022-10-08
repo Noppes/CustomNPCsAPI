@@ -1,7 +1,7 @@
 package noppes.npcs.api.entity;
 
-import net.minecraft.entity.projectile.ThrowableEntity;
+import net.minecraft.world.entity.projectile.ThrowableProjectile;
 
-public interface IThrowable<T extends ThrowableEntity> extends IEntity<T>{
+public interface IThrowable<T extends ThrowableProjectile> extends IEntity<T>{
 
 }

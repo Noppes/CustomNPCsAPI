@@ -1,14 +1,13 @@
 package noppes.npcs.api.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import noppes.npcs.api.IContainer;
 import noppes.npcs.api.INbt;
 import noppes.npcs.api.IPos;
 import noppes.npcs.api.IWorld;
 import noppes.npcs.api.entity.data.IData;
-import noppes.npcs.api.item.IItemStack;
 
 public interface IBlock {
 
@@ -76,7 +75,7 @@ public interface IBlock {
 	 */
 	public IData getStoreddata();
 		
-	public IWorld getWorld();
+	public IWorld getLevel();
 	
 
 	public INbt getBlockEntityNBT();
@@ -87,7 +86,7 @@ public interface IBlock {
 	 * Expert users only
 	 * @return Returns minecrafts tilentity
 	 */
-	public TileEntity getMCTileEntity();
+	public BlockEntity getMCTileEntity();
 	
 	/**
 	 * Expert users only

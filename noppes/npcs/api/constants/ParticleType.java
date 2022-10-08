@@ -1,9 +1,9 @@
 package noppes.npcs.api.constants;
 
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.particles.IParticleData;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.particles.RedstoneParticleData;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.FriendlyByteBuf;
 
 public class ParticleType {
 	public static final int NONE = 0;
@@ -16,7 +16,7 @@ public class ParticleType {
 	public static final int ENCHANT = 7;
 	public static final int CRIT = 8;
 	
-	public static IParticleData getMCType(int type){
+	public static ParticleOptions getMCType(int type){
 		if(type == SMOKE)
 			return ParticleTypes.SMOKE;
 		if(type == PORTAL)
@@ -37,19 +37,14 @@ public class ParticleType {
 		return null;
 	}
 
-	static class RedstoneParticleType extends RedstoneParticleData {
+	static class RedstoneParticleType extends DustParticleOptions {
 
 		protected RedstoneParticleType() {
-			super(1,0,0, 1);
+			super(DustParticleOptions.REDSTONE_PARTICLE_COLOR, 1);
 		}
 
 		@Override
-		public net.minecraft.particles.ParticleType<net.minecraft.particles.RedstoneParticleData> getType() {
-			return ParticleTypes.DUST;
-		}
-
-		@Override
-		public void writeToNetwork(PacketBuffer p_197553_1_) {
+		public void writeToNetwork(FriendlyByteBuf p_197553_1_) {
 		}
 
 		@Override
