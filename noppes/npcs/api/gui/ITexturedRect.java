@@ -5,10 +5,6 @@ public interface ITexturedRect extends ICustomGuiComponent {
     String getTexture();
     ITexturedRect setTexture(String texture);
 
-    int getWidth();
-    int getHeight();
-    ITexturedRect setSize(int width, int height);
-
     float getScale();
     ITexturedRect setScale(float scale);
 
@@ -16,4 +12,5 @@ public interface ITexturedRect extends ICustomGuiComponent {
     int getTextureY();
     ITexturedRect setTextureOffset(int offsetX, int offsetY);
 
+    ITexturedRect setRepeatingTexture(int width, int height, int borderSize);
 }

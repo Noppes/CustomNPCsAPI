@@ -15,6 +15,7 @@ import net.minecraftforge.fml.ModList;
 import noppes.npcs.api.block.IBlock;
 import noppes.npcs.api.entity.ICustomNpc;
 import noppes.npcs.api.entity.IEntity;
+import noppes.npcs.api.entity.IPlayer;
 import noppes.npcs.api.entity.data.IPlayerMail;
 import noppes.npcs.api.gui.ICustomGui;
 import noppes.npcs.api.handler.*;
@@ -38,6 +39,7 @@ public abstract class NpcAPI {
 	 * Creates and spawns an npc
 	 */
 	public abstract ICustomNpc spawnNPC(Level level, int x, int y, int z);
+
 
 	public abstract IEntity getIEntity(Entity entity);
 
@@ -83,7 +85,7 @@ public abstract class NpcAPI {
 	/**
 	 * @author Ryan
 	 */
-	public abstract ICustomGui createCustomGui(int id, int width, int height, boolean pauseGame);	
+	public abstract ICustomGui createCustomGui(int id, int width, int height, boolean pauseGame, IPlayer player);
 	
 	/**
 	 * Get player data even if they are offline

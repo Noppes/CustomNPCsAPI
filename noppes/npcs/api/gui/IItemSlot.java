@@ -9,6 +9,11 @@ public interface IItemSlot extends ICustomGuiComponent {
     IItemStack getStack();
     IItemSlot setStack(IItemStack itemStack);
 
+    boolean getShowGui();
+    IItemSlot setShowGui(boolean bo);
+
+    boolean isPlayerSlot();
+
     Slot getMCSlot();
 
 }
