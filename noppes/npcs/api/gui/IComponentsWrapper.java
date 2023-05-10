@@ -1,5 +1,7 @@
 package noppes.npcs.api.gui;
 
+import noppes.npcs.api.item.IItemStack;
+
 import java.util.List;
 
 public interface IComponentsWrapper {
@@ -119,6 +121,17 @@ public interface IComponentsWrapper {
     IScroll addScroll(int id, int x, int y, int width, int height, String[] list);
 
     /**
+     * Add a Scroll List to the GUI, for the player to select from.
+     * @param id - Unique ID for identifying this scroll.
+     * @param format - String format for display
+     * @param x - X Position, relative to the Left side of the GUI window.
+     * @param y - Y Position, relative to the Top of the GUI window.
+     * @param width - Width of the Scroll List.
+     * @param height - Height of the Scroll List.
+     */
+    ISlider addSlider(int id, int x, int y, int width, int height, String format);
+
+    /**
      * Add a texture to be drawn within the GUI.
      * @param id - Unique ID for identifying this texture.
      * @param texture - Resource Location of the texture to use. (For Example: "minecraft:textures/gui/widgets.png")
@@ -159,5 +172,40 @@ public interface IComponentsWrapper {
      * @param id - Component ID to match.
      */
     void removeComponent(int id);
+
+
+    List<IItemSlot> getSlots();
+    List<IItemSlot> getPlayerSlots();
+
+    /**
+     * Add an Item Slot to the GUI.
+     * CAUTION: Handling Item Storage can be complicated. Once the GUI closes, any items in it will be lost unless you handle storing/saving this information yourself.
+     * @param x - X Position, relative to the Left side of the GUI window.
+     * @param y - Y Position, relative to the Top of the GUI window.
+     */
+    IItemSlot addItemSlot(int x, int y);
+
+    /**
+     * Add an Item Slot to the GUI with an IItemStack already in it.
+     * CAUTION: Handling Item Storage can be complicated. Once the GUI closes, any items in it will be lost unless you handle storing/saving this information yourself.
+     * @param x - X Position, relative to the Left side of the GUI window.
+     * @param y - Y Position, relative to the Top of the GUI window.
+     * @param stack - IItemStack to be in this slot upon opening the GUI.
+     */
+    IItemSlot addItemSlot(int x, int y, IItemStack stack);
+
+    void remoteItemSlot(IItemSlot slot);
+
+    @Deprecated
+    void showPlayerInventory(int x, int y);
+
+    /**
+     * Add a display of the Player's Inventory to the GUI.
+     * A Player's inventory is around 162 Wide, and 58 Tall. Take this into consideration when placing this.
+     * @param x - X Position of the Top-Left corner, relative to the Left side of the GUI window.
+     * @param y - Y Position of the Top-Left corner, relative to the Top of the GUI window.
+     * @param full - Show the full inventory or just the hotbar
+     */
+    IItemSlot[] showPlayerInventory(int x, int y, boolean full);
 
 }
