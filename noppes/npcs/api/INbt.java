@@ -98,6 +98,8 @@ public interface INbt {
 	 */
 	public void clear();
 
+	public boolean isEmpty();
+
 	/**
 	 * Merges two nbt tabs, note that nbt tags will be overwritten if they have the
 	 * same keys
