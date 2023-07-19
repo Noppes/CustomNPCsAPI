@@ -5,7 +5,7 @@ import noppes.npcs.api.entity.IEntity;
 
 public interface IEntityDisplay extends ICustomGuiComponent {
 
-    IEntity getEntity(IWorld world);
+    IEntity getEntity();
     IEntityDisplay setEntity(IEntity entity);
 
     int getRotation();
@@ -13,5 +13,8 @@ public interface IEntityDisplay extends ICustomGuiComponent {
 
     float getScale();
     IEntityDisplay setScale(float scale);
+
+    boolean getBackground();
+    IEntityDisplay setBackground(boolean bo);
 
 }

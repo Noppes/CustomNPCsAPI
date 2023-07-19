@@ -161,7 +161,7 @@ public interface IEntity<T extends Entity> {
 	/**
 	 * @return Returns the {@link noppes.npcs.api.IWorld}
 	 */
-	public IWorld getLevel();
+	public IWorld getWorld();
 
 	/**
 	 * @return Name as which it's registered in minecraft

@@ -19,6 +19,11 @@ public interface ICustomGui extends IComponentsWrapper {
      */
     void update();
 
+    /**
+     * Updates a single component of a gui, instead of the whole gui
+     */
+    void update(ICustomGuiComponent component);
+
     IComponentsScrollableWrapper getScrollingPanel();
 
     void openSubGui(ICustomGui gui);

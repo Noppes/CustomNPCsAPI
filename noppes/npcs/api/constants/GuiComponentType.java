@@ -11,4 +11,5 @@ public class GuiComponentType {
     public static final int BUTTON_LIST = 7;
     public static final int SLIDER = 8;
     public static final int ENTITY_DISPLAY = 9;
+    public static final int ASSETS_SELECTOR = 10;
 }

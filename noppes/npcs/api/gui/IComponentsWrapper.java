@@ -2,6 +2,7 @@ package noppes.npcs.api.gui;
 
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.item.IItemStack;
+import noppes.npcs.api.wrapper.gui.CustomGuiAssetsSelectorWrapper;
 
 import java.util.List;
 
@@ -133,13 +134,23 @@ public interface IComponentsWrapper {
     ISlider addSlider(int id, int x, int y, int width, int height, String format);
 
     /**
-     * Add a Scroll List to the GUI, for the player to select from.
-     * @param id - Unique ID for identifying this scroll.
-     * @param entity - Entity for display
+     * Add an entity display
+     * @param id - Unique ID for identifying this component.
      * @param x - X Position, relative to the Left side of the GUI window.
      * @param y - Y Position, relative to the Top of the GUI window.
+     * @param entity - Entity for display
      */
     IEntityDisplay addEntityDisplay(int id, int x, int y, IEntity entity);
+
+    /**
+     * Add a Scroll List to the GUI, for the player to select from.
+     * @param id - Unique ID for identifying this component.
+     * @param x - X Position, relative to the Left side of the GUI window.
+     * @param y - Y Position, relative to the Top of the GUI window.
+     * @param width - Width of the component.
+     * @param height - Height of the component.
+     */
+    IAssetsSelector addAssetsSelector(int id, int x, int y, int width, int height);
 
     /**
      * Add a texture to be drawn within the GUI.
