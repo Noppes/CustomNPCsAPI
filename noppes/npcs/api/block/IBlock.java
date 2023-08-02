@@ -75,7 +75,7 @@ public interface IBlock {
 	 */
 	public IData getStoreddata();
 		
-	public IWorld getLevel();
+	public IWorld getWorld();
 	
 
 	public INbt getBlockEntityNBT();

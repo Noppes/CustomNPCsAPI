@@ -1,5 +1,6 @@
 package noppes.npcs.api.gui;
 
+import noppes.npcs.api.function.gui.GuiComponentClicked;
 import noppes.npcs.api.function.gui.GuiComponentUpdate;
 
 public interface IAssetsSelector extends ICustomGuiComponent {
@@ -26,5 +27,10 @@ public interface IAssetsSelector extends ICustomGuiComponent {
     IAssetsSelector setFileType(String type);
 
     IAssetsSelector setOnChange(GuiComponentUpdate<IAssetsSelector> onChange);
+
+    /**
+     * Called when an asset is double-clicked
+     */
+    IAssetsSelector setOnPress(GuiComponentClicked<IAssetsSelector> onChange);
 
 }

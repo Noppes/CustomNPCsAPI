@@ -2,7 +2,6 @@ package noppes.npcs.api.gui;
 
 import noppes.npcs.api.entity.IEntity;
 import noppes.npcs.api.item.IItemStack;
-import noppes.npcs.api.wrapper.gui.CustomGuiAssetsSelectorWrapper;
 
 import java.util.List;
 
@@ -215,7 +214,7 @@ public interface IComponentsWrapper {
      */
     IItemSlot addItemSlot(int x, int y, IItemStack stack);
 
-    void remoteItemSlot(IItemSlot slot);
+    void removeItemSlot(IItemSlot slot);
 
     @Deprecated
     void showPlayerInventory(int x, int y);

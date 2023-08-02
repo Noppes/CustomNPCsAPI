@@ -22,5 +22,11 @@ public interface ICustomGuiComponent {
     ICustomGuiComponent setHoverText(String text);
     ICustomGuiComponent setHoverText(String[] text);
 
+    boolean getEnabled();
+    ICustomGuiComponent setEnabled(boolean bo);
+
+    boolean getVisible();
+    ICustomGuiComponent setVisible(boolean bo);
+
     int getType();
 }

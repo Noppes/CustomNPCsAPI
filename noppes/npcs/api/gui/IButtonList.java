@@ -1,7 +1,5 @@
 package noppes.npcs.api.gui;
 
-import noppes.npcs.api.function.gui.GuiComponentClicked;
-
 public interface IButtonList extends IButton {
 
     IButtonList setValues(String... values);

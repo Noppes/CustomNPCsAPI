@@ -37,8 +37,5 @@ public interface IButton extends ICustomGuiComponent {
     IItemStack getDisplayItem();
     IButton setDisplayItem(IItemStack item);
 
-    void setEnabled(boolean bo);
-    boolean getEnabled();
-
     IButton setOnPress(GuiComponentClicked<IButton> onPress);
 }

@@ -10,9 +10,6 @@ public interface ITextField extends ICustomGuiComponent {
     int getColor();
     ITextField setColor(int color);
 
-    ITextField setEnabled(boolean bo);
-    boolean getEnabled();
-
     ITextField setOnChange(GuiComponentUpdate<ITextField> onChange);
     ITextField setOnFocusLost(GuiComponentUpdate<ITextField> onChange);
 
