@@ -1,6 +1,8 @@
 package noppes.npcs.api.gui;
 
 import net.minecraft.world.inventory.Slot;
+import noppes.npcs.api.function.gui.GuiComponentAction;
+import noppes.npcs.api.function.gui.GuiComponentSlotClicked;
 import noppes.npcs.api.function.gui.GuiItemSlotUpdate;
 import noppes.npcs.api.item.IItemStack;
 
@@ -10,6 +12,8 @@ public interface IItemSlot extends ICustomGuiComponent {
     IItemStack getStack();
     IItemSlot setStack(IItemStack itemStack);
 
+    int getShownSize();
+    IItemSlot setShowSize(int size);
 
     /**
      * This is purely for the visual slot, default is 1
@@ -23,9 +27,15 @@ public interface IItemSlot extends ICustomGuiComponent {
      */
     IItemSlot setGuiType(int type);
 
+    boolean getDropOnClose();
+    IItemSlot setDropOnClose(boolean drop);
+
     boolean isPlayerSlot();
 
     IItemSlot setOnUpdate(GuiItemSlotUpdate onUpdate);
+    IItemSlot setOnClick(GuiComponentSlotClicked onPress);
+
+    int getIndex();
 
     Slot getMCSlot();
 

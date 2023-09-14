@@ -109,6 +109,20 @@ public interface IWorld {
 	 */
 	public void spawnParticle(String particle, double x, double y, double z, double dx, double dy, double dz, double speed, int count);
 
+	/**
+	 * Sends a packet from the server to the client everytime its called. Probably should not use this too much.
+	 * @param name Block name.
+	 * @param x The x position
+	 * @param y The y position
+	 * @param z The z position
+	 * @param dx Usually used for the x motion
+	 * @param dy Usually used for the y motion
+	 * @param dz Usually used for the z motion
+	 * @param speed Speed of the particles, usually between 0 and 1
+	 * @param count Particle count
+	 */
+	public void spawnParticleBlock(String name, double x, double y, double z, double dx, double dy, double dz, double speed, int count);
+
 	public void broadcast(String message);
 
 	public IScoreboard getScoreboard();

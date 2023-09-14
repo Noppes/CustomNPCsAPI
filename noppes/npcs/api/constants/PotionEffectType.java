@@ -3,6 +3,8 @@ package noppes.npcs.api.constants;
 import net.minecraft.core.Registry;
 import net.minecraft.world.effect.MobEffect;
 
+import java.util.List;
+
 public final class PotionEffectType {
 	public static final int NONE = 0;
 	public static final int FIRE = 666;
@@ -40,13 +42,17 @@ public final class PotionEffectType {
 	public static final int DOLPHINS_GRACE = 30;
 	public static final int BAD_OMEN = 31;
 	public static final int HERO_OF_THE_VILLAGE = 32;
-	
 
-	
+
+
 	public static MobEffect getMCType(int effect) {
 		if(effect == NONE || effect == FIRE)
 			return null;
 
 		return Registry.MOB_EFFECT.byId(effect);
+	}
+
+	public static List<MobEffect> getMCAllTypes() {
+		return Registry.MOB_EFFECT.stream().toList();
 	}
 }

@@ -139,7 +139,7 @@ public interface IComponentsWrapper {
      * @param y - Y Position, relative to the Top of the GUI window.
      * @param entity - Entity for display
      */
-    IEntityDisplay addEntityDisplay(int id, int x, int y, IEntity entity);
+    IEntityDisplay addEntityDisplay(int id, int x, int y, int width, int height, IEntity entity);
 
     /**
      * Add a Scroll List to the GUI, for the player to select from.
@@ -193,26 +193,25 @@ public interface IComponentsWrapper {
      */
     void removeComponent(int id);
 
-
     List<IItemSlot> getSlots();
     List<IItemSlot> getPlayerSlots();
 
-    /**
-     * Add an Item Slot to the GUI.
-     * CAUTION: Handling Item Storage can be complicated. Once the GUI closes, any items in it will be lost unless you handle storing/saving this information yourself.
-     * @param x - X Position, relative to the Left side of the GUI window.
-     * @param y - Y Position, relative to the Top of the GUI window.
-     */
+    @Deprecated
     IItemSlot addItemSlot(int x, int y);
+    @Deprecated
+    IItemSlot addItemSlot(int x, int y, IItemStack stack);
 
     /**
      * Add an Item Slot to the GUI with an IItemStack already in it.
      * CAUTION: Handling Item Storage can be complicated. Once the GUI closes, any items in it will be lost unless you handle storing/saving this information yourself.
+     * @param id - Id to identify this item slot
      * @param x - X Position, relative to the Left side of the GUI window.
      * @param y - Y Position, relative to the Top of the GUI window.
      * @param stack - IItemStack to be in this slot upon opening the GUI.
      */
-    IItemSlot addItemSlot(int x, int y, IItemStack stack);
+    IItemSlot addItemSlot(int id, int x, int y, IItemStack stack);
+
+    IItemSlot getItemSlot(int id);
 
     void removeItemSlot(IItemSlot slot);
 

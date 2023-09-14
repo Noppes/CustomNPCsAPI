@@ -22,6 +22,19 @@ public class ForgeEvent extends CustomNPCsEvent {
 		this.event = event;
 	}
 
+	@Override
+	public boolean isCancelable() {
+		return event.isCancelable();
+	}
+	@Override
+	public boolean isCanceled() {
+		return event.isCanceled();
+	}
+	@Override
+	public void setCanceled(boolean cancel) {
+		event.setCanceled(cancel);
+	}
+
 	/**
 	 * init <br>
 	 * The init event has no forge event 

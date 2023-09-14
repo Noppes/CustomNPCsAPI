@@ -2,129 +2,128 @@ package noppes.npcs.api.entity.data;
 
 public interface INPCRanged {
 
-	public int getStrength();
+	int getStrength();
 
-	public void setStrength(int strength);
+	void setStrength(int strength);
 
 	/**
 	 * @return Speed of the projectile shot
 	 */
-	public int getSpeed();
+	int getSpeed();
 
 	/**
 	 * @param speed Speed of the projectile shot (default:10)
 	 */
-	public void setSpeed(int speed);
+	void setSpeed(int speed);
 
 	/**
 	 * Burst is the ammount shot at a time. E.g. a burst of 5 burst delay of 2 and a normal delay of 20, 
 	 * will shoot 5 projectiles with a delay of 2 ticks every 20 ticks.
 	 */
-	public int getBurst();
+	int getBurst();
 
-	public void setBurst(int count);
+	void setBurst(int count);
 
-	public int getBurstDelay();
+	int getBurstDelay();
 
-	public void setBurstDelay(int delay);
+	void setBurstDelay(int delay);
 
-	public int getKnockback();
+	int getKnockback();
 
-	public void setKnockback(int punch);
+	void setKnockback(int punch);
 
-	public int getSize();
+	int getSize();
 
-	public void setSize(int size);
+	void setSize(int size);
 
-	public boolean getRender3D();
+	boolean getRender3D();
 
-	public void setRender3D(boolean render3d);
+	void setRender3D(boolean render3d);
 
-	public boolean getSpins();
+	boolean getSpins();
 
-	public void setSpins(boolean spins);
+	void setSpins(boolean spins);
 
-	public boolean getSticks();
+	boolean getSticks();
 
-	public void setSticks(boolean sticks);
+	void setSticks(boolean sticks);
 
-	public boolean getHasGravity();
+	boolean getHasGravity();
 
-	public void setHasGravity(boolean hasGravity);
+	void setHasGravity(boolean hasGravity);
 
-	public boolean getAccelerate();
+	boolean getAccelerate();
 
-	public void setAccelerate(boolean accelerate);
+	void setAccelerate(boolean accelerate);
 
-	public int getExplodeSize();
+	int getExplodeSize();
 
-	public void setExplodeSize(int size);
+	void setExplodeSize(int size);
 
 	/**
 	 * @see noppes.npcs.api.constants.PotionEffectType
 	 */
-	public int getEffectType();
+	int getEffectType();
 	
-	public int getEffectTime();
+	int getEffectTime();
 
-	public int getEffectStrength();
+	int getEffectStrength();
 
-	public void setEffect(int type, int strength, int time);
+	void setEffect(int type, int strength, int time);
 
-	public boolean getGlows();
+	boolean getGlows();
 
-	public void setGlows(boolean glows);
+	void setGlows(boolean glows);
 
 	/**
-	 * @see noppes.npcs.api.constants.ParticleType
+	 * see <a href="http://minecraft.gamepedia.com/Particles">http://minecraft.gamepedia.com/Particles</a>
 	 */
-	public int getParticle();
+	String getParticle();
 
-	public void setParticle(int type);
+	/**
+	 * see <a href="http://minecraft.gamepedia.com/Particles">http://minecraft.gamepedia.com/Particles</a>
+	 */
+	void setParticle(String type);
 	
 	/**
 	 * @param type 0:Fire
 	 */
-	public String getSound(int type);
+	String getSound(int type);
 
 	/**
 	 * @param type 0:Fire, 1:Hit, 2:Ground
 	 */
-	public void setSound(int type, String sound);
+	void setSound(int type, String sound);
 
-	public int getShotCount();
+	int getShotCount();
 
-	public void setShotCount(int count);
+	void setShotCount(int count);
 
-	public boolean getHasAimAnimation();
+	boolean getHasAimAnimation();
 
-	public void setHasAimAnimation(boolean aim);
+	void setHasAimAnimation(boolean aim);
 
-	public int getAccuracy();
+	int getAccuracy();
 
-	public void setAccuracy(int accuracy);
+	void setAccuracy(int accuracy);
 
-	public int getRange();
+	int getRange();
 
-	public void setRange(int range);
+	void setRange(int range);
 
-	public int getDelayMin();
+	int getDelayMin();
 
-	public int getDelayMax();
+	int getDelayMax();
 	
 	/**
 	 * @return Returns a value between delayMin and delayMax
 	 */
-	public int getDelayRNG();
+	int getDelayRNG();
 
-	public void setDelay(int min, int max);
+	void setDelay(int min, int max);
 
-	public int getFireType();
+	int getFireType();
 
-	public void setFireType(int type);
-
-	public int getMeleeRange();
-
-	public void setMeleeRange(int range);
+	void setFireType(int type);
 
 }

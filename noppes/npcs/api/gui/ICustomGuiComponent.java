@@ -1,5 +1,8 @@
 package noppes.npcs.api.gui;
 
+import noppes.npcs.api.function.gui.GuiComponentAction;
+import noppes.npcs.api.function.gui.GuiComponentState;
+
 import java.util.UUID;
 
 public interface ICustomGuiComponent {
@@ -17,6 +20,10 @@ public interface ICustomGuiComponent {
     int getHeight();
     ICustomGuiComponent setSize(int width, int height);
 
+    default boolean isInside(double x, double y){
+        return x >= getPosX() && x < (getPosX() + getWidth()) && y >= getPosY() && y < (getPosY() + getHeight());
+    }
+
     boolean hasHoverText();
     String[] getHoverText();
     ICustomGuiComponent setHoverText(String text);
@@ -24,9 +31,17 @@ public interface ICustomGuiComponent {
 
     boolean getEnabled();
     ICustomGuiComponent setEnabled(boolean bo);
+    ICustomGuiComponent setEnabledCondition(GuiComponentState condition);
 
     boolean getVisible();
     ICustomGuiComponent setVisible(boolean bo);
+    ICustomGuiComponent setVisibleCondition(GuiComponentState condition);
+
+    boolean getHovered();
+    ICustomGuiComponent setHovered(boolean bo);
+
+    ICustomGuiComponent setOnHover(GuiComponentAction<? extends ICustomGuiComponent> onHover);
+    ICustomGuiComponent setOnHoverExit(GuiComponentAction<? extends ICustomGuiComponent> onHoverExit);
 
     int getType();
 }

@@ -146,6 +146,13 @@ public abstract class NpcAPI {
 	 * @return
 	 */
 	public abstract String executeCommand(IWorld world, String command);
+
+	/**
+	 * @param world The world in which the command is executed
+	 * @param command The Command to execute
+	 * @return
+	 */
+	public abstract String executeCommandSilent(IWorld world, String command);
 	
 	/**
 	 * @author Nikedemos

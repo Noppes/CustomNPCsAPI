@@ -176,6 +176,15 @@ public interface IItemStack {
 	 */
 	public int getFoodLevel();
 
+	@Deprecated
 	public boolean compare(IItemStack item, boolean ignoreNBT);
-	
+
+	public boolean compare(IItemStack item, boolean ignoreNBT, boolean ignoreDamage);
+
+	/**
+	 * Splits the itemstack
+	 * @param stackSize Size to reduce stacksize with
+	 * @return returns a new itemstack of stackSize length
+	 */
+	IItemStack split(int stackSize);
 }

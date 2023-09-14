@@ -20,6 +20,12 @@ public interface ICustomGui extends IComponentsWrapper {
     void update();
 
     /**
+     *
+     * @return Returns the item the player is currently holding in their cursor
+     */
+    IItemStack getCarriedItem();
+
+    /**
      * Updates a single component of a gui, instead of the whole gui
      */
     void update(ICustomGuiComponent component);
@@ -31,6 +37,8 @@ public interface ICustomGui extends IComponentsWrapper {
     ICustomGui getSubGui();
 
     boolean hasSubGui();
+
+    boolean isSubGui();
 
     ICustomGui closeSubGui();
 
