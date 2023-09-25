@@ -7,92 +7,95 @@ import noppes.npcs.api.IContainer;
 import noppes.npcs.api.INbt;
 import noppes.npcs.api.IPos;
 import noppes.npcs.api.IWorld;
+import noppes.npcs.api.entity.IEntityLiving;
 import noppes.npcs.api.entity.data.IData;
+
+import javax.annotation.Nullable;
 
 public interface IBlock {
 
-	public int getX();
+	int getX();
 	
-	public int getY();
+	int getY();
 	
-	public int getZ();
+	int getZ();
 	
-	public IPos getPos();
+	IPos getPos();
 	
-	public Object getProperty(String name);
+	Object getProperty(String name);
 	
-	public void setProperty(String name, Object val);
+	void setProperty(String name, Object val);
 
-	public String[] getProperties();
+	String[] getProperties();
 	
 	/**
 	 * @return Returns this blocks name
 	 */
-	public String getName();
+	String getName();
 
 	/**
 	 * Removes this block
 	 */
-	public void remove();
+	void remove();
 	
 	/**
 	 * @return Returns whether or not this block has been replaced by another
 	 */
-	public boolean isRemoved();
+	boolean isRemoved();
 	
-	public boolean isAir();
+	boolean isAir();
 	
 	/*
 	 * @param name Sets the block to replace this one using the blocks name
 	 * @return Returns the new block
 	 */
-	public IBlock setBlock(String name);
+	IBlock setBlock(String name);
 
 	/**
 	 * @param block Sets the block to replace this one
 	 * @return Returns the new block
 	 */
-	public IBlock setBlock(IBlock block);
+	IBlock setBlock(IBlock block);
 	
-	public boolean hasTileEntity();
+	boolean hasTileEntity();
 
 	/**
 	 * @return Returns whether it has items stored inside it (e.g. chests, droppers, hoppers, etc)
 	 */
-	public boolean isContainer();
+	boolean isContainer();
 	
-	public IContainer getContainer();
+	IContainer getContainer();
 	
 	/**
 	 * Temp data stores anything but only untill it's reloaded. 
 	 * (works only for customnpcs blocks)
 	 */
-	public IData getTempdata();
+	IData getTempdata();
 	
 	/**
 	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved 
 	 * (works only for blocks with TileEntities)
 	 */
-	public IData getStoreddata();
+	IData getStoreddata();
 		
-	public IWorld getWorld();
+	IWorld getWorld();
 	
 
-	public INbt getBlockEntityNBT();
+	INbt getBlockEntityNBT();
 
-	public void setTileEntityNBT(INbt nbt);
+	void setTileEntityNBT(INbt nbt);
 	
 	/**
 	 * Expert users only
 	 * @return Returns minecrafts tilentity
 	 */
-	public BlockEntity getMCTileEntity();
+	BlockEntity getMCTileEntity();
 	
 	/**
 	 * Expert users only
 	 * @return Returns minecrafts block
 	 */
-	public Block getMCBlock();
+	Block getMCBlock();
 
 	/**
 	 * @param type Event type
@@ -102,19 +105,20 @@ public interface IBlock {
 	 * 	Note block - type:(0-9) data:(0-24) plays different notes
 	 * 
 	 */
-	public void blockEvent(int type, int data);
+	void blockEvent(int type, int data);
 
-	public String getDisplayName();
+	String getDisplayName();
 
 	/**
 	 * Expert users only
 	 * @return Returns minecrafts iblockstate
 	 */
-	public BlockState getMCBlockState();
+	BlockState getMCBlockState();
 
 	/**
 	 * Simulates a player interacting with this block (can give weird results)
 	 * @param side The side of the block interacted with
+	 * @param entity Entity that clicked, can be null
 	 */
-	public void interact(int side);
+	void interact(int side, @Nullable IEntityLiving entity);
 }

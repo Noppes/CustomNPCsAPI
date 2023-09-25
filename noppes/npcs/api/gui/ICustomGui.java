@@ -24,6 +24,7 @@ public interface ICustomGui extends IComponentsWrapper {
      * @return Returns the item the player is currently holding in their cursor
      */
     IItemStack getCarriedItem();
+    void setCarriedItem(IItemStack stack);
 
     /**
      * Updates a single component of a gui, instead of the whole gui

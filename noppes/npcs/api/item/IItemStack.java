@@ -2,6 +2,7 @@ package noppes.npcs.api.item;
 
 import net.minecraft.world.item.ItemStack;
 import noppes.npcs.api.INbt;
+import noppes.npcs.api.entity.IEntityLiving;
 import noppes.npcs.api.entity.IMob;
 import noppes.npcs.api.entity.data.IData;
 
@@ -9,177 +10,177 @@ import noppes.npcs.api.entity.data.IData;
 
 public interface IItemStack {
 
-	public int getStackSize();
+	int getStackSize();
 	
 	/**
 	 * @param size The size of the itemstack. A number between 1 and 64
 	 */
-	public void setStackSize(int size);
+	void setStackSize(int size);
 
-	public int getMaxStackSize();
+	int getMaxStackSize();
 
-	public boolean isDamageable();
+	boolean isDamageable();
 	/**
 	 * @return Returns the damage of this item. Only for items that have durability.
 	 */
-	public int getDamage();
+	int getDamage();
 
 	/**
 	 * @param value The value to be set as item damage. Only for items that have durability.
 	 */
-	public void setDamage(int value);
+	void setDamage(int value);
 	
-	public int getMaxDamage();
+	int getMaxDamage();
 	
-	public double getAttackDamage();
+	double getAttackDamage();
 
-	public void damageItem(int damage, IMob living);
+	void damageItem(int damage, IMob living);
 
 	/**
 	 * @param id The enchantment id
 	 * @param strenght The strenght of the enchantment
 	 */
-	public void addEnchantment(String id, int strenght);
+	void addEnchantment(String id, int strenght);
 	
-	public boolean isEnchanted();
+	boolean isEnchanted();
 
 	/**
 	 * @param id The enchantment id
 	 */
-	public boolean hasEnchant(String id);
+	boolean hasEnchant(String id);
 
 	/**
 	 * @param id The enchantment id
 	 * @return Returns whether something was removed or not
 	 */
-	public boolean removeEnchant(String id);
+	boolean removeEnchant(String id);
 	
 	/**
 	 * @deprecated
 	 * @return Returns whether or not this item is a block
 	 */
-	public boolean isBlock();
+	boolean isBlock();
 	
-	public boolean isWearable();
+	boolean isWearable();
 	
 	/**
 	 * @return Return whether or not the item has a custom name
 	 */
-	public boolean hasCustomName();
+	boolean hasCustomName();
 	
 	/**
 	 * @param name The custom name this item will get
 	 */
-	public void setCustomName(String name);
+	void setCustomName(String name);
 	
 	/**
 	 * @return Return the ingame displayed name. This is either the item name or the custom name if it has one.
 	 */
-	public String getDisplayName();
+	String getDisplayName();
 	
 	/**
 	 * @return Get the items ingame name. Use this incase the item ingame has custom name and you want the original name.
 	 */
-	public String getItemName();
+	String getItemName();
 
 	/**
 	 * @return The minecraft name for this item
 	 */
-	public String getName();
+	String getName();
 
 	/**
 	 * @deprecated
 	 * @return Whether this is a writable book item. If it is check IItemBook for more info
 	 */
-	public boolean isBook();
+	boolean isBook();
 	
 	/**
 	 * @return A copy of the ItemStack
 	 */
-	public IItemStack copy();
+	IItemStack copy();
 	
 	/**
 	 * No support is given for this method. Dont use if you dont know what you are doing.
 	 * @return Minecraft ItemStack
 	 */
-	public ItemStack getMCItemStack();
+	ItemStack getMCItemStack();
 
 	/**
 	 * @return Used to get the extra NBT, which is used by enchantments and customname
 	 */
-	public INbt getNbt();
+	INbt getNbt();
 
 	/**
 	 * @return Returns false if the nbt of this itemstack is null or empty
 	 */
-	public boolean hasNbt();
+	boolean hasNbt();
 	
 	/**
 	 * Removes the nbt from the itemstack
 	 */
-	public void removeNbt();
+	void removeNbt();
 	
 	/**
 	 * @return The entire item as nbt
 	 */
-	public INbt getItemNbt();
+	INbt getItemNbt();
 
 	/**
 	 * @return Returns true if this itemstack is air or the stacksize is 0
 	 */
-	public boolean isEmpty();
+	boolean isEmpty();
 	
-	public int getType();
+	int getType();
 	
-	public String[] getLore();
+	String[] getLore();
 	
-	public void setLore(String[] lore);
+	void setLore(String[] lore);
 
 	/**
 	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
 	 * @param value
 	 * @deprecated Replaced by setAttribute(String name, double value, int slot)
 	 */
-	public void setAttribute(String name, double value);
+	void setAttribute(String name, double value);
 
 	/**
 	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
 	 * @param value
 	 * @param slot Slot in which the attribute is active -1:ALL, 0:MAINHAND, 1:OFFHAND, 2:FEET, 3:LEGS, 4:CHEST, 5:HEAD 
 	 */
-	public void setAttribute(String name, double value, int slot);
+	void setAttribute(String name, double value, int slot);
 
 	/**
 	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
 	 * @return Returns the value of this attribute
 	 */
-	public double getAttribute(String name);
+	double getAttribute(String name);
 
 	/**
 	 * @param name Attribute name see (https://minecraft.gamepedia.com/Attribute)
 	 * @return Whether or not this item has the attribute
 	 */
-	public boolean hasAttribute(String name);
+	boolean hasAttribute(String name);
 	
 	/**
 	 * Temp data stores anything but only untill it's reloaded
 	 */
-	public IData getTempdata();
+	IData getTempdata();
 	
 	/**
 	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved
 	 */
-	public IData getStoreddata();
+	IData getStoreddata();
 
 	/**
 	 * @return Returns 0 if the item isnt food and otherwise the amount it restores hunger
 	 */
-	public int getFoodLevel();
+	int getFoodLevel();
 
 	@Deprecated
-	public boolean compare(IItemStack item, boolean ignoreNBT);
+	boolean compare(IItemStack item, boolean ignoreNBT);
 
-	public boolean compare(IItemStack item, boolean ignoreNBT, boolean ignoreDamage);
+	boolean compare(IItemStack item, boolean ignoreNBT, boolean ignoreDamage);
 
 	/**
 	 * Splits the itemstack
@@ -187,4 +188,12 @@ public interface IItemStack {
 	 * @return returns a new itemstack of stackSize length
 	 */
 	IItemStack split(int stackSize);
+
+	/**
+	 * Simulates an entity using this item
+	 * @param entity Entity that clicked, can be null
+	 * @param isMainHand Use as mainhand or offhand
+	 */
+	void use(IEntityLiving entity, boolean isMainHand);
+
 }
