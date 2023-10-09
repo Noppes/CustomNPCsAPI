@@ -18,6 +18,7 @@ public interface IScroll extends ICustomGuiComponent {
     IScroll setSelection(int... selection);
     String[] getSelectionList();
     IScroll setSelectionList(String... list);
+    boolean hasSelection();
 
     boolean isMultiSelect();
     IScroll setMultiSelect(boolean multiSelect);
@@ -27,5 +28,4 @@ public interface IScroll extends ICustomGuiComponent {
 
     boolean getHasSearch();
     IScroll setHasSearch(boolean bo);
-
 }
