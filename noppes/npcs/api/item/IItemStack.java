@@ -129,9 +129,12 @@ public interface IItemStack {
 	 * @return Returns true if this itemstack is air or the stacksize is 0
 	 */
 	boolean isEmpty();
-	
+
+	/**
+	 * @return {@link noppes.npcs.api.constants.ItemType}
+	 */
 	int getType();
-	
+
 	String[] getLore();
 	
 	void setLore(String[] lore);

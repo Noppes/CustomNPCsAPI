@@ -4,6 +4,6 @@ import noppes.npcs.api.gui.ICustomGui;
 import noppes.npcs.api.gui.IItemSlot;
 
 @FunctionalInterface
-public interface GuiComponentSlotClicked {
+public interface GuiItemSlotClicked {
     boolean onClick(ICustomGui gui, IItemSlot comp, int dragType, String clickType);
 }

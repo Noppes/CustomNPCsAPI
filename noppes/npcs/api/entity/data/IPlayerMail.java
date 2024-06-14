@@ -1,26 +1,28 @@
 package noppes.npcs.api.entity.data;
 
-import noppes.npcs.api.IContainer;
 import noppes.npcs.api.handler.data.IQuest;
+import noppes.npcs.api.item.IItemStack;
 
 public interface IPlayerMail {
 	
-	public String getSender();
+	String getSender();
 	
-	public void setSender(String sender);
+	void setSender(String sender);
 	
-	public String getSubject();
+	String getSubject();
 	
-	public void setSubject(String subject);
+	void setSubject(String subject);
 	
-	public String[] getText();
+	String getText();
 	
-	public void setText(String[] text);
+	void setText(String text);
 	
-	public IQuest getQuest();
+	IQuest getQuest();
 	
-	public void setQuest(int id);
-	
-	public IContainer getContainer();
+	void setQuest(int id);
+
+	IItemStack getItem(int slot);
+
+	void setItem(int slot, IItemStack item);
 	
 }

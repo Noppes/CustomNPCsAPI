@@ -1,12 +1,16 @@
 package noppes.npcs.api.gui;
 
 import noppes.npcs.api.function.gui.GuiComponentAction;
+import noppes.npcs.api.function.gui.GuiComponentHold;
 import noppes.npcs.api.item.IItemStack;
 
 public interface IButton extends ICustomGuiComponent {
 
     String getLabel();
     IButton setLabel(String label);
+    IButton setLabelOffset(int width, int height);
+    int getLabelOffsetX();
+    int getLabelOffsetY();
     IButton appendLabel(String label, Object... args);
 
     ITexturedRect getTextureRect();
@@ -42,4 +46,6 @@ public interface IButton extends ICustomGuiComponent {
     IButton setColor(int color);
 
     IButton setOnPress(GuiComponentAction<IButton> onPress);
+
+    IButton setOnHold(GuiComponentHold<IButton> onPress);
 }

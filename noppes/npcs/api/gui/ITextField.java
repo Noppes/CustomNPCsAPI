@@ -16,12 +16,15 @@ public interface ITextField extends ICustomGuiComponent {
     ITextField setFocused(boolean bo);
     boolean getFocused();
 
+    ITextField setHideBackground(boolean bo);
+    boolean getHideBackground();
+
     /**
-     * @param type 0:string, 1:int, 2:hex, 3:float
+     * @param type 0:string, 1:int, 2:hex, 3:float, 4:long
      */
     ITextField setCharacterType(int type);
     /**
-     * @return 0:string, 1:int, 2:hex, 3:float
+     * @return 0:string, 1:int, 2:hex, 3:float, 4:long
      */
     int getCharacterType();
 
@@ -37,8 +40,11 @@ public interface ITextField extends ICustomGuiComponent {
     float getFloat();
     ITextField setFloat(float f);
 
+    long getLong();
+    ITextField setLong(long l);
+
     /**
      * Incase CharacterType is 1 or 2, you can set the min and max value
      */
-    ITextField setMinMax(int min, int max);
+    ITextField setMinMax(Number min, Number max);
 }

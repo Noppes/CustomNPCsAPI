@@ -10,8 +10,6 @@ import noppes.npcs.api.IWorld;
 import noppes.npcs.api.entity.IEntityLiving;
 import noppes.npcs.api.entity.data.IData;
 
-import javax.annotation.Nullable;
-
 public interface IBlock {
 
 	int getX();
@@ -120,5 +118,5 @@ public interface IBlock {
 	 * @param side The side of the block interacted with
 	 * @param entity Entity that clicked, can be null
 	 */
-	void interact(int side, @Nullable IEntityLiving entity);
+	void interact(int side, IEntityLiving entity);
 }

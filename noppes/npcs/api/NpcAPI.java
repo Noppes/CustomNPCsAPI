@@ -99,7 +99,8 @@ public abstract class NpcAPI {
 	 * @return The event bus where you register CustomNPCEvents
 	 */
 	public abstract IEventBus events();
-	
+
+	public abstract void registerScriptEvent(Class c);
 	
 	/**
 	 * Use to register your own /noppes subcommand

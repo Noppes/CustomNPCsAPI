@@ -11,114 +11,119 @@ import noppes.npcs.api.item.IItemStack;
 
 public interface IPlayer<T extends ServerPlayer> extends IEntityLiving<T> {
 
-	public String getDisplayName();
+	String getDisplayName();
 	
-	public boolean hasFinishedQuest(int id);
+	boolean hasFinishedQuest(int id);
 	
-	public boolean hasActiveQuest(int id);
+	boolean hasActiveQuest(int id);
 	
-	public void startQuest(int id);
+	void startQuest(int id);
 		
 	/**
 	 * @return Returns -1:Unfriendly, 0:Neutral, 1:Friendly
 	 */
-	public int factionStatus(int factionId);
+	int factionStatus(int factionId);
 	
 	/**
 	 * Add the quest from finished quest list
 	 * @param id The Quest ID
 	 */
-	public void finishQuest(int id);
+	void finishQuest(int id);
 	
 	/**
 	 * Removes the quest from active quest list
 	 * @param id The Quest ID
 	 */
-	public void stopQuest(int id);
+	void stopQuest(int id);
 
 	/**
 	 * Removes the quest from active and finished quest list
 	 * @param id The Quest ID
 	 */
-	public void removeQuest(int id);
+	void removeQuest(int id);
 
-	public boolean hasReadDialog(int id);
+	boolean hasReadDialog(int id);
 	
 	/**
 	 * @param name Name of the person talking in the dialog
 	 */
-	public void showDialog(int id, String name);
+	void showDialog(int id, String name);
 	
 	/**
 	 * @param id Removes the given id from the read dialogs list
 	 */
-	public void removeDialog(int id);
+	void removeDialog(int id);
 	
 	/**
 	 * @param id Adds the given id to the read dialogs
 	 */
-	public void addDialog(int id);
+	void addDialog(int id);
 	/**
 	 * @param faction The faction id
 	 * @param points The points to increase. Use negative values to decrease
 	 */
-	public void addFactionPoints(int faction, int points);
+	void addFactionPoints(int faction, int points);
 
     /**         
      * @param faction The faction id
      * @return  points
      */
-	public int getFactionPoints(int faction);
+	int getFactionPoints(int faction);
 
-	public void message(String message);
+	void message(String message);
 	
-	public int getGamemode();
+	int getGamemode();
 	
-	public void setGamemode(int mode);
-	
-	/**
-	 * Use getInventory().count instead
-	 * @deprecated
-	 */
-	public int inventoryItemCount(IItemStack item);
+	void setGamemode(int mode);
 	
 	/**
 	 * Use getInventory().count instead
 	 * @deprecated
 	 */
-	public int inventoryItemCount(String id);
+	int inventoryItemCount(IItemStack item);
+	
+	/**
+	 * Use getInventory().count instead
+	 * @deprecated
+	 */
+	int inventoryItemCount(String id);
 
 	/**
 	 * @return Returns a IItemStack array size 36
 	 */
-	public IContainer getInventory();
+	IContainer getInventory();
 
 	/**
 	 * @return Returns the itemstack the player is currently holding in a container gui
 	 */
-	public IItemStack getInventoryHeldItem();
+	IItemStack getInventoryHeldItem();
 	
 	/**
 	 * @param item The Item type to be removed
 	 * @param amount How many will be removed
 	 * @return Returns true if the items were removed succesfully. Returns false incase a bigger amount than what the player has was given
 	 */
-	public boolean removeItem(IItemStack item, int amount);
+	boolean removeItem(IItemStack item, int amount);
 
 	/**
 	 * @param id The items name
 	 * @param amount How many will be removed
 	 * @return Returns true if the items were removed succesfully. Returns false incase a bigger amount than what the player has was given or item doesnt exist
 	 */
-	public boolean removeItem(String id, int amount);
+	boolean removeItem(String id, int amount);
 
-	public void removeAllItems(IItemStack item);
+	void removeAllItems(IItemStack item);
+
+	/**
+	 * @param item Item to be added or dropped if inventory is full
+	 */
+	void giveOrDropItems(IItemStack[] items);
 	
 	/**
 	 * @param item Item to be added
 	 * @return Returns whether or not it gave the item succesfully
 	 */
-	public boolean giveItem(IItemStack item);
+	boolean giveItem(IItemStack item);
 	
 	
 	/**
@@ -126,7 +131,7 @@ public interface IPlayer<T extends ServerPlayer> extends IEntityLiving<T> {
 	 * @param amount The amount of the item to be added
 	 * @return Returns whether or not it gave the item succesfully
 	 */
-	public boolean giveItem(String id, int amount);
+	boolean giveItem(String id, int amount);
 
 	
 	/**
@@ -135,105 +140,107 @@ public interface IPlayer<T extends ServerPlayer> extends IEntityLiving<T> {
 	 * @param y The y position
 	 * @param z The z position
 	 */
-	public void setSpawnpoint(int x, int y, int z);
+	void setSpawnpoint(int x, int y, int z);
 	
-	public void resetSpawnpoint();
+	void resetSpawnpoint();
 
 	/**
 	 * @param achievement The achievement id. For a complete list see <a href="http://minecraft.gamepedia.com/Achievements>Achievements</a>
 	 * @return Returns whether or not the player has this achievement
 	 */
-	public boolean hasAdvancement(String achievement);
+	boolean hasAdvancement(String achievement);
 	
-	public int getExpLevel();
+	int getExpLevel();
 	
-	public void setExpLevel(int level);
+	void setExpLevel(int level);
 	
-	public boolean hasPermission(String permission);
+	boolean hasPermission(String permission);
 
-	public Object getPixelmonData();
+	Object getPixelmonData();
 
-	public ITimers getTimers();
+	ITimers getTimers();
 	
-	public void closeGui();
+	void closeGui();
 
 	@Override
-	public T getMCEntity();
+	T getMCEntity();
 
-	public IBlock getSpawnPoint();
+	IBlock getSpawnPoint();
 
-	public void setSpawnPoint(IBlock block);
+	void setSpawnPoint(IBlock block);
 
-	public int getHunger();
+	int getHunger();
 
-	public void setHunger(int level);
+	void setHunger(int level);
 
 	/**
 	 * @param message The message the player gets when kicked
 	 */
-	public void kick(String message);
+	void kick(String message);
 
 	/**
 	 * @param title Title of the notification
 	 * @param msg Message of the notification
 	 * @param type (0-3) notification background type
 	 */
-	public void sendNotification(String title, String msg, int type);
+	void sendNotification(String title, String msg, int type);
 	
-	public void sendMail(IPlayerMail mail);
+	void sendMail(IPlayerMail mail);
 	
 	/**
 	 * WANRING, REMOVES ALL PLAYER DATA (data only from CustomNPCs, does not clear inventory etc)
 	 */
-	public void clearData();
+	void clearData();
 
-	public IQuest[] getActiveQuests();
+	IQuest[] getActiveQuests();
 
-	public IQuest[] getFinishedQuests();
+	IQuest[] getFinishedQuests();
 
 	/**
 	 * Syncs inventory changes to the client side. Also checks Item Quests for completion
 	 */
-	public void updatePlayerInventory();
+	void updatePlayerInventory();
 	
 	/**
 	 * @param sound Sounds resource name
 	 * @param volume default 1
 	 * @param pitch default 1
 	 */
-	public void playSound(String sound, float volume, float pitch);
+	void playSound(String sound, float volume, float pitch);
 
 	/**
 	 * @param sound Sounds resource name
 	 * @param background Whether to play the music in the background or like a jukebox in a specific location
 	 * @param loops Whether the music loops
 	 */
-	public void playMusic(String sound, boolean background, boolean loops);
+	void playMusic(String sound, boolean background, boolean loops);
+
+	void stopMusic();
 
 	/**
 	 * @return Returns the container of the player if he has a container gui open. Returns the inventory container if none is open
 	 */
-	public IContainer getOpenContainer();
+	IContainer getOpenContainer();
 
-	public boolean canQuestBeAccepted(int id);
+	boolean canQuestBeAccepted(int id);
 
 	/**
 	 * Open a ICustomGui to this player.
 	 * @param gui Custom GUI to be displayed to the player.
 	 * @author RyanV
 	*/
-	public void showCustomGui(ICustomGui gui);
+	void showCustomGui(ICustomGui gui);
 	
 	/**
 	 * @return Returns the currently opened custom gui
 	 */
-	public ICustomGui getCustomGui();
+	ICustomGui getCustomGui();
 
 	/**
 	 * Fires trigger event for player scripts
 	 * @param id, Id for the event
 	 * @param arguments, arguments you can give with it
 	 */
-	public void trigger(int id, Object... arguments);
+	void trigger(int id, Object... arguments);
 
 }

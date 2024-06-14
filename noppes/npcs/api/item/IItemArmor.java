@@ -1,9 +1,12 @@
 package noppes.npcs.api.item;
 
+import net.minecraft.world.entity.EquipmentSlot;
+
 public interface IItemArmor extends IItemStack {
 
-	public int getArmorSlot();
+	int getArmorSlot();
 	
-	public String getArmorMaterial();
-	
+	String getArmorMaterial();
+
+    EquipmentSlot getSlotType();
 }

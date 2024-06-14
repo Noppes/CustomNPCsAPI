@@ -1,9 +1,9 @@
 package noppes.npcs.api.gui;
 
 import noppes.npcs.api.entity.IPlayer;
+import noppes.npcs.api.function.gui.GuiBoolean;
+import noppes.npcs.api.function.gui.GuiClosed;
 import noppes.npcs.api.item.IItemStack;
-
-import java.util.List;
 
 public interface ICustomGui extends IComponentsWrapper {
 
@@ -14,6 +14,7 @@ public interface ICustomGui extends IComponentsWrapper {
     void setSize(int width, int height);
     void setDoesPauseGame(boolean pauseGame);
     void setBackgroundTexture(String resourceLocation);
+    String getBackgroundTexture();
     /**
      * Update the player's CustomGUI with this one.
      */
@@ -53,4 +54,10 @@ public interface ICustomGui extends IComponentsWrapper {
     ICustomGui getActiveGui();
 
     IPlayer getPlayer();
+
+    ICustomGui setOnClosed(GuiClosed onClosed);
+
+    ICustomGui showMessage(String message);
+
+    ICustomGui showYesNo(String message, GuiBoolean callback);
 }
