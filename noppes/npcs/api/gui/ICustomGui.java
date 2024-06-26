@@ -1,6 +1,7 @@
 package noppes.npcs.api.gui;
 
 import noppes.npcs.api.entity.IPlayer;
+import noppes.npcs.api.function.EventWrapper;
 import noppes.npcs.api.function.gui.GuiBoolean;
 import noppes.npcs.api.function.gui.GuiClosed;
 import noppes.npcs.api.item.IItemStack;
@@ -55,7 +56,8 @@ public interface ICustomGui extends IComponentsWrapper {
 
     IPlayer getPlayer();
 
-    ICustomGui setOnClosed(GuiClosed onClosed);
+    ICustomGui setOnClosed(String id, GuiClosed onClosed);
+    EventWrapper<GuiClosed> getOnClosedEvents();
 
     ICustomGui showMessage(String message);
 

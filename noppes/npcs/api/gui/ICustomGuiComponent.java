@@ -1,5 +1,6 @@
 package noppes.npcs.api.gui;
 
+import noppes.npcs.api.function.EventWrapper;
 import noppes.npcs.api.function.gui.GuiComponentAction;
 import noppes.npcs.api.function.gui.GuiComponentState;
 
@@ -40,8 +41,11 @@ public interface ICustomGuiComponent {
     boolean getHovered();
     ICustomGuiComponent setHovered(boolean bo);
 
-    ICustomGuiComponent setOnHover(GuiComponentAction<? extends ICustomGuiComponent> onHover);
-    ICustomGuiComponent setOnHoverExit(GuiComponentAction<? extends ICustomGuiComponent> onHoverExit);
+    ICustomGuiComponent setOnHover(String id, GuiComponentAction<ICustomGuiComponent> onHover);
+    EventWrapper<GuiComponentAction<ICustomGuiComponent>> getOnHoverEvents();
+
+    ICustomGuiComponent setOnHoverExit(String id, GuiComponentAction<ICustomGuiComponent> onHoverExit);
+    EventWrapper<GuiComponentAction<ICustomGuiComponent>> getOnHoverExitEvents();
 
     int getType();
 }

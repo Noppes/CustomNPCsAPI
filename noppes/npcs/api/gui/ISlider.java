@@ -1,5 +1,6 @@
  package noppes.npcs.api.gui;
 
+ import noppes.npcs.api.function.EventWrapper;
  import noppes.npcs.api.function.gui.GuiComponentAction;
 
  public interface ISlider extends ICustomGuiComponent {
@@ -19,5 +20,6 @@
     int getDecimals();
     ISlider setDecimals(int i);
 
-     ISlider setOnChange(GuiComponentAction<ISlider> onChange);
+     ISlider setOnChange(String id, GuiComponentAction<ISlider> onChange);
+     EventWrapper<GuiComponentAction<ISlider>> getOnChangeEvents();
 }

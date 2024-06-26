@@ -1,5 +1,6 @@
 package noppes.npcs.api.gui;
 
+import noppes.npcs.api.function.EventWrapper;
 import noppes.npcs.api.function.gui.GuiScrollAction;
 
 public interface IScroll extends ICustomGuiComponent {
@@ -27,8 +28,10 @@ public interface IScroll extends ICustomGuiComponent {
     boolean isMultiSelect();
     IScroll setMultiSelect(boolean multiSelect);
 
-    IScroll setOnClick(GuiScrollAction<IScroll> onClick);
-    IScroll setOnDoubleClick(GuiScrollAction<IScroll> onDoubleClick);
+    IScroll setOnClick(String id, GuiScrollAction<IScroll> onClick);
+    EventWrapper<GuiScrollAction<IScroll>> getOnClickEvents();
+    IScroll setOnDoubleClick(String id, GuiScrollAction<IScroll> onDoubleClick);
+    EventWrapper<GuiScrollAction<IScroll>> getOnDoubleClickEvents();
 
     boolean getHasSearch();
     IScroll setHasSearch(boolean bo);

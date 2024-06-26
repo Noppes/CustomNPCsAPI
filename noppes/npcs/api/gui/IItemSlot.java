@@ -1,11 +1,11 @@
 package noppes.npcs.api.gui;
 
 import net.minecraft.world.inventory.Slot;
+import noppes.npcs.api.function.EventWrapper;
 import noppes.npcs.api.function.gui.GuiItemSlotAccepts;
 import noppes.npcs.api.function.gui.GuiItemSlotClicked;
 import noppes.npcs.api.function.gui.GuiItemSlotUpdate;
 import noppes.npcs.api.item.IItemStack;
-import noppes.npcs.api.wrapper.gui.CustomGuiItemSlotWrapper;
 
 public interface IItemSlot extends ICustomGuiComponent {
 
@@ -33,9 +33,14 @@ public interface IItemSlot extends ICustomGuiComponent {
 
     boolean isPlayerSlot();
 
-    IItemSlot setOnUpdate(GuiItemSlotUpdate onUpdate);
-    IItemSlot setOnClick(GuiItemSlotClicked onPress);
-    IItemSlot setOnAccepts(GuiItemSlotAccepts onAccepts);
+    IItemSlot setOnUpdate(String id, GuiItemSlotUpdate onUpdate);
+    EventWrapper<GuiItemSlotUpdate> getOnUpdateEvents();
+
+    IItemSlot setOnClick(String id, GuiItemSlotClicked onPress);
+    EventWrapper<GuiItemSlotClicked> getOnClickEvents();
+
+    IItemSlot setOnAccepts(String id, GuiItemSlotAccepts onAccepts);
+    EventWrapper<GuiItemSlotAccepts> getOnAcceptsEvents();
 
     int getIndex();
 

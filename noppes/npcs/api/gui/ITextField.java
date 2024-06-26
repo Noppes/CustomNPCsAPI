@@ -1,5 +1,6 @@
 package noppes.npcs.api.gui;
 
+import noppes.npcs.api.function.EventWrapper;
 import noppes.npcs.api.function.gui.GuiComponentAction;
 
 public interface ITextField extends ICustomGuiComponent {
@@ -10,8 +11,10 @@ public interface ITextField extends ICustomGuiComponent {
     int getColor();
     ITextField setColor(int color);
 
-    ITextField setOnChange(GuiComponentAction<ITextField> onChange);
-    ITextField setOnFocusLost(GuiComponentAction<ITextField> onChange);
+    ITextField setOnChange(String id, GuiComponentAction<ITextField> onChange);
+    EventWrapper<GuiComponentAction<ITextField>> getOnChangeEvents();
+    ITextField setOnFocusLost(String id, GuiComponentAction<ITextField> onChange);
+    EventWrapper<GuiComponentAction<ITextField>> getOnFocusLostEvents();
 
     ITextField setFocused(boolean bo);
     boolean getFocused();
