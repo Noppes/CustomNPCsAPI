@@ -227,4 +227,8 @@ public interface IComponentsWrapper {
      */
     IItemSlot[] showPlayerInventory(int x, int y, boolean full);
 
+    /**
+     * Removes all components
+     */
+    void clear();
 }

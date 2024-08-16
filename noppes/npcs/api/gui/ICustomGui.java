@@ -2,6 +2,7 @@ package noppes.npcs.api.gui;
 
 import noppes.npcs.api.entity.IPlayer;
 import noppes.npcs.api.function.EventWrapper;
+import noppes.npcs.api.function.gui.GuiAction;
 import noppes.npcs.api.function.gui.GuiBoolean;
 import noppes.npcs.api.function.gui.GuiClosed;
 import noppes.npcs.api.item.IItemStack;
@@ -62,4 +63,8 @@ public interface ICustomGui extends IComponentsWrapper {
     ICustomGui showMessage(String message);
 
     ICustomGui showYesNo(String message, GuiBoolean callback);
+
+    ICustomGui setCustomAction(String id, GuiAction action);
+
+    EventWrapper<GuiAction> getCustomActionEvents();
 }

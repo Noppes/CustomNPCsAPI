@@ -35,4 +35,6 @@ public interface IScroll extends ICustomGuiComponent {
 
     boolean getHasSearch();
     IScroll setHasSearch(boolean bo);
+
+    void clear();
 }

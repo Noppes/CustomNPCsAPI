@@ -115,7 +115,7 @@ public interface IPlayer<T extends ServerPlayer> extends IEntityLiving<T> {
 	void removeAllItems(IItemStack item);
 
 	/**
-	 * @param item Item to be added or dropped if inventory is full
+	 * @param items Item to be added or dropped if inventory is full
 	 */
 	void giveOrDropItems(IItemStack[] items);
 	

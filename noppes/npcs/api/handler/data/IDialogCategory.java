@@ -7,6 +7,8 @@ public interface IDialogCategory {
 	public List<IDialog> dialogs();
 	
 	public String getName();
-	
-	public IDialog create();
+
+    void setName(String name);
+
+    public IDialog create();
 }
