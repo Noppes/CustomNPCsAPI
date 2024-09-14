@@ -4,35 +4,35 @@ import java.util.List;
 
 public interface IDialog {
 	
-	public int getId();
+	int getId();
 
-	public String getName();
+	String getName();
 	
-	public void setName(String name);
+	void setName(String name);
 	
-	public String getText();
+	String getText();
 	
-	public void setText(String text);
+	void setText(String text);
 
-	public IQuest getQuest();
+	IQuest getQuest();
 	
-	public void setQuest(IQuest quest);
+	void setQuest(IQuest quest);
 	
-	public String getCommand();
+	String[] getCommands();
 	
-	public void setCommand(String command);
+	void setCommands(String... commands);
 
-	public List<IDialogOption> getOptions();
+	List<IDialogOption> getOptions();
 	
 	/**
 	 * @param slot (0-5)
 	 * @return
 	 */
-	public IDialogOption getOption(int slot);
+	IDialogOption getOption(int slot);
 	
-	public IAvailability getAvailability();
+	IAvailability getAvailability();
 	
-	public IDialogCategory getCategory();
+	IDialogCategory getCategory();
 	
-	public void save();
+	void save();
 }

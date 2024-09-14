@@ -184,6 +184,7 @@ public interface IItemStack {
 	boolean compare(IItemStack item, boolean ignoreNBT);
 
 	boolean compare(IItemStack item, boolean ignoreNBT, boolean ignoreDamage);
+	boolean compare(ItemStack item, boolean ignoreNBT, boolean ignoreDamage);
 
 	/**
 	 * Splits the itemstack
