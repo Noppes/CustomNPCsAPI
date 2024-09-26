@@ -10,13 +10,19 @@ import noppes.npcs.api.item.IItemStack;
 public interface ICustomGui extends IComponentsWrapper {
 
     int getID();
+
     int getWidth();
     int getHeight();
-
     void setSize(int width, int height);
-    void setDoesPauseGame(boolean pauseGame);
-    void setBackgroundTexture(String resourceLocation);
+
     String getBackgroundTexture();
+    void setBackgroundTexture(String resourceLocation);
+
+    boolean getDoesPauseGame();
+    void setDoesPauseGame(boolean bo);
+
+    boolean getCloseOnEsc();
+    void setCloseOnEsc(boolean bo);
     /**
      * Update the player's CustomGUI with this one.
      */

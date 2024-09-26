@@ -14,77 +14,77 @@ public interface IWorld {
 	/**
 	 * @deprecated
 	 */
-	public IEntity[] getNearbyEntities(int x, int y, int z, int range, int type);
+	IEntity[] getNearbyEntities(int x, int y, int z, int range, int type);
 
-	public IEntity[] getNearbyEntities(IPos pos, int range, int type);
+	IEntity[] getNearbyEntities(IPos pos, int range, int type);
 
 	/**
 	 * @deprecated
 	 */
-	public IEntity getClosestEntity(int x, int y, int z, int range, int type);
+	IEntity getClosestEntity(int x, int y, int z, int range, int type);
 
-	public IEntity getClosestEntity(IPos pos, int range, int type);
+	IEntity getClosestEntity(IPos pos, int range, int type);
 
 	/**
 	 * This gets all currently loaded entities in a world
 	 * @param type {@link EntitiesType}}
 	 * @return An array of all entities
 	 */
-	public IEntity[] getAllEntities(int type);
+	IEntity[] getAllEntities(int type);
 
 	/**
 	 * @return The world time
 	 */
-	public long getTime();
+	long getTime();
 
-	public void setTime(long time);
+	void setTime(long time);
 
 	/**
 	 * @return The total world time (doesn't change with the /time set command
 	 */
-	public long getTotalTime();
+	long getTotalTime();
 
 	/**
 	 * @deprecated
 	 */
-	public IBlock getBlock(int x, int y, int z);
+	IBlock getBlock(int x, int y, int z);
 
 	/**
 	 * @return The block at the given position. Returns null if there isn't a block
 	 */
-	public IBlock getBlock(IPos pos);
+	IBlock getBlock(IPos pos);
 
 	/**
 	 * @deprecated metadata nolonger exists
 	 */
-	public void setBlock(int x, int y, int z, String name, int meta);
-	public IBlock setBlock(IPos pos, String name);
+	void setBlock(int x, int y, int z, String name, int meta);
+	IBlock setBlock(IPos pos, String name);
 	/**
 	 * @deprecated
 	 */
-	public void removeBlock(int x, int y, int z);
-	public void removeBlock(IPos pos);
+	void removeBlock(int x, int y, int z);
+	void removeBlock(IPos pos);
 
 	/**
 	 * @return Returns a value between 0 and 1
 	 */
-	public float getLightValue(int x, int y, int z);
+	float getLightValue(int x, int y, int z);
 
 	/**
 	 * @param name The name of the player to be returned
 	 * @return The Player with name. Null is returned when the player isnt found
 	 */
-	public IPlayer getPlayer(String name);
+	IPlayer getPlayer(String name);
 
-	public boolean isDay();
+	boolean isDay();
 
-	public boolean isRaining();
+	boolean isRaining();
 	
-	public IDimension getDimension();
+	IDimension getDimension();
 
-	public void setRaining(boolean bo);
+	void setRaining(boolean bo);
 
-	public void thunderStrike(double x, double y, double z);
+	void thunderStrike(double x, double y, double z);
 	
 	/**
 	 * Sound will be played in a 16 block range
@@ -93,7 +93,7 @@ public interface IWorld {
 	 * @param volume default 1
 	 * @param pitch default 1
 	 */
-	public void playSoundAt(IPos pos, String sound, float volume, float pitch);
+	void playSoundAt(IPos pos, String sound, float volume, float pitch);
 	
 	/**
 	 * Sends a packet from the server to the client everytime its called. Probably should not use this too much.
@@ -107,7 +107,7 @@ public interface IWorld {
 	 * @param speed Speed of the particles, usually between 0 and 1
 	 * @param count Particle count
 	 */
-	public void spawnParticle(String particle, double x, double y, double z, double dx, double dy, double dz, double speed, int count);
+	void spawnParticle(String particle, double x, double y, double z, double dx, double dy, double dz, double speed, int count);
 
 	/**
 	 * Sends a packet from the server to the client everytime its called. Probably should not use this too much.
@@ -121,27 +121,27 @@ public interface IWorld {
 	 * @param speed Speed of the particles, usually between 0 and 1
 	 * @param count Particle count
 	 */
-	public void spawnParticleBlock(String name, double x, double y, double z, double dx, double dy, double dz, double speed, int count);
+	void spawnParticleBlock(String name, double x, double y, double z, double dx, double dy, double dz, double speed, int count);
 
-	public void broadcast(String message);
+	void broadcast(String message);
 
-	public IScoreboard getScoreboard();
+	IScoreboard getScoreboard();
 
 	/**
 	 * Stores any type of data, but will be gone on restart
 	 * Temp data is the same cross dimension
 	 */
-	public IData getTempdata();
+	IData getTempdata();
 
 	/**
 	 * Stored data persists through world restart. Unlike tempdata only Strings and Numbers can be saved.
 	 * Stored data is the same cross dimension
 	 */
-	public IData getStoreddata();
+	IData getStoreddata();
 
-	public IItemStack createItem(String name, int size);
+	IItemStack createItem(String name, int size);
 
-	public IItemStack createItemFromNbt(INbt nbt);
+	IItemStack createItemFromNbt(INbt nbt);
 
 	
 	/**
@@ -152,63 +152,68 @@ public interface IWorld {
 	 * @param fire Whether or not the explosion does fire damage
 	 * @param grief Whether or not the explosion does damage to blocks
 	 */
-	public void explode(double x, double y, double z, float range, boolean fire, boolean grief);
+	void explode(double x, double y, double z, float range, boolean fire, boolean grief);
 
-	public IPlayer[] getAllPlayers();
+	IPlayer[] getAllPlayers();
 
-	public String getBiomeName(int x, int z);
+	String getBiomeName(int x, int z);
 
-	public void spawnEntity(IEntity entity);
+	void spawnEntity(IEntity entity);
 
 	/**
 	 * Depricated, use the API.clones.spawn instead
 	 */
 	@Deprecated
-	public IEntity spawnClone(double x, double y, double z, int tab, String name);
+	IEntity spawnClone(double x, double y, double z, int tab, String name);
 
 	/**
 	 * Depricated, use the API.clones.get instead
 	 */
 	@Deprecated
-	public IEntity getClone(int tab, String name);
+	IEntity getClone(int tab, String name);
 
 	/**
 	 * @return value between 0 and 16
 	 */
-	public int getRedstonePower(int x, int y, int z);
+	int getRedstonePower(int x, int y, int z);
 	
 	/**
 	 * Expert users only
 	 * @return Returns minecrafts world
 	 */
-	public ServerLevel getMCLevel();
+	ServerLevel getMCLevel();
 	
 	/**
 	 * Expert users only
 	 * @return Returns minecraft BlockPos object
 	 */
-	public BlockPos getMCBlockPos(int x, int y, int z);
+	BlockPos getMCBlockPos(int x, int y, int z);
 
 	/**
 	 * @param uuid entity uuid
 	 * @return Returns entity based on uuid
 	 */
-	public IEntity getEntity(String uuid);
+	IEntity getEntity(String uuid);
 
-	public IEntity createEntityFromNBT(INbt nbt);
+	IEntity createEntityFromNBT(INbt nbt);
 
-	public IEntity createEntity(String id);
+	IEntity createEntity(String id);
 
-	public IBlock getSpawnPoint();
+	IBlock getSpawnPoint();
 
-	public void setSpawnPoint(IBlock block);
+	void setSpawnPoint(IBlock block);
 
-	public String getName();
+	String getName();
 
 	/**
 	 * Fires trigger event for forge scripts
 	 * @param id, Id for the event
 	 * @param arguments, arguments you can give with it
 	 */
-	public void trigger(int id, Object... arguments);
+	void trigger(int id, Object... arguments);
+
+	/**
+	 * Syncs any changed block data to the client
+	 */
+    void triggerBlockUpdate(IPos pos);
 }
