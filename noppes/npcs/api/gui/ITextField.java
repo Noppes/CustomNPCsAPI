@@ -50,4 +50,6 @@ public interface ITextField extends ICustomGuiComponent {
      * Incase CharacterType is 1 or 2, you can set the min and max value
      */
     ITextField setMinMax(Number min, Number max);
+
+    void insertText(String text);
 }

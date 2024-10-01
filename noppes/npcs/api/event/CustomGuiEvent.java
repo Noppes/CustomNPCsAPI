@@ -98,4 +98,22 @@ public class CustomGuiEvent extends CustomNPCsEvent {
 
     }
 
+    public static class ResizedEvent extends CustomGuiEvent {
+        public final int oldWidth;
+        public final int oldHeight;
+
+        public ResizedEvent(IPlayer player, ICustomGui gui, int oldWidth, int oldHeight) {
+            super(player, gui);
+            this.oldWidth = oldWidth;
+            this.oldHeight = oldHeight;
+        }
+    }
+
+    public static class OpenedEvent extends CustomGuiEvent {
+
+        public OpenedEvent(IPlayer player, ICustomGui gui) {
+            super(player, gui);
+        }
+    }
+
 }

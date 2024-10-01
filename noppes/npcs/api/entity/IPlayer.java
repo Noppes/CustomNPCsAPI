@@ -244,4 +244,9 @@ public interface IPlayer<T extends ServerPlayer> extends IEntityLiving<T> {
 	void trigger(int id, Object... arguments);
 
 	boolean isOp();
+
+	int getScreenWidth();
+	int getScreenHeight();
+
+	void openWebsite(String url);
 }

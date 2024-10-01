@@ -3,9 +3,11 @@ package noppes.npcs.api.gui;
 import noppes.npcs.api.entity.IPlayer;
 import noppes.npcs.api.function.EventWrapper;
 import noppes.npcs.api.function.gui.GuiAction;
-import noppes.npcs.api.function.gui.GuiBoolean;
+import noppes.npcs.api.function.gui.GuiCallback;
 import noppes.npcs.api.function.gui.GuiClosed;
 import noppes.npcs.api.item.IItemStack;
+
+import java.util.List;
 
 public interface ICustomGui extends IComponentsWrapper {
 
@@ -63,14 +65,16 @@ public interface ICustomGui extends IComponentsWrapper {
 
     IPlayer getPlayer();
 
+    ICustomGui showMessage(String message);
+    ICustomGui showYesNo(String message, GuiCallback<Boolean> callback);
+    ICustomGui showList(String title, String[] list, String selected, GuiCallback<String> callback);
+
     ICustomGui setOnClosed(String id, GuiClosed onClosed);
     EventWrapper<GuiClosed> getOnClosedEvents();
 
-    ICustomGui showMessage(String message);
-
-    ICustomGui showYesNo(String message, GuiBoolean callback);
-
     ICustomGui setCustomAction(String id, GuiAction action);
-
     EventWrapper<GuiAction> getCustomActionEvents();
+
+    ICustomGui setOnResized(String id, GuiAction action);
+    EventWrapper<GuiAction> getOnResizedEvents();
 }
