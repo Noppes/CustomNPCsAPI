@@ -8,10 +8,16 @@ import noppes.npcs.api.function.gui.GuiClosed;
 import noppes.npcs.api.item.IItemStack;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface ICustomGui extends IComponentsWrapper {
 
+    @Deprecated //Use getName()
     int getID();
+
+    UUID getUniqueID();
+
+    String getName();
 
     int getWidth();
     int getHeight();
@@ -45,6 +51,8 @@ public interface ICustomGui extends IComponentsWrapper {
     IComponentsScrollableWrapper getScrollingPanel();
 
     void openSubGui(ICustomGui gui);
+
+    void open();
 
     ICustomGui getSubGui();
 

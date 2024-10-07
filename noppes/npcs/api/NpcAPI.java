@@ -85,7 +85,7 @@ public abstract class NpcAPI {
 	/**
 	 * @author Ryan
 	 */
-	public abstract ICustomGui createCustomGui(int id, int width, int height, boolean pauseGame, IPlayer player);
+	public abstract ICustomGui createCustomGui(String name, int width, int height, boolean pauseGame, IPlayer player);
 	
 	/**
 	 * Get player data even if they are offline

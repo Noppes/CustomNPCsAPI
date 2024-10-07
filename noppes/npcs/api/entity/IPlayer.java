@@ -224,11 +224,7 @@ public interface IPlayer<T extends ServerPlayer> extends IEntityLiving<T> {
 
 	boolean canQuestBeAccepted(int id);
 
-	/**
-	 * Open a ICustomGui to this player.
-	 * @param gui Custom GUI to be displayed to the player.
-	 * @author RyanV
-	*/
+	@Deprecated //Use ICustomGui.open()
 	void showCustomGui(ICustomGui gui);
 	
 	/**
