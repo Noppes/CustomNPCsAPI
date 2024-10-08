@@ -41,7 +41,7 @@ public class ForgeEvent extends CustomNPCsEvent {
 	 */
 	public static class InitEvent extends ForgeEvent {
 		public InitEvent() {
-			super(null);
+			super(new Event());
 		}
 	}
 
