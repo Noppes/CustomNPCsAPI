@@ -62,9 +62,9 @@ public interface IEntityLiving<T extends LivingEntity> extends IEntity<T>{
 	 * @param effect
 	 * @param duration The duration in seconds
 	 * @param strength The amplifier of the potion effect
-	 * @param hideParticles Whether or not you want to hide potion particles
+	 * @param showParticles Whether you want to hide potion particles
 	 */
-	public void addPotionEffect(int effect, int duration, int strength, boolean hideParticles);
+	public void addPotionEffect(int effect, int duration, int strength, boolean showParticles);
 	
 	public void clearPotionEffects();
 	
