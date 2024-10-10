@@ -18,4 +18,8 @@ public interface IDialogOption {
 
 	String[] getCommands();
 	void setCommands(String... commands);
+
+	IDialog getDialog();
+	IDialogOption setDialog(IDialog dialog);
+
 }
