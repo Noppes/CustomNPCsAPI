@@ -3,7 +3,10 @@ package noppes.npcs.api.constants;
 import net.minecraft.core.Registry;
 import net.minecraft.world.effect.MobEffect;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public final class PotionEffectType {
 	public static final int NONE = 0;
@@ -53,6 +56,10 @@ public final class PotionEffectType {
 	}
 
 	public static List<MobEffect> getMCAllTypes() {
-		return Registry.MOB_EFFECT.stream().toList();
+		List<MobEffect> list = new ArrayList<>();
+		for(int i = 1; i <= 32; i++){
+			list.add(getMCType(i));
+		}
+		return list;
 	}
 }
