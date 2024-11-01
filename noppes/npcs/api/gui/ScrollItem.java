@@ -2,7 +2,7 @@ package noppes.npcs.api.gui;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.contents.TranslatableContents;
 
 public class ScrollItem {
     public int index;
@@ -34,7 +34,7 @@ public class ScrollItem {
     }
 
     public static ScrollItem create(String s) {
-        return create(new TranslatableComponent(s));
+        return create(Component.translatable(s));
     }
 
     public ScrollItem setIndex(int index){
@@ -55,7 +55,7 @@ public class ScrollItem {
         if(text == Component.EMPTY){
             return "";
         }
-        if(text instanceof TranslatableComponent tc){
+        if(text.getContents() instanceof TranslatableContents tc){
             return tc.getKey();
         }
         return text.getString();

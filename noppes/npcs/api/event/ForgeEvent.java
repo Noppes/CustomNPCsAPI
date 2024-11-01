@@ -70,7 +70,7 @@ public class ForgeEvent extends CustomNPCsEvent {
 	public static class LevelEvent extends ForgeEvent{
 		public final IWorld world;
 		
-		public LevelEvent(net.minecraftforge.event.world.WorldEvent event, IWorld world) {
+		public LevelEvent(net.minecraftforge.event.level.LevelEvent event, IWorld world) {
 			super(event);
 			this.world = world;
 		}
