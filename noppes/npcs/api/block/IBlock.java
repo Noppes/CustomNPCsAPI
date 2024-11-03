@@ -119,4 +119,9 @@ public interface IBlock {
 	 * @param entity Entity that clicked, can be null
 	 */
 	void interact(int side, IEntityLiving entity);
+
+	/**
+	 * Call to let minecraft know to save all changes made in the blocks data
+	 */
+	void setChanged();
 }
